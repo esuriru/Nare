@@ -1,19 +1,23 @@
 #include "Application.h"
 
-void Nare::Application::Run() 
+namespace Nare
 {
-	while (true)
+	void Application::Run() 
 	{
-		
+		while (true)
+		{
+			
+		}
 	}
-}
 
-Nare::Application::Application()
-{
+	Application::Application()
+	{
 
-}
+	}
 
-Nare::Application::~Application()
-{
+	Application::~Application()
+	{
 
+	}
+	
 }

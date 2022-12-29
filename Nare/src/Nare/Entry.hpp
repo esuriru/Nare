@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef NR_PLATFORM_WINDOWS
+
 #include <iostream>
 
 extern Nare::Application* Nare::CreateApplication();
@@ -11,3 +13,5 @@ int main(int argc, char** argv)
 	app->Run();
 	delete app;
 }
+
+#endif 

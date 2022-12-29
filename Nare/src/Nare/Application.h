@@ -1,7 +1,13 @@
 #pragma once
 
+/**
+ * \brief Engine core namespace
+ */
 namespace Nare
 {
+	/**
+	 * \brief Application created that uses the engine.
+	 */
 	class Application
 	{
 	public:
