@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Event.h"
+#include <sstream>
 
 namespace Nare
 {
@@ -18,5 +19,44 @@ namespace Nare
 		int keycode_;
 
 	};
+
+	class KeyPressedEvent : public KeyEvent
+	{
+	public:
+		KeyPressedEvent(int keycode, int repeatCount)
+			: KeyEvent(keycode), repeatCount_(repeatCount) {}
+
+		inline int GetRepeatCount() const
+		{
+			return repeatCount_;
+		}
+
+		inline std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyPressedEvent: Keycode: " << keycode_ << " (" << repeatCount_ << " repeats)";
+			return ss.str();
+		}
+
+		NR_EVENT_CLASS_TYPE(KeyPressed)
+	private:
+		int repeatCount_;
+	};
+
+	class KeyReleasedEvent : public KeyEvent
+	{
+	public:
+		KeyReleasedEvent(int keycode) : KeyEvent(keycode) {}
+
+		inline std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyReleasedEvent: Keycode: " << keycode_;
+			return ss.str();
+		}
+
+		NR_EVENT_CLASS_TYPE(KeyReleased)
+	};
+
 }
 

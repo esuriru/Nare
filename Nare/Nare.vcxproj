@@ -93,6 +93,8 @@
       <PreprocessorDefinitions>WIN32;NR_PLATFORM_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Nare/src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>nrpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -108,6 +110,8 @@
       <PreprocessorDefinitions>WIN32;NR_PLATFORM_WINDOWS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Nare/src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>nrpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,20 +149,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\nrpch.h" />
+    <ClInclude Include="src\Nare\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Nare\Events\EventDispatcher.h" />
     <ClInclude Include="src\Nare\Events\KeyEvent.h" />
     <ClInclude Include="src\Nare\Events\Event.h" />
     <ClInclude Include="src\Nare\Core.h" />
+    <ClInclude Include="src\Nare\Events\MouseEvent.h" />
     <ClInclude Include="src\Nare\Log.h" />
     <ClInclude Include="src\Nare\Application.h" />
     <ClInclude Include="src\Nare.h" />
     <ClInclude Include="src\Nare\Entry.hpp" />
+    <ClInclude Include="src\Nare\Mathf\Mathf.h" />
+    <ClInclude Include="src\Nare\Mathf\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Nare\Events\EventDispatcher.cpp" />
-    <ClCompile Include="src\Nare\Events\KeyEvent.cpp" />
+    <ClCompile Include="src\nrpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\Nare\Log.cpp" />
     <ClCompile Include="src\Nare\Application.cpp" />
+    <ClCompile Include="src\Nare\Mathf\Vector2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

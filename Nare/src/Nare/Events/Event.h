@@ -2,6 +2,9 @@
 
 #include <string>
 
+// NOTE: Used by other event classes for their ToString implementation
+#include <sstream>
+
 #include "Nare/Core.h"
 
 namespace Nare
@@ -31,7 +34,7 @@ namespace Nare
 
 /**
  * \brief Define the class type. (To be defined in every event)
- * \param type 
+ * \param type: Event class type
  */
 #define NR_EVENT_CLASS_TYPE(type)\
 	static EventType GetStaticType() { return EventType::##type; }\
@@ -40,7 +43,7 @@ namespace Nare
 	
 /**
  * \brief Define the class category. (To be defined in an event that has a category)
- * \param category
+ * \param category: Event class category
  */
 #define NR_EVENT_CLASS_CATEGORY(category)\
 	virtual int GetCategoryFlags() const override { return category; }

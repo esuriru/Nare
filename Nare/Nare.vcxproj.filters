@@ -1,57 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Hazel">
+      <UniqueIdentifier>{5e6adf2c-83d2-4a16-9bff-fbb91efc5c6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Nare.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Nare\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Hazel</Filter>
     </ClInclude>
-    <ClInclude Include="src\Nare\Entry.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Nare\Log.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Nare\Events\ApplicationEvent.h">
+      <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Core.h">
-      <Filter>Header Files</Filter>
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare\Entry.hpp">
+      <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\Event.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Nare\Events\KeyEvent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\EventDispatcher.h">
-      <Filter>Header Files</Filter>
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare\Events\KeyEvent.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare\Log.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare\Mathf\Mathf.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare\Events\MouseEvent.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nrpch.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nare\Mathf\Vector2.h">
+      <Filter>Hazel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nare\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Hazel</Filter>
     </ClCompile>
     <ClCompile Include="src\Nare\Log.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Hazel</Filter>
     </ClCompile>
-    <ClCompile Include="src\Nare\Events\KeyEvent.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\nrpch.cpp">
+      <Filter>Hazel</Filter>
     </ClCompile>
-    <ClCompile Include="src\Nare\Events\EventDispatcher.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Nare\Mathf\Vector2.cpp">
+      <Filter>Hazel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
