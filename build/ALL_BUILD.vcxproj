@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|win32">
+      <Configuration>Debug</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|win32">
+      <Configuration>Release</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{88A6EEA7-8F7D-3239-BEA4-6FFB37B7BF03}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;C:\Users\User\source\repos\Nare\CMake\Utils.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeCCompiler.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeRCCompiler.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;C:\Users\User\source\repos\Nare\CMake\Utils.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeCCompiler.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeRCCompiler.cmake;C:\Users\User\source\repos\Nare\build\CMakeFiles\3.23.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ZERO_CHECK.vcxproj">
+      <Project>{852BE6D9-6ABB-321F-B13B-BCE0B61FE248}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Launcher\Launcher.vcxproj">
+      <Project>{46CA59C3-84BC-3BDB-A7CF-6EC69558BB41}</Project>
+      <Name>Launcher</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\Nare.vcxproj">
+      <Project>{AA9ADA2A-D2F1-3188-8C8D-2D2893BDA0D1}</Project>
+      <Name>Nare</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\boing.vcxproj">
+      <Project>{A9A2B053-9AA9-3229-8353-0374A3538DB0}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\clipboard.vcxproj">
+      <Project>{BF612BCA-78F9-31A6-ADBD-ECDF0302CCE3}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\cursor.vcxproj">
+      <Project>{C05D1F8E-3070-32BF-A7CA-96AB2725E8B7}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\empty.vcxproj">
+      <Project>{63C50BAA-A776-3041-91D3-79FEF9755912}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\events.vcxproj">
+      <Project>{6CD136DE-EF40-3FEA-AB0F-4A89FEE679A1}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\gamma.vcxproj">
+      <Project>{8DA52E0C-174A-3375-B0D1-768FC4756D01}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\gears.vcxproj">
+      <Project>{CE4C0DF7-BA49-361C-BAB2-C2EC012597DA}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\glfw.vcxproj">
+      <Project>{AAD3739D-7AE2-3022-AC5B-B0594096AE74}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\glfwinfo.vcxproj">
+      <Project>{0923615F-15E9-3B62-AF8F-295812045001}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\heightmap.vcxproj">
+      <Project>{9A35C138-7A3D-36C2-B52D-26B896D97837}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\icon.vcxproj">
+      <Project>{CDF7B796-0BC0-350B-8AE4-C80A5D44CF2E}</Project>
+      <Name>icon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\iconify.vcxproj">
+      <Project>{D7D2F8A7-E01B-3A77-8F70-032B646AF5B7}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\inputlag.vcxproj">
+      <Project>{3C53E088-5D32-3320-8DD6-77842EC064F2}</Project>
+      <Name>inputlag</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\joysticks.vcxproj">
+      <Project>{2576C9A1-3942-39AE-867E-3EE4BB6266D8}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\monitors.vcxproj">
+      <Project>{02ACDC7D-B87D-3D44-B892-12D8C93C8A2C}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\msaa.vcxproj">
+      <Project>{EDB61A86-CEEC-3385-BC81-947BECFFB710}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\offscreen.vcxproj">
+      <Project>{3955C242-B4FC-3164-985F-782E7AF38967}</Project>
+      <Name>offscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\opacity.vcxproj">
+      <Project>{D17B2060-F384-3F27-A9ED-93E46FE74E64}</Project>
+      <Name>opacity</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\particles.vcxproj">
+      <Project>{032002F0-2272-3B74-B3F7-3466D69C255B}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\reopen.vcxproj">
+      <Project>{AF08302D-85A3-3505-9D21-5FCD6CB450B0}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\sharing.vcxproj">
+      <Project>{3E60A2DA-C3B5-3779-B9B5-E1E96AA6DFFB}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\simple.vcxproj">
+      <Project>{D0B70CAA-DE14-3E60-8E6B-6B652F5153B4}</Project>
+      <Name>simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\splitview.vcxproj">
+      <Project>{38006769-E7FE-3A50-8321-D76CFCEBED8B}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\tearing.vcxproj">
+      <Project>{BFCB7CDB-2276-3BC5-972E-8E6CA38BA0A8}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\threads.vcxproj">
+      <Project>{F70C7C42-E4B4-3FCD-8D9D-2E3C419C061C}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\timeout.vcxproj">
+      <Project>{7E43A829-4EFE-380F-B49D-5F07EEDBE8C9}</Project>
+      <Name>timeout</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\title.vcxproj">
+      <Project>{E363A938-FCF5-3F0B-B20D-AFD554F07D32}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\triangle-vulkan.vcxproj">
+      <Project>{AF119A60-AA01-36DF-B281-7849CB728672}</Project>
+      <Name>triangle-vulkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\examples\wave.vcxproj">
+      <Project>{C54FBD34-3A6B-3F77-90C0-0D801722FEF3}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\tests\windows.vcxproj">
+      <Project>{32294C05-6EFB-39B5-9393-94D08DB5188F}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

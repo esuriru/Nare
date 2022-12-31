@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "Nare/vendor/GLFW/tests",
+		"source" : "Nare/vendor/GLFW/tests"
+	}
+}
