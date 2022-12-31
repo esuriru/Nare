@@ -8,16 +8,25 @@ project(Nare C CXX)
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
 ################################################################################
-if(NOT CMAKE_VS_PLATFORM_NAME)
+#if(NOT CMAKE_VS_PLATFORM_NAME)
 # TODO: This should not be hardcoded. It always returns to this because it's blank
+#    set(CMAKE_VS_PLATFORM_NAME "x86")
+#endif()
+#message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
+
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    # 64 bit
+    set(CMAKE_VS_PLATFORM_NAME "x64")
+elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
+    # 32 bit
     set(CMAKE_VS_PLATFORM_NAME "x86")
 endif()
-message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
 
-if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64"
-     OR "${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86"))
+if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86"))
     message(FATAL_ERROR "${CMAKE_VS_PLATFORM_NAME} arch is not supported!")
 endif()
+
 
 
 ################################################################################
