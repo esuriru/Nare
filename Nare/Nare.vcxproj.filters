@@ -1,63 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Hazel">
+    <Filter Include="Nare">
       <UniqueIdentifier>{5e6adf2c-83d2-4a16-9bff-fbb91efc5c6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Nare\Application.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\ApplicationEvent.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Core.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Entry.hpp">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\Event.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\EventDispatcher.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\KeyEvent.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Log.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Mathf\Mathf.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Events\MouseEvent.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\nrpch.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
     <ClInclude Include="src\Nare\Mathf\Vector2.h">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Nare\Application.cpp">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClCompile>
     <ClCompile Include="src\Nare\Log.cpp">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClCompile>
     <ClCompile Include="src\nrpch.cpp">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClCompile>
     <ClCompile Include="src\Nare\Mathf\Vector2.cpp">
-      <Filter>Hazel</Filter>
+      <Filter>Nare</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

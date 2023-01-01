@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\cmake_pch.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Application.cpp">
+      <Filter>Nare</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Log.cpp">
+      <Filter>Nare</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.cpp">
+      <Filter>Nare</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.cpp">
+      <Filter>Nare</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Application.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Entry.hpp">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\ApplicationEvent.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\Event.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\EventDispatcher.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\KeyEvent.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\MouseEvent.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Log.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Mathf.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.h">
+      <Filter>Nare</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\Debug\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\Release\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\Nare\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Nare">
+      <UniqueIdentifier>{60BE89C3-686F-3612-BA4E-DACA13127DAC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Precompile Header File">
+      <UniqueIdentifier>{02CB61E2-E475-3F67-8F7F-B7F2C974E321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6956CE17-C0F8-3FC6-AE75-224F4BFB81F4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

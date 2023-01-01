@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Nare/Events/Event.h"
+#include "Event.h"
 #include "Nare/Mathf/Vector2.h"
 
 namespace Nare
