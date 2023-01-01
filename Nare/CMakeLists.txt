@@ -5,28 +5,42 @@ set(PROJECT_NAME Nare)
 ################################################################################
 set(Nare
     "src/Nare.h"
+    "src/nrpch.cpp"
+    "src/nrpch.h"
+
     "src/Nare/Application.cpp"
     "src/Nare/Application.h"
     "src/Nare/Core.h"
     "src/Nare/Entry.hpp"
+    "src/Nare/Log.cpp"
+    "src/Nare/Log.h"
+    "src/Nare/Window.h"
+
     "src/Nare/Events/ApplicationEvent.h"
     "src/Nare/Events/Event.h"
     "src/Nare/Events/EventDispatcher.h"
     "src/Nare/Events/KeyEvent.h"
     "src/Nare/Events/MouseEvent.h"
-    "src/Nare/Log.cpp"
-    "src/Nare/Log.h"
+
     "src/Nare/Mathf/Mathf.h"
     "src/Nare/Mathf/Vector2.cpp"
     "src/Nare/Mathf/Vector2.h"
-    "src/nrpch.cpp"
-    "src/nrpch.h"
+
+    "src/Nare/Platform/Windows/WindowsWindow.h"
+    "src/Nare/Platform/Windows/WindowsWindow.cpp"
+
 )
-source_group("Nare" FILES ${Nare})
 
 set(ALL_FILES
     ${Nare}
 )
+
+# Arrange each file into it's own folder's filter
+foreach(source IN LISTS Nare)
+    get_filename_component(source_path "${source}" PATH)
+    string(REPLACE "/" "\\" source_path_msvc "${source_path}")
+    source_group("${source_path_msvc}" FILES "$source")
+endforeach()
 
 
 ################################################################################
@@ -101,6 +115,9 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         ">"
         "WIN32;"
         "NR_PLATFORM_WINDOWS;"
+        "$<$<CONFIG:Debug>:"
+			"NR_ENABLE_ASSERTS"
+		">"
         "_CONSOLE;"
         "UNICODE;"
         "_UNICODE"

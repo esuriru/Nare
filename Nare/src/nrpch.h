@@ -19,6 +19,15 @@
 #include <sstream>
 #include <exception>
 
+
+#include <chrono>
+#include <iomanip>
+#include <ctime>
+#include <time.h>
+
+// For logger
+#include <stdio.h>
+
 #ifdef NR_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
