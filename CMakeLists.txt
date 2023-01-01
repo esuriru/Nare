@@ -4,16 +4,9 @@ set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 
 project(Nare C CXX)
 
-
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
 ################################################################################
-#if(NOT CMAKE_VS_PLATFORM_NAME)
-# TODO: This should not be hardcoded. It always returns to this because it's blank
-#    set(CMAKE_VS_PLATFORM_NAME "x86")
-#endif()
-#message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
-
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     # 64 bit
@@ -23,6 +16,7 @@ elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
     set(CMAKE_VS_PLATFORM_NAME "x86")
 endif()
 
+# For now, Nare only supports building in 32 bit.
 if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86"))
     message(FATAL_ERROR "${CMAKE_VS_PLATFORM_NAME} arch is not supported!")
 endif()
@@ -101,7 +95,9 @@ add_subdirectory(Launcher)
 add_subdirectory(Nare)
 add_subdirectory(Nare/vendor/GLFW)
 
-
+if (MSVC)
+	set(VS_STARTUP_PROJECT Launcher)
+endif()
 
 
 

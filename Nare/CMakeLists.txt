@@ -70,6 +70,9 @@ endif()
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     target_include_directories(${PROJECT_NAME} PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/src"
+
+        # GLFW
+        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLFW"
     )
 endif()
 
@@ -157,3 +160,8 @@ if(MSVC)
     endif()
 endif()
 
+# The nitty gritty
+target_link_libraries(${PROJECT_NAME} PRIVATE
+	glfw
+    opengl32
+)
