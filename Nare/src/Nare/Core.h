@@ -1,4 +1,5 @@
 #pragma once
+#include "Log.h"
 
 #ifdef NR_PLATFORM_WINDOWS
 	#ifdef WIN32
@@ -12,7 +13,9 @@
 #endif
 
 #ifdef NR_ENABLE_ASSERTS
-	#define NR_ASSERT(x, ...) { if (!(x)) { 
+	#define NR_CORE_ASSERT(x, ...) { if (!(x)) { NR_CORE_ERROR("Nare Engine: Assertion Failed - {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define NR_CORE_ASSERT(x, ...)
 #endif
 
 // Bit-shift to the left (multiply by 2)

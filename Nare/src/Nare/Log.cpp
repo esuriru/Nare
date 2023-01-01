@@ -3,7 +3,7 @@
 
 namespace Nare
 {
-	// TODO: This feels wrong against OOP standard. Maybe change this implementation later. The log should have a core and a client console.
+	// TODO: This is wrong against OOP standard. Maybe change this implementation later. The log should have a core and a client console.
 	// TODO: It only has a single static console handle. It also will not be very cross platform.
 #ifdef NR_PLATFORM_WINDOWS
 	static HANDLE coreConsoleHandle_ = GetStdHandle(STD_OUTPUT_HANDLE);
