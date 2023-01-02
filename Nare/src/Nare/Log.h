@@ -10,8 +10,8 @@ namespace Nare
 	 */
 	class Log
 	{
+	// TODO: Spacing between the time and the actual message should be a setting
 	public:
-		// TODO: Spacing between the time and the actual message should be a setting
 		enum LogPriority
 		{
 			LogPriorityTrace = 0,
@@ -32,25 +32,6 @@ namespace Nare
 
 
 #pragma region TEMPLATE_GLOBAL_LOG_FUNCTIONS
-
-		template<class T>
-		static void log(LogPriority level, const T& msg)
-		{
-			SetTextColourFromLogPriority(level);
-			std::cout << "[" << RetrieveCurrentTime() << "]" << " "; // Time
-			std::cout << msg << "\n";
-		}
-
-		template<typename Arg, typename... Args>
-		static void log(LogPriority level, Arg&& arg, Args &&... args)
-		{
-			SetTextColourFromLogPriority(level);
-			std::cout << "[" << RetrieveCurrentTime() << "]" << " "; // Time
-			std::cout << std::forward<Arg>(arg);
-			using pack_expander = int[];
-			static_cast<void>(pack_expander{ 0, (static_cast<void>(std::cout << std::forward<Args>(args)), 0)... });
-			std::cout << "\n";
-		}
 
 		template<typename... Args>
 		static void Trace(Args&&... args)
@@ -84,19 +65,39 @@ namespace Nare
 			// TODO: Might need to end the application?
 		}
 
+	private:
+
+		template<class T>
+		static void log(LogPriority level, const T& msg)
+		{
+			SetTextColourFromLogPriority(level);
+			std::cout << "[" << RetrieveCurrentTime() << "]" << " "; // Time
+			std::cout << msg << "\n";
+		}
+
+		template<typename Arg, typename... Args>
+		static void log(LogPriority level, Arg&& arg, Args &&... args)
+		{
+			SetTextColourFromLogPriority(level);
+			std::cout << "[" << RetrieveCurrentTime() << "]" << " "; // Time
+			std::cout << std::forward<Arg>(arg);
+			using pack_expander = int[];
+			static_cast<void>(pack_expander{ 0, (static_cast<void>(std::cout << std::forward<Args>(args)), 0)... });
+			std::cout << "\n";
+		}
 #pragma endregion TEMPLATE_GLOBAL_LOG_FUNCTIONS
 
-	private:
 		friend class Logger;
+
 		static std::string RetrieveCurrentTime();
 		static void SetTextColourFromLogPriority(LogPriority level);
 
 		static std::shared_ptr<Logger> coreLogger_;
 		static std::shared_ptr<Logger> clientLogger_;
-
 	};
 }
 
+// This feels very out of place.
 #include "Logger.h"
 
 #pragma region GLOBAL_LOG_MACROS

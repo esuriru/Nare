@@ -27,8 +27,10 @@ namespace Nare
 			std::cout << "[" << Log::RetrieveCurrentTime() << "]" << " "; // Time
 			std::cout << name_ << ": "; // Name
 			std::cout << std::forward<Arg>(arg); // First arg
+
 			using pack_expander = int[];
 			static_cast<void>(pack_expander{ 0, (static_cast<void>(std::cout << std::forward<Args>(args)), 0)... }); // Expand the pack then print it
+
 			std::cout << "\n";
 		}
 
