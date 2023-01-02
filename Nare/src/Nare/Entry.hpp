@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 	const auto app = Nare::CreateApplication();
 	app->Run();
 	delete app;
+	Nare::Log::Exit();
 }
 
 #endif 

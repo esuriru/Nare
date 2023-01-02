@@ -1,4 +1,5 @@
 #include "Application.h"
+#include <GLFW/glfw3.h>
 #include "Window.h"
 
 #include "Log.h"
@@ -9,9 +10,11 @@ namespace Nare
 	void Application::Run() 
 	{
 		WindowResizeEvent e(1280, 720);
-		NR_CORE_INFO("Application created");
+
 		while (running_)
 		{
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 			window_->OnUpdate();
 		}
 	}

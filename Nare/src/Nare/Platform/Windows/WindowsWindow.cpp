@@ -27,6 +27,8 @@ namespace Nare
 		data_.Width = props.Width;
 		data_.Height = props.Height;
 
+		NR_CORE_INFO("Creating window ", props.Title, "(", props.Width, ", ", props.Height, ")");
+
 		if (!s_GLFWInitialized)
 		{
 			const int glfw_init_success = glfwInit();

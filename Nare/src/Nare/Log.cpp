@@ -20,10 +20,13 @@ namespace Nare
 		// TODO: Should not be hardcoded here.
 		coreLogger_ = std::make_shared<Logger>("NARE");
 		clientLogger_ = std::make_shared<Logger>("APP");
+
+		NR_CORE_TRACE("Initialized Log!");
 	}
 
 	void Log::Exit()
 	{
+		SetTextColourFromLogPriority(LogPriorityTrace);
 	}
 
 	std::shared_ptr<Logger> Log::GetCoreLogger()
@@ -68,8 +71,10 @@ namespace Nare
 		switch (level)
 		{
 		case LogPriorityTrace:
-		case LogPriorityInfo:
 			SetConsoleTextAttribute(consoleHandle_, 15); // White
+			break;
+		case LogPriorityInfo:
+			SetConsoleTextAttribute(consoleHandle_, FOREGROUND_GREEN); // White
 			break;
 		case LogPriorityWarn:
 			SetConsoleTextAttribute(consoleHandle_, 14); // Yellow

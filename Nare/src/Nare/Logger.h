@@ -11,29 +11,6 @@ namespace Nare
 		explicit Logger(const std::string& name);
 
 #pragma region TEMPLATE_LOCAL_LOG_FUNCTIONS
-		template<class T>
-		void log(Log::LogPriority level, const T& msg)
-		{
-			Log::SetTextColourFromLogPriority(level);
-			std::cout << "[" << Log::RetrieveCurrentTime() << "]" << " "; // Time
-			std::cout << name_ << ": "; // Name
-			std::cout << msg << "\n";
-		}
-
-		template<typename Arg, typename... Args>
-		void log(Log::LogPriority level, Arg&& arg, Args &&... args)
-		{
-			Log::SetTextColourFromLogPriority(level);
-			std::cout << "[" << Log::RetrieveCurrentTime() << "]" << " "; // Time
-			std::cout << name_ << ": "; // Name
-			std::cout << std::forward<Arg>(arg); // First arg
-
-			using pack_expander = int[];
-			static_cast<void>(pack_expander{ 0, (static_cast<void>(std::cout << std::forward<Args>(args)), 0)... }); // Expand the pack then print it
-
-			std::cout << "\n";
-		}
-
 		template<typename... Args>
 		void Trace(Args&&... args)
 		{
@@ -65,8 +42,30 @@ namespace Nare
 			log(Log::LogPriorityFatal, std::forward<Args>(args)...);
 			// TODO: Might need to end the application?
 		}
-#pragma endregion TEMPLATE_LOCAL_LOG_FUNCTIONS
 	private:
+		template<class T>
+		void log(Log::LogPriority level, const T& msg)
+		{
+			Log::SetTextColourFromLogPriority(level);
+			std::cout << "[" << Log::RetrieveCurrentTime() << "]" << " "; // Time
+			std::cout << name_ << ": "; // Name
+			std::cout << msg << "\n";
+		}
+
+		template<typename Arg, typename... Args>
+		void log(Log::LogPriority level, Arg&& arg, Args &&... args)
+		{
+			Log::SetTextColourFromLogPriority(level);
+			std::cout << "[" << Log::RetrieveCurrentTime() << "]" << " "; // Time
+			std::cout << name_ << ": "; // Name
+			std::cout << std::forward<Arg>(arg); // First arg
+
+			using pack_expander = int[];
+			static_cast<void>(pack_expander{ 0, (static_cast<void>(std::cout << std::forward<Args>(args)), 0)... }); // Expand the pack then print it
+
+			std::cout << "\n";
+		}
+#pragma endregion TEMPLATE_LOCAL_LOG_FUNCTIONS
 		/**
 		 * \brief To be printed when logging
 		 */
