@@ -74,9 +74,14 @@ namespace Nare
 			return GetCategoryFlags() & category;
 		}
 
+		inline friend std::ostream& operator<<(std::ostream& out, const Event& e)
+		{
+			return out << e.ToString();
+		}
+
 	protected:
 		bool handled_ = false;
 	};
-	
+
 }
 

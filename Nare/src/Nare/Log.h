@@ -15,97 +15,39 @@ namespace Nare
 			LogPriorityFatal
 		};
 
+		static void Init();
+		static void Exit();
+
+
 		Log();
 		~Log();
 
 	private:
+		//static std::unique_ptr<Log> coreInstance_;
 
-		template<class T, class Char = char>
-		struct is_not_loggable : 
-			std::integral_constant<bool,
-				!std::is_convertible<T, const char*>::value && !std::is_convertible<T, std::basic_string<Char>>::value &&
-				!std::is_same<T, const char*>::value && !std::is_same<T, std::basic_string<Char>>::value>
-		{};
-		template<class T, class Char = char>
-		struct is_loggable : 
-			std::integral_constant<bool,
-				std::is_convertible<T, const char*>::value || std::is_convertible<T, std::basic_string<Char>>::value ||
-				std::is_same<T, const char*>::value || std::is_same<T, std::basic_string<Char>>::value>
-		{};
-
-		template<class T>
-		using IsString = std::enable_if_t<std::is_convertible<T, std::string>::value, bool>;
-
-		template<class T>
-		using IsNotString = std::enable_if_t<!std::is_convertible<T, std::string>::value, bool>;
-
-		template<class T, IsString<T> = true>
-		static constexpr T print_cast(T msg)
-		{
-			return std::forward<T>(msg);
-		}
-
-		template<class T, IsNotString<T> = true>
-		static constexpr const char* print_cast(T msg)
-		{
-			return msg.data();
-		}
-
-		template<typename... Args>
-		static void printArgs(const char* format = nullptr, Args &&... args)
-		{
-			printf(format != nullptr ? format : "%s", print_cast(args)...);
-		}
-
-		template<class T, class Char = char>
-		using IsLoggable =
-			std::enable_if_t<is_loggable<T, Char>::value, bool>;
-
-		template<class T, class Char = char>
-		using IsNotLoggable =
-			std::enable_if_t<!is_loggable<T, Char>::value, bool>;
-
-		// TODO: I am not able to input the char type (could be wchar) in these packed templates. When the time comes, I'll look at it again.
-		template<typename... Args>
-		using IsNotLoggableArgs =
-			std::enable_if_t<!std::conjunction_v<is_loggable<Args>...>, bool>;
-
-		template<typename... Args>
-		using IsLoggableArgs =
-			std::enable_if_t<std::conjunction_v<is_loggable<Args>...>, bool>;
-
-
+		// TODO: Will implement the formatting later. Not an important thing now.
+		static std::string s_format;
 	public:
 #pragma region TEMPLATE_LOG_FUNCTIONS
-		template<class T, IsNotLoggable<T> = true>
-		static void log(LogPriority level, const T& msg)
-		{
-			// Not possible to print;	
-		}
 
-		template<class T, IsLoggable<T> = true>
+		// TODO: Spacing between the time and the actual message should be a setting
+		template<class T>
 		static void log(LogPriority level, const T& msg)
 		{
 			SetTextColourFromLogPriority(level);
-			printf("[%s] ", RetrieveCurrentTime().data());
-			printf(msg);
-			printf("\n");
+			std::cout << "[" << RetrieveCurrentTime() << "]" << " "; // Time
+			std::cout << msg << "\n";
 		}
 
-		template<typename... Args, IsLoggableArgs<Args...> = true>
-		static void log(LogPriority level, Args &&... args)
+		template<typename Arg, typename... Args>
+		static void log(LogPriority level, Arg&& arg, Args &&... args)
 		{
 			SetTextColourFromLogPriority(level);
-			printf("[%s] ", RetrieveCurrentTime().data());
-			printArgs(args...);
-			//printf(std::forward<Args>(args)...);
-			printf("\n");
-		}
-
-		template<typename... Args, IsNotLoggableArgs<Args...> = true>
-		static void log(LogPriority level, Args &&... args)
-		{
-			// not printable
+			std::cout << "[" << RetrieveCurrentTime() << "]" << " "; // Time
+			std::cout << std::forward<Arg>(arg);
+			using pack_expander = int[];
+			static_cast<void>(pack_expander{ 0, (static_cast<void>(std::cout << std::forward<Args>(args)), 0)... });
+			std::cout << "\n";
 		}
 
 		template<typename... Args>

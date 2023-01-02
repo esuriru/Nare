@@ -2,12 +2,13 @@
 
 #ifdef NR_PLATFORM_WINDOWS
 
-#include <iostream>
+#include "Log.h"
 
 extern Nare::Application* Nare::CreateApplication();
 
 int main(int argc, char** argv)
 {
+	Nare::Log::Init();
 	auto app = Nare::CreateApplication();
 	app->Run();
 	delete app;

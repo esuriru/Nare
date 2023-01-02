@@ -3,11 +3,23 @@
 
 namespace Nare
 {
+	std::string Log::s_format = "%s";
 	// TODO: This is wrong against OOP standard. Maybe change this implementation later. The log should have a core and a client console.
 	// TODO: It only has a single static console handle. It also will not be very cross platform.
 #ifdef NR_PLATFORM_WINDOWS
 	static HANDLE coreConsoleHandle_ = GetStdHandle(STD_OUTPUT_HANDLE);
 #endif
+
+	void Log::Init()
+	{
+		// TODO: Make this a better logger. Might make my own logger library as well.
+		std::ios::sync_with_stdio(false);
+		//coreInstance_ = std::make_unique<Log>();
+	}
+
+	void Log::Exit()
+	{
+	}
 
 	Log::Log()
 	{
@@ -35,8 +47,6 @@ namespace Nare
 		switch (level)
 		{
 		case LogPriorityTrace:
-			SetConsoleTextAttribute(coreConsoleHandle_, 15); // White
-			break;
 		case LogPriorityInfo:
 			SetConsoleTextAttribute(coreConsoleHandle_, 15); // White
 			break;
@@ -44,8 +54,6 @@ namespace Nare
 			SetConsoleTextAttribute(coreConsoleHandle_, 14); // Yellow
 			break;
 		case LogPriorityError:
-			SetConsoleTextAttribute(coreConsoleHandle_, FOREGROUND_RED); 
-			break;
 		case LogPriorityFatal:
 			SetConsoleTextAttribute(coreConsoleHandle_, FOREGROUND_RED);
 			break;
