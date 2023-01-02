@@ -1,25 +1,41 @@
 #include "nrpch.h"
 #include "Log.h"
+#include "Logger.h"
 
 namespace Nare
 {
-	std::string Log::s_format = "%s";
-	// TODO: This is wrong against OOP standard. Maybe change this implementation later. The log should have a core and a client console.
-	// TODO: It only has a single static console handle. It also will not be very cross platform.
+	// static loggers
+	std::shared_ptr<Logger> Nare::Log::coreLogger_;
+	std::shared_ptr<Logger> Nare::Log::clientLogger_;
+
 #ifdef NR_PLATFORM_WINDOWS
-	static HANDLE coreConsoleHandle_ = GetStdHandle(STD_OUTPUT_HANDLE);
+	static HANDLE consoleHandle_ = GetStdHandle(STD_OUTPUT_HANDLE);
 #endif
 
 	void Log::Init()
 	{
-		// TODO: Make this a better logger. Might make my own logger library as well.
+		// TODO: Make this a better logger (lol). Might make my own logger library as well.
 		std::ios::sync_with_stdio(false);
-		//coreInstance_ = std::make_unique<Log>();
+
+		// TODO: Should not be hardcoded here.
+		coreLogger_ = std::make_shared<Logger>("NARE");
+		clientLogger_ = std::make_shared<Logger>("APP");
 	}
 
 	void Log::Exit()
 	{
 	}
+
+	std::shared_ptr<Logger> Log::GetCoreLogger()
+	{
+		return coreLogger_;
+	}
+
+	std::shared_ptr<Logger> Log::GetClientLogger()
+	{
+		return clientLogger_;
+	}
+
 
 	Log::Log()
 	{
@@ -41,6 +57,11 @@ namespace Nare
 		return ss.str();
 	}
 
+	/**
+	 * \brief Static function to change the text colour from the level's priority. This is where the colours are being set.
+	 * NOTE: ONLY WORKS IN WINDOWS
+	 * \param level: Priority level 
+	 */
 	void Log::SetTextColourFromLogPriority(LogPriority level)
 	{
 #ifdef NR_PLATFORM_WINDOWS
@@ -48,14 +69,14 @@ namespace Nare
 		{
 		case LogPriorityTrace:
 		case LogPriorityInfo:
-			SetConsoleTextAttribute(coreConsoleHandle_, 15); // White
+			SetConsoleTextAttribute(consoleHandle_, 15); // White
 			break;
 		case LogPriorityWarn:
-			SetConsoleTextAttribute(coreConsoleHandle_, 14); // Yellow
+			SetConsoleTextAttribute(consoleHandle_, 14); // Yellow
 			break;
 		case LogPriorityError:
 		case LogPriorityFatal:
-			SetConsoleTextAttribute(coreConsoleHandle_, FOREGROUND_RED);
+			SetConsoleTextAttribute(consoleHandle_, FOREGROUND_RED);
 			break;
 		}
 #endif

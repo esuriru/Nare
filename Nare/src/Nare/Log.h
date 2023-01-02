@@ -3,9 +3,15 @@
 
 namespace Nare
 {
+	class Logger;
+
+	/**
+	 * \brief Global log manager
+	 */
 	class Log
 	{
 	public:
+		// TODO: Spacing between the time and the actual message should be a setting
 		enum LogPriority
 		{
 			LogPriorityTrace = 0,
@@ -18,19 +24,15 @@ namespace Nare
 		static void Init();
 		static void Exit();
 
+		static std::shared_ptr<Logger> GetCoreLogger();
+		static std::shared_ptr<Logger> GetClientLogger();
 
 		Log();
 		~Log();
 
-	private:
-		//static std::unique_ptr<Log> coreInstance_;
 
-		// TODO: Will implement the formatting later. Not an important thing now.
-		static std::string s_format;
-	public:
-#pragma region TEMPLATE_LOG_FUNCTIONS
+#pragma region TEMPLATE_GLOBAL_LOG_FUNCTIONS
 
-		// TODO: Spacing between the time and the actual message should be a setting
 		template<class T>
 		static void log(LogPriority level, const T& msg)
 		{
@@ -81,33 +83,49 @@ namespace Nare
 			log(LogPriorityFatal, std::forward<Args>(args)...);
 			// TODO: Might need to end the application?
 		}
-#pragma endregion TEMPLATE_LOG_FUNCTIONS
+
+#pragma endregion TEMPLATE_GLOBAL_LOG_FUNCTIONS
 
 	private:
-		
+		friend class Logger;
 		static std::string RetrieveCurrentTime();
 		static void SetTextColourFromLogPriority(LogPriority level);
+
+		static std::shared_ptr<Logger> coreLogger_;
+		static std::shared_ptr<Logger> clientLogger_;
 
 	};
 }
 
+#include "Logger.h"
+
+#pragma region GLOBAL_LOG_MACROS
+
+#define NR_TRACE(...) ::Nare::Log::Trace(__VA_ARGS__)
+#define NR_INFO(...) ::Nare::Log::Info(__VA_ARGS__)
+#define NR_WARN(...) ::Nare::Log::Warn(__VA_ARGS__)
+#define NR_ERROR(...) ::Nare::Log::Error(__VA_ARGS__)
+#define NR_FATAL(...) ::Nare::Log::Fatal(__VA_ARGS__)
+
+#pragma endregion GLOBAL_LOG_MACROS
+
 #pragma region CORE_LOG_MACROS
 
-#if 1 
-#define NR_CORE_TRACE(...) ::Nare::Log::Trace(__VA_ARGS__)
-#define NR_CORE_INFO(...) ::Nare::Log::Info(__VA_ARGS__)
-#define NR_CORE_WARN(...) ::Nare::Log::Warn(__VA_ARGS__)
-#define NR_CORE_ERROR(...) ::Nare::Log::Error(__VA_ARGS__)
-#define NR_CORE_FATAL(...) ::Nare::Log::Fatal(__VA_ARGS__)
-#endif
-
-#if 0
-#define NR_CORE_TRACE(...) ::Nare::Log::log(::Nare::Log::LogPriority::LogPriorityTrace, __VA_ARGS__)
-#define NR_CORE_INFO(...)  ::Nare::Log::log(::Nare::Log::LogPriority::LogPriorityInfo, __VA_ARGS__) 
-#define NR_CORE_WARN(...)  ::Nare::Log::log(::Nare::Log::LogPriority::LogPriorityWarn, __VA_ARGS__)
-#define NR_CORE_ERROR(...) ::Nare::Log::log(::Nare::Log::LogPriority::LogPriorityError, __VA_ARGS__)
-#define NR_CORE_FATAL(...) ::Nare::Log::log(::Nare::Log::LogPriority::LogPriorityFatal, __VA_ARGS__)
-#endif 
+#define NR_CORE_TRACE(...) ::Nare::Log::GetCoreLogger()->Trace(__VA_ARGS__)
+#define NR_CORE_INFO(...)  ::Nare::Log::GetCoreLogger()->Info(__VA_ARGS__)
+#define NR_CORE_WARN(...)  ::Nare::Log::GetCoreLogger()->Warn(__VA_ARGS__)
+#define NR_CORE_ERROR(...) ::Nare::Log::GetCoreLogger()->Error(__VA_ARGS__)
+#define NR_CORE_FATAL(...) ::Nare::Log::GetCoreLogger()->Fatal(__VA_ARGS__)
 
 #pragma endregion CORE_LOG_MACROS
+
+#pragma region CLIENT_LOG_MACROS
+
+#define NR_CLIENT_TRACE(...) ::Nare::Log::GetClientLogger()->Trace(__VA_ARGS__)
+#define NR_CLIENT_INFO(...)  ::Nare::Log::GetClientLogger()->Info(__VA_ARGS__)
+#define NR_CLIENT_WARN(...)  ::Nare::Log::GetClientLogger()->Warn(__VA_ARGS__)
+#define NR_CLIENT_ERROR(...) ::Nare::Log::GetClientLogger()->Error(__VA_ARGS__)
+#define NR_CLIENT_FATAL(...) ::Nare::Log::GetClientLogger()->Fatal(__VA_ARGS__)
+
+#pragma endregion CLIENT_LOG_MACROS
 

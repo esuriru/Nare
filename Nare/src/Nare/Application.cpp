@@ -9,9 +9,7 @@ namespace Nare
 	void Application::Run() 
 	{
 		WindowResizeEvent e(1280, 720);
-		int a = 2;
-		NR_CORE_ERROR("sting", "test");
-		NR_CORE_INFO(e);
+		NR_CORE_INFO("Application created");
 		while (running_)
 		{
 			window_->OnUpdate();

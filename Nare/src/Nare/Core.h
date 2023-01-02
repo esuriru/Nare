@@ -13,9 +13,11 @@
 #endif
 
 #ifdef NR_ENABLE_ASSERTS
-	#define NR_CORE_ASSERT(x, ...) { if (!(x)) { NR_CORE_ERROR("Nare Engine: Assertion Failed - {0}", __VA_ARGS__); __debugbreak(); } }
+	#define NR_CORE_ASSERT(x, ...) { if (!(x)) { NR_CORE_ERROR("Nare Engine: Assertion Failed - ", __VA_ARGS__); __debugbreak(); } }
+	#define NR_CLIENT_ASSERT(x, ...) { if (!(x)) { NR_CLIENT_ERROR("Nare Engine: Assertion Failed - ", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define NR_CORE_ASSERT(x, ...)
+	#define NR_CLIENT_ASSERT(x, ...)
 #endif
 
 // Bit-shift to the left (multiply by 2)

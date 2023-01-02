@@ -15,6 +15,8 @@ set(Nare
     "src/Nare/Log.cpp"
     "src/Nare/Log.h"
     "src/Nare/Window.h"
+    "src/Nare/Logger.h"
+    "src/Nare/Logger.cpp"
 
     "src/Nare/Events/ApplicationEvent.h"
     "src/Nare/Events/Event.h"
