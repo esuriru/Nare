@@ -22,6 +22,8 @@ if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86"))
 endif()
 
 
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+
 
 ################################################################################
 # Global configuration types
