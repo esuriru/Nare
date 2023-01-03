@@ -41,6 +41,7 @@ namespace Nare
 
 		NR_CORE_INFO("Creating window ", props.Title, "(", props.Width, ", ", props.Height, ")");
 
+
 		if (!s_GLFWInitialized)
 		{
 			const int glfw_init_success = glfwInit();
@@ -51,21 +52,20 @@ namespace Nare
 			s_GLFWInitialized = true;
 		}
 
-		gl_window_ = glfwCreateWindow(static_cast<int>(props.Width), static_cast<int>(props.Height), data_.Title.data(), nullptr, nullptr);
+		window_ = glfwCreateWindow(static_cast<int>(props.Width), static_cast<int>(props.Height), data_.Title.data(), nullptr, nullptr);
 
-		if (!gl_window_)
+		context_ = new OpenGLContext(window_);
+		context_->Init();
+
+		if (!window_)
 			NR_CORE_FATAL("Could not create the window.");
 
-		glfwMakeContextCurrent(gl_window_);
 
-		int glad_init_success = gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress));
-		NR_CORE_ASSERT(glad_init_success, "Could not initialize GLAD.");
-
-		glfwSetWindowUserPointer(gl_window_, &data_);
+		glfwSetWindowUserPointer(window_, &data_);
 		SetVSyncEnabled(true);
 
 #pragma region GLFW_CALLBACKS
-		glfwSetWindowSizeCallback(gl_window_, [](GLFWwindow* window, int width, int height)
+		glfwSetWindowSizeCallback(window_, [](GLFWwindow* window, int width, int height)
 		{
 			WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 			data.Width = width;
@@ -75,14 +75,14 @@ namespace Nare
 			data.EventCallback(event);
 		});
 
-		glfwSetWindowCloseCallback(gl_window_, [](GLFWwindow* window)
+		glfwSetWindowCloseCallback(window_, [](GLFWwindow* window)
 		{
 			WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 			WindowCloseEvent event;
 			data.EventCallback(event);
 		});
 
-		glfwSetKeyCallback(gl_window_, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+		glfwSetKeyCallback(window_, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
 			WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 
@@ -109,7 +109,7 @@ namespace Nare
 			}
 		});
 
-		glfwSetMouseButtonCallback(gl_window_, [](GLFWwindow* window, int button, int action, int mods)
+		glfwSetMouseButtonCallback(window_, [](GLFWwindow* window, int button, int action, int mods)
 		{
 			WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 
@@ -130,7 +130,7 @@ namespace Nare
 			}
 		});
 
-		glfwSetScrollCallback(gl_window_, [](GLFWwindow* window, double x_offset, double y_offset)
+		glfwSetScrollCallback(window_, [](GLFWwindow* window, double x_offset, double y_offset)
 		{
 			WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 
@@ -138,7 +138,7 @@ namespace Nare
 			data.EventCallback(event);
 		});
 
-		glfwSetCursorPosCallback(gl_window_, [](GLFWwindow* window, double x_pos, double y_pos)
+		glfwSetCursorPosCallback(window_, [](GLFWwindow* window, double x_pos, double y_pos)
 		{
 			WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 
@@ -150,13 +150,13 @@ namespace Nare
 
 	void WindowsWindow::Exit()
 	{
-		glfwDestroyWindow(gl_window_);
+		glfwDestroyWindow(window_);
 	}
 
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(gl_window_);
+		glfwSwapBuffers(window_);
 	}
 
 	void WindowsWindow::SetVSyncEnabled(bool enabled)

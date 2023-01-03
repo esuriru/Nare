@@ -21,7 +21,7 @@ namespace Nare
 		coreLogger_ = std::make_shared<Logger>("NARE");
 		clientLogger_ = std::make_shared<Logger>("APP");
 
-		NR_CORE_TRACE("Initialized Log!");
+		NR_CORE_WARN("Initialized Log!");
 	}
 
 	void Log::Exit()

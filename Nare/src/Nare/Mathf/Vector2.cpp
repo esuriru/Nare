@@ -3,6 +3,7 @@
 
 
 #include "Mathf.h"
+#include "Nare/Core.h"
 
 Vector2::Vector2()
 	: x(0.f)
@@ -12,8 +13,8 @@ Vector2::Vector2()
 }
 
 Vector2::Vector2(double x, double y)
-	: x(x)
-	, y(y)
+	: x(static_cast<float>(x))
+	, y(static_cast<float>(y))
 {
 }
 
@@ -24,8 +25,8 @@ Vector2::Vector2(float x, float y)
 }
 
 Vector2::Vector2(unsigned x, unsigned y)
-	: x(x)
-	, y(y)
+	: x(static_cast<float>(x))
+	, y(static_cast<float>(y))
 {
 }
 
@@ -107,16 +108,14 @@ Vector2& Vector2::operator/=(float scalar)
 Vector2& Vector2::Normalize()
 {
 	const float l = Length();
-	// TODO: Change this into our own macro.
-	assert(Mathf::ApproximatelyZero(l));
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero");
 	return *this /= l;
 }
 
 Vector2 Vector2::Normalized() const
 {
 	const float l = Length();
-	// TODO: Change this into our own macro.
-	assert(Mathf::ApproximatelyZero(l));
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero");
 	return Vector2(*this) / l;
 }
 

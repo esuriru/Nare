@@ -58,6 +58,7 @@ namespace Nare
 		bool running_;
 		LayerStack layerStack_;
 
+		unsigned int vertexArray_, vertexBuffer_, indexBuffer_;
 	protected:
 		static Application* s_instance_;
 

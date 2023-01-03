@@ -12,7 +12,6 @@ public:
 		//NR_CLIENT_INFO("Test Layer");
 		if (Nare::Input::GetKeyDown(NR_KEY_TAB))
 			NR_CLIENT_INFO("Tab key is pressed!");
-
 	}
 
 	void OnEvent(Nare::Event& event) override

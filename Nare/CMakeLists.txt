@@ -36,10 +36,18 @@ set(Nare
     "src/Nare/Mathf/Vector2.cpp"
     "src/Nare/Mathf/Vector2.h"
 
+    # Windows specific
     "src/Nare/Platform/Windows/WindowsWindow.h"
     "src/Nare/Platform/Windows/WindowsWindow.cpp"
     "src/Nare/Platform/Windows/WindowsInput.cpp"
     "src/Nare/Platform/Windows/WindowsInput.h"
+
+    # OpenGL specific
+    "src/Nare/Platform/OpenGL/OpenGLContext.h"
+    "src/Nare/Platform/OpenGL/OpenGLContext.cpp"
+
+    # Renderer
+    "src/Nare/Renderer/GraphicsContext.h"
 
 )
 

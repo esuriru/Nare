@@ -78,7 +78,7 @@ namespace Nare
 		{
 			return out << e.ToString();
 		}
-		bool Handled;
+		bool Handled = false;
 	};
 
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Nare/Window.h"
+#include "Nare/Platform/OpenGL/OpenGLContext.h"
 
 struct GLFWwindow;
 
@@ -35,7 +36,7 @@ namespace Nare
 
 		inline virtual void* GetNativeWindow() const override
 		{
-			return gl_window_;
+			return window_;
 		}
 
 #pragma endregion INLINE_FUNCTIONS
@@ -47,13 +48,15 @@ namespace Nare
 #pragma endregion PRIVATE_FUNCTIONS
 
 #pragma region PRIVATE_DATA_MEMBERS
-		GLFWwindow* gl_window_{};
+		GLFWwindow* window_{};
+
+		GraphicsContext* context_;
 
 		struct WindowData
 		{
 			std::string Title;
 			unsigned int Width, Height;
-			bool VSyncEnabled;
+			bool VSyncEnabled = false;
 
 			EventCallback EventCallback;
 		};
