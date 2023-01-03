@@ -1,6 +1,6 @@
 #include "Application.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 #include "Window.h"
 #include "Log.h"
 #include "Layer.h"
@@ -66,6 +66,9 @@ namespace Nare
 		, running_(true)
 	{
 		window_->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
+
+		unsigned int id;
+		glGenVertexArrays(1, &id);
 	}
 
 	Application::~Application()

@@ -5,6 +5,9 @@
 #include "Nare/Events/MouseEvent.h"
 #include "Nare/Events/KeyEvent.h"
 
+#include <GLAD/glad.h>
+#include <GLFW/glfw3.h>
+
 namespace Nare
 {
 	static bool s_GLFWInitialized = false;
@@ -54,6 +57,10 @@ namespace Nare
 			NR_CORE_FATAL("Could not create the window.");
 
 		glfwMakeContextCurrent(gl_window_);
+
+		int glad_init_success = gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress));
+		NR_CORE_ASSERT(glad_init_success, "Could not initialize GLAD.");
+
 		glfwSetWindowUserPointer(gl_window_, &data_);
 		SetVSyncEnabled(true);
 

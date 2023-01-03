@@ -93,6 +93,7 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 
         # GLFW
         "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLFW"
+        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLAD"
     )
 endif()
 
@@ -126,7 +127,8 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 		">"
         "_CONSOLE;"
         "UNICODE;"
-        "_UNICODE"
+        "_UNICODE;"
+        "GLFW_INCLUDE_NONE"
     )
 endif()
 
