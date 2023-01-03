@@ -33,6 +33,11 @@ namespace Nare
 			data_.EventCallback = cb;
 		}
 
+		inline virtual void* GetNativeWindow() const override
+		{
+			return gl_window_;
+		}
+
 #pragma endregion INLINE_FUNCTIONS
 
 	private:

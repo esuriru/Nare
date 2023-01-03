@@ -1,7 +1,11 @@
 #pragma once
 #include "LayerStack.h"
 #include "nrpch.h"
+
 #include "Nare/Events/Event.h"
+#include "Nare/Events/KeyEvent.h"
+#include "Nare/Events/MouseEvent.h"
+#include "Nare/Events/ApplicationEvent.h"
 
 /**
  * \brief Engine core namespace
@@ -25,6 +29,19 @@ namespace Nare
 
 		void OnEvent(Event& e);
 
+#pragma region INLINE_FUNCTIONS
+		inline static Application& Instance()
+		{
+			return *s_instance_;
+		}
+
+		inline Window& GetWindow()
+		{
+			return *window_;
+		}
+#pragma endregion INLINE_FUNCTIONS
+		
+
 #pragma region LAYER_STACK
 
 		void PushLayer(Layer* layer);
@@ -40,6 +57,9 @@ namespace Nare
 		std::unique_ptr<Window> window_;
 		bool running_;
 		LayerStack layerStack_;
+
+	protected:
+		static Application* s_instance_;
 
 	};
 

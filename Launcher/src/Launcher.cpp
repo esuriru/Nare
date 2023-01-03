@@ -10,11 +10,18 @@ public:
 	void OnUpdate() override
 	{
 		//NR_CLIENT_INFO("Test Layer");
+		if (Nare::Input::GetKeyDown(NR_KEY_TAB))
+			NR_CLIENT_INFO("Tab key is pressed!");
+
 	}
 
 	void OnEvent(Nare::Event& event) override
 	{
-		NR_CLIENT_TRACE(event);
+		if (event.GetEventType() == Nare::EventType::KeyPressed)
+		{
+			Nare::KeyPressedEvent& e = dynamic_cast<Nare::KeyPressedEvent&>(event);
+			NR_CLIENT_TRACE("Key pressed: ", static_cast<char>(e.GetKeyCode()));
+		}
 	}
 };
 

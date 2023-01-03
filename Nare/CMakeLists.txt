@@ -21,6 +21,10 @@ set(Nare
     "src/Nare/Layer.h"
     "src/Nare/LayerStack.h"
     "src/Nare/LayerStack.cpp"
+    "src/Nare/Input.h"
+    "src/Nare/Input.cpp"
+    "src/Nare/Keycodes.h"
+    "src/Nare/MouseButtonCodes.h"
 
     "src/Nare/Events/ApplicationEvent.h"
     "src/Nare/Events/Event.h"
@@ -34,6 +38,8 @@ set(Nare
 
     "src/Nare/Platform/Windows/WindowsWindow.h"
     "src/Nare/Platform/Windows/WindowsWindow.cpp"
+    "src/Nare/Platform/Windows/WindowsInput.cpp"
+    "src/Nare/Platform/Windows/WindowsInput.h"
 
 )
 

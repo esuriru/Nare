@@ -9,14 +9,19 @@
 #include "Events/ApplicationEvent.h"
 #include "Events/EventDispatcher.h"
 
+#include "Input.h"
+
 namespace Nare
 {
+	Application* Nare::Application::s_instance_ = nullptr;
+
 #define	BIND_EVENT_FUNC(x) (std::bind(&Application::x, this, std::placeholders::_1))
 
 	void Application::Run() 
 	{
-		WindowResizeEvent e(1280, 720);
+		// WindowResizeEvent e(1280, 720);
 
+		// Runtime loop
 		while (running_)
 		{
 			glClearColor(1, 0, 1, 1);
@@ -24,6 +29,10 @@ namespace Nare
 
 			for (const auto& layer : layerStack_)
 				layer->OnUpdate();
+
+			//const Vector2& mousePos = Input::GetMousePosition();
+			//NR_CORE_TRACE(mousePos);
+
 
 			window_->OnUpdate();
 		}
@@ -69,6 +78,8 @@ namespace Nare
 
 		unsigned int id;
 		glGenVertexArrays(1, &id);
+
+		s_instance_ = this;
 	}
 
 	Application::~Application()
