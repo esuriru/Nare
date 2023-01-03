@@ -45,9 +45,17 @@ set(Nare
     # OpenGL specific
     "src/Nare/Platform/OpenGL/OpenGLContext.h"
     "src/Nare/Platform/OpenGL/OpenGLContext.cpp"
+    "src/Nare/Platform/OpenGL/OpenGLBuffer.h"
+    "src/Nare/Platform/OpenGL/OpenGLBuffer.cpp"
 
     # Renderer
     "src/Nare/Renderer/GraphicsContext.h"
+    "src/Nare/Renderer/Shader.h"
+    "src/Nare/Renderer/Shader.cpp"
+    "src/Nare/Renderer/Buffer.h"
+    "src/Nare/Renderer/Buffer.cpp"
+    "src/Nare/Renderer/Renderer.h"
+    "src/Nare/Renderer/Renderer.cpp"
 
 )
 

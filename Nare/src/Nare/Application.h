@@ -6,6 +6,9 @@
 #include "Nare/Events/KeyEvent.h"
 #include "Nare/Events/MouseEvent.h"
 #include "Nare/Events/ApplicationEvent.h"
+#include "Nare/Renderer/Buffer.h"
+
+#include "Nare/Renderer/Shader.h"
 
 /**
  * \brief Engine core namespace
@@ -58,7 +61,12 @@ namespace Nare
 		bool running_;
 		LayerStack layerStack_;
 
-		unsigned int vertexArray_, vertexBuffer_, indexBuffer_;
+		unsigned int vertexArray_;
+		std::unique_ptr<Shader> shader_;
+
+		std::unique_ptr<VertexBuffer> vertexBuffer_;
+		std::unique_ptr<IndexBuffer> indexBuffer_;
+
 	protected:
 		static Application* s_instance_;
 
