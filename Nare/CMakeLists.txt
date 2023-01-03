@@ -17,6 +17,10 @@ set(Nare
     "src/Nare/Window.h"
     "src/Nare/Logger.h"
     "src/Nare/Logger.cpp"
+    "src/Nare/Layer.cpp"
+    "src/Nare/Layer.h"
+    "src/Nare/LayerStack.h"
+    "src/Nare/LayerStack.cpp"
 
     "src/Nare/Events/ApplicationEvent.h"
     "src/Nare/Events/Event.h"
@@ -182,5 +186,6 @@ endif()
 # The nitty gritty
 target_link_libraries(${PROJECT_NAME} PRIVATE
 	glfw
+    GLAD
     opengl32
 )

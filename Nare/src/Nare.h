@@ -5,6 +5,7 @@
 
 #include "Nare/Application.h"
 #include "Nare/Log.h"
+#include "Nare/Layer.h"
 
 // Entry point
 #include "Nare/Entry.hpp"

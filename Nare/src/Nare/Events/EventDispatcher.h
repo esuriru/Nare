@@ -7,7 +7,7 @@ namespace Nare
 {
 	class EventDispatcher
 	{
-		// TODO: Look into whether std::function is the best way to do this. From what I know std::function has overhead.
+		// TODO: Lambdas can be compiled into std::functions. Look up whether they can be compiled into function ptrs instead to save overhead
 		template<typename T>
 		using EventHandler = std::function<bool(T&)>;
 	public:
@@ -19,7 +19,7 @@ namespace Nare
 			if (event_.GetEventType() == T::GetStaticType())
 			{
 				// Use the handler argument to handle the event.
-				event_.handled_ = callback(*(T*)&event_);
+				event_.Handled = callback(*(T*)&event_);
 				return true;
 			}
 			return false;

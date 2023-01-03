@@ -94,10 +94,12 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(Launcher)
 add_subdirectory(Nare)
 add_subdirectory(Nare/vendor/GLFW)
+add_subdirectory(Nare/vendor/GLAD)
 
 if (MSVC)
 	set(VS_STARTUP_PROJECT Launcher)
 endif()
+
 
 
 

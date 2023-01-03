@@ -78,9 +78,7 @@ namespace Nare
 		{
 			return out << e.ToString();
 		}
-
-	protected:
-		bool handled_ = false;
+		bool Handled;
 	};
 
 }
