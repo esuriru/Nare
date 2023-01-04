@@ -13,10 +13,13 @@
 
 #include <vector>
 #include <array>
+#include <queue>
 #include <memory>
+#include <unordered_map>
+#include <typeinfo>
 
-// TODO: Should remove this and make my own assert function
-#include <cassert>
+#include <set>
+#include <bitset>
 #include <cmath>
 #include <sstream>
 #include <exception>

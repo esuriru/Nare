@@ -25,6 +25,15 @@ set(Nare
     "src/Nare/Input.cpp"
     "src/Nare/Keycodes.h"
     "src/Nare/MouseButtonCodes.h"
+    "src/Nare/Entity.h"
+    "src/Nare/Entity.cpp"
+    "src/Nare/IComponentArray.h"
+    "src/Nare/ComponentArray.h"
+    "src/Nare/ComponentManager.h"
+    "src/Nare/System.h"
+    "src/Nare/SystemManager.h"
+    "src/Nare/Coordinator.h"
+    "src/Nare/Coordinator.cpp"
 
     "src/Nare/Events/ApplicationEvent.h"
     "src/Nare/Events/Event.h"
@@ -72,8 +81,6 @@ set(Nare
     "src/Nare/Renderer/VertexArray.cpp"
     "src/Nare/Renderer/RenderCommand.h"
     "src/Nare/Renderer/RenderCommand.cpp"
-    "src/Nare/Renderer/OrthographicCamera.h"
-    "src/Nare/Renderer/OrthographicCamera.cpp"
 
 )
 
