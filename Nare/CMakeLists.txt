@@ -70,6 +70,8 @@ set(Nare
     "src/Nare/Renderer/VertexArray.cpp"
     "src/Nare/Renderer/RenderCommand.h"
     "src/Nare/Renderer/RenderCommand.cpp"
+    "src/Nare/Renderer/OrthographicCamera.h"
+    "src/Nare/Renderer/OrthographicCamera.cpp"
 
 )
 

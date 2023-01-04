@@ -10,6 +10,9 @@
 #include "Nare/Keycodes.h"
 #include "Nare/MouseButtonCodes.h"
 
+// Math
+#include "Nare/NareMath.h"
+
 // Entry point
 #include "Nare/Entry.hpp"
 
