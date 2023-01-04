@@ -9,7 +9,7 @@ struct Vector3
 
 #pragma region CONSTRUCTORS
 	explicit Vector3(const float& scalar);
-	Vector3(float x = 0.0, float y = 0.0, float c = 0.0);
+	Vector3(float x = 0.0, float y = 0.0, float z = 0.0);
 	Vector3(const Vector3 &rhs);
 	Vector3(const Vector2& rhs);
 	Vector3(const Vector2& rhs, float z);

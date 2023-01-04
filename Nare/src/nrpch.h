@@ -12,6 +12,7 @@
 #include <limits>
 
 #include <vector>
+#include <array>
 #include <memory>
 
 // TODO: Should remove this and make my own assert function

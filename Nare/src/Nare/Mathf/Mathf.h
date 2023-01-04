@@ -47,4 +47,27 @@ namespace Mathf
 		return a <= Epsilon && -a <= Epsilon;
 	}
 
+	template <typename T>
+	inline constexpr float Abs(const T& val)
+	{
+		return fabs(val);
+	}
+
+	template <typename T>
+	inline constexpr float Cos(const T& val)
+	{
+		return cosf(val);
+	}
+
+	template <typename T>
+	inline constexpr float Sin(const T& val)
+	{
+		return sinf(val);
+	}
+
+	template <typename T>
+	inline constexpr float Tan(const T& val)
+	{
+		return tanf(val);
+	}
 }

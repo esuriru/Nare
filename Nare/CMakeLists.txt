@@ -39,9 +39,11 @@ set(Nare
     "src/Nare/Mathf/Vector3.h"
     "src/Nare/Mathf/Vector4.cpp"
     "src/Nare/Mathf/Vector4.h"
+    "src/Nare/Mathf/Matrix4x4.h"
+    "src/Nare/Mathf/Matrix4x4.cpp"
+    "src/Nare/Mathf/Quaternion.h"
+    "src/Nare/Mathf/Quaternion.cpp"
 
-    # Windows specific
-    "src/Nare/Platform/Windows/WindowsWindow.h"
     "src/Nare/Platform/Windows/WindowsWindow.cpp"
     "src/Nare/Platform/Windows/WindowsInput.cpp"
     "src/Nare/Platform/Windows/WindowsInput.h"
