@@ -56,6 +56,26 @@ float Vector2::operator[](const unsigned& index) const
 	}
 }
 
+bool Vector2::IsZero() const
+{
+	return Mathf::ApproximatelyZero(x) && Mathf::ApproximatelyZero(y);
+}
+
+bool Vector2::operator==(const Vector2& rhs) const
+{
+	return Mathf::Approximately(x, rhs.x) && Mathf::Approximately(y, rhs.y);
+}
+
+bool Vector2::operator!=(const Vector2& rhs) const
+{
+	return !Mathf::Approximately(x, rhs.x) || !Mathf::Approximately(y, rhs.y);
+}
+
+Vector2 Vector2::operator-() const
+{
+	return { -x, -y };
+}
+
 Vector2& Vector2::operator+=(const Vector2& rhs)
 {
 	x += rhs.x;
@@ -108,14 +128,14 @@ Vector2& Vector2::operator/=(float scalar)
 Vector2& Vector2::Normalize()
 {
 	const float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero");
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
 	return *this /= l;
 }
 
 Vector2 Vector2::Normalized() const
 {
 	const float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero");
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
 	return Vector2(*this) / l;
 }
 

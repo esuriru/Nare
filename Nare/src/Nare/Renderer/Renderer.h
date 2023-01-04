@@ -1,22 +1,22 @@
 #pragma once
+#include "RendererAPI.h"
+#include "RenderCommand.h"
 
 namespace Nare
 {
-	enum class RendererAPI
-	{
-		None = 0,
-		OpenGL
-	};
+	class VertexArray;
 
 	class Renderer
 	{
 	public:
-		inline static RendererAPI GetAPI()
-		{
-			return s_rendererAPI;
-		}
+		static void BeginScene();
+		static void EndScene();
 
-	private:
-		static RendererAPI s_rendererAPI;
+		static void Submit(const std::shared_ptr<VertexArray>& vertexArray);
+
+		inline static RendererAPI::API GetAPI()
+		{
+			return RendererAPI::GetAPI();
+		}
 	};
 }

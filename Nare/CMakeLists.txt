@@ -35,6 +35,10 @@ set(Nare
     "src/Nare/Mathf/Mathf.h"
     "src/Nare/Mathf/Vector2.cpp"
     "src/Nare/Mathf/Vector2.h"
+    "src/Nare/Mathf/Vector3.cpp"
+    "src/Nare/Mathf/Vector3.h"
+    "src/Nare/Mathf/Vector4.cpp"
+    "src/Nare/Mathf/Vector4.h"
 
     # Windows specific
     "src/Nare/Platform/Windows/WindowsWindow.h"
@@ -47,6 +51,10 @@ set(Nare
     "src/Nare/Platform/OpenGL/OpenGLContext.cpp"
     "src/Nare/Platform/OpenGL/OpenGLBuffer.h"
     "src/Nare/Platform/OpenGL/OpenGLBuffer.cpp"
+    "src/Nare/Platform/OpenGL/OpenGLVertexArray.h"
+    "src/Nare/Platform/OpenGL/OpenGLVertexArray.cpp"
+    "src/Nare/Platform/OpenGL/OpenGLRendererAPI.h"
+    "src/Nare/Platform/OpenGL/OpenGLRendererAPI.cpp"
 
     # Renderer
     "src/Nare/Renderer/GraphicsContext.h"
@@ -56,6 +64,12 @@ set(Nare
     "src/Nare/Renderer/Buffer.cpp"
     "src/Nare/Renderer/Renderer.h"
     "src/Nare/Renderer/Renderer.cpp"
+    "src/Nare/Renderer/RendererAPI.h"
+    "src/Nare/Renderer/RendererAPI.cpp"
+    "src/Nare/Renderer/VertexArray.h"
+    "src/Nare/Renderer/VertexArray.cpp"
+    "src/Nare/Renderer/RenderCommand.h"
+    "src/Nare/Renderer/RenderCommand.cpp"
 
 )
 

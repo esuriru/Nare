@@ -30,6 +30,12 @@ struct Vector2
 
 #pragma region LOCAL_OPERATORS
 
+	bool IsZero() const;
+	bool operator==(const Vector2& rhs) const;
+	bool operator!=(const Vector2& rhs) const;
+
+	Vector2 operator-() const;
+
 	Vector2& operator+=(const Vector2& rhs);
 	Vector2 operator+(const Vector2& rhs) const;
 
@@ -63,6 +69,7 @@ struct Vector2
 
 #pragma endregion LOCAL_OPERATORS
 
+	// TODO: Probably make a base class that creates static template functions that just enables static functionality between vectors
 #pragma region STATIC_OPERATORS
 
 	static Vector2 Normalize(const Vector2& vec);

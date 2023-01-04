@@ -92,6 +92,7 @@ namespace Nare
 		static std::string RetrieveCurrentTime();
 		static void SetTextColourFromLogPriority(LogPriority level);
 
+		// TODO: rename these
 		static std::shared_ptr<Logger> coreLogger_;
 		static std::shared_ptr<Logger> clientLogger_;
 	};

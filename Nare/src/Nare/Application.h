@@ -9,6 +9,7 @@
 #include "Nare/Renderer/Buffer.h"
 
 #include "Nare/Renderer/Shader.h"
+#include "Renderer/VertexArray.h"
 
 /**
  * \brief Engine core namespace
@@ -61,11 +62,13 @@ namespace Nare
 		bool running_;
 		LayerStack layerStack_;
 
-		unsigned int vertexArray_;
-		std::unique_ptr<Shader> shader_;
+		// TODO: Shaders (to be asset files)
+		std::shared_ptr<Shader> shader_;
+		std::shared_ptr<Shader> rainbowShader_;
 
-		std::unique_ptr<VertexBuffer> vertexBuffer_;
-		std::unique_ptr<IndexBuffer> indexBuffer_;
+		// TODO: Vertex Arrays, maybe to be in a list.
+		std::shared_ptr<VertexArray> vertexArray_;
+		std::shared_ptr<VertexArray> squareVertexArray_;
 
 	protected:
 		static Application* s_instance_;

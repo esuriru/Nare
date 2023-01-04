@@ -11,7 +11,7 @@ namespace Nare
 	{
 		glCreateBuffers(1, &rendererID_);
 		glBindBuffer(GL_ARRAY_BUFFER, rendererID_);
-		glBufferData(GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, static_cast<GLint>(size), vertices, GL_STATIC_DRAW);
 	}
 
 	OpenGLVertexBuffer::~OpenGLVertexBuffer()
@@ -29,6 +29,7 @@ namespace Nare
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
+
 #pragma endregion VERTEX_BUFFER
 
 #pragma region INDEX_BUFFER
@@ -38,7 +39,7 @@ namespace Nare
 	{
 		glCreateBuffers(1, &rendererID_);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rendererID_);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, static_cast<long>(count * sizeof(uint32_t)), indices, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, static_cast<GLint>(count * sizeof(uint32_t)), indices, GL_STATIC_DRAW);
 	}
 
 	OpenGLIndexBuffer::~OpenGLIndexBuffer()
