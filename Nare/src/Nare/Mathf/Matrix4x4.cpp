@@ -141,6 +141,45 @@ Matrix4x4 Matrix4x4::operator*(const float scalar)
 	return Matrix4x4(*this) *= scalar;
 }
 
+Matrix4x4 Matrix4x4::operator+(const Matrix4x4& rhs) const
+{
+	Matrix4x4 temp(*this);
+	for (int i = 0; i < 16; ++i)
+	{
+		temp.matrix_[i] += rhs.matrix_[i];
+	}
+	return temp;
+}
+
+Matrix4x4 Matrix4x4::operator-(const Matrix4x4& rhs) const
+{
+	Matrix4x4 temp(*this);
+	for (int i = 0; i < 16; ++i)
+	{
+		temp.matrix_[i] -= rhs.matrix_[i];
+	}
+	return temp;
+}
+
+Vector4 Matrix4x4::operator*(const Vector4& rhs) const
+{
+	return {
+		matrix_[0] * rhs.x + matrix_[4] * rhs.y + matrix_[8] * rhs.z + matrix_[12] * rhs.w,
+		matrix_[1] * rhs.x + matrix_[5] * rhs.y + matrix_[9] * rhs.z + matrix_[13] * rhs.w,
+		matrix_[2] * rhs.x + matrix_[6] * rhs.y + matrix_[10] * rhs.z + matrix_[14] * rhs.w,
+		matrix_[3] * rhs.x + matrix_[7] * rhs.y + matrix_[11] * rhs.z + matrix_[15] * rhs.w,
+	};
+}
+
+Vector3 Matrix4x4::operator*(const Vector3& rhs) const
+{
+	return {
+		matrix_[0] * rhs.x + matrix_[4] * rhs.y + matrix_[8] * rhs.z + matrix_[12],
+		matrix_[1] * rhs.x + matrix_[5] * rhs.y + matrix_[9] * rhs.z + matrix_[13],
+		matrix_[2] * rhs.x + matrix_[6] * rhs.y + matrix_[10] * rhs.z + matrix_[14]
+	};
+}
+
 Vector4 Matrix4x4::GetRow(unsigned index) const
 {
 	return { matrix_[index], matrix_[index + 4 * 1], matrix_[index + 4 * 2], matrix_[index + 4 * 3] };

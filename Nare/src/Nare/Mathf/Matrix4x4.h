@@ -37,6 +37,12 @@ struct Matrix4x4
 	Matrix4x4 operator*(const Matrix4x4& rhs);
 	Matrix4x4 operator*(const float scalar);
 
+	Matrix4x4 operator+(const Matrix4x4& rhs) const;
+	Matrix4x4 operator-(const Matrix4x4& rhs) const;
+
+	Vector4 operator*(const Vector4& rhs) const;
+	Vector3 operator*(const Vector3& rhs) const;
+
 	Vector4 GetRow(unsigned int index) const;
 	Vector4 GetColumn(unsigned int index) const;
 
