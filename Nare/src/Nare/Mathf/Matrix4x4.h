@@ -1,5 +1,5 @@
 #pragma once
-
+#include "nrpch.h"
 
 struct Quaternion;
 struct Vector4;

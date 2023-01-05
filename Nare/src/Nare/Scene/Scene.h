@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Nare/Coordinator.h"
-#include "Nare/Entity.h"
+#include "Nare/Scene/Coordinator.h"
+#include "Nare/Scene/Entity.h"
 
 namespace Nare
 {
@@ -16,5 +16,6 @@ namespace Nare
 		std::vector<Entity> entities_;
 
 		std::shared_ptr<Coordinator> coordinator_;
+
 	};
 }

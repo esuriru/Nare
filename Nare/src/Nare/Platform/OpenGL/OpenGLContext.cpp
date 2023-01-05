@@ -4,7 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <GLAD/glad.h>
 
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 
 namespace Nare
 {

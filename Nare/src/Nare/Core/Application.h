@@ -1,5 +1,5 @@
 #pragma once
-#include "Coordinator.h"
+#include "Nare/Scene/Coordinator.h"
 #include "LayerStack.h"
 #include "nrpch.h"
 
@@ -10,7 +10,7 @@
 #include "Nare/Renderer/Buffer.h"
 
 #include "Nare/Renderer/Shader.h"
-#include "Renderer/VertexArray.h"
+#include "Nare/Renderer/VertexArray.h"
 
 /**
  * \brief Engine core namespace

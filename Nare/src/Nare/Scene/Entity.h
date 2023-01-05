@@ -1,5 +1,5 @@
 #pragma once
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 
 namespace Nare
 {

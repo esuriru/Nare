@@ -1,7 +1,7 @@
 #include "Matrix4x4.h"
 
-#include "Nare/Core.h"
-#include "Nare/NareMath.h"
+#include "Nare/Core/Core.h"
+#include "Nare/Core/NareMath.h"
 
 const Matrix4x4& Matrix4x4::identity = Matrix4x4({
 		1.f, 0.f, 0.f, 0.f,

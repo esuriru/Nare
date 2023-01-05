@@ -5,12 +5,12 @@
 #include "Layer.h"
 #include "Nare/Platform/OpenGL/OpenGLBuffer.h"
 #include "Nare/Renderer/Renderer.h"
-#include "Nare/Timestep.h"
-#include "Nare/Core.h"
+#include "Nare/Core/Timestep.h"
+#include "Nare/Core/Core.h"
 
 // Events
-#include "Events/ApplicationEvent.h"
-#include "Events/EventDispatcher.h"
+#include "Nare/Events/ApplicationEvent.h"
+#include "Nare/Events/EventDispatcher.h"
 
 #include "Input.h"
 #include "GLFW/glfw3.h"

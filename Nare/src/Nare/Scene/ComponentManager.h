@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Nare/ComponentArray.h"
+#include "Nare/Scene/ComponentArray.h"
 
 namespace Nare
 {

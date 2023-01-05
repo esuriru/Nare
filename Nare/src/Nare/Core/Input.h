@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 #include "Nare/Mathf/Vector2.h"
 
 namespace Nare

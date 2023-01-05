@@ -2,7 +2,7 @@
 #include "nrpch.h"
 
 // TODO: Make it all in one header to include.
-#include "Nare/NareMath.h"
+#include "Nare/Core/NareMath.h"
 
 namespace Nare
 {

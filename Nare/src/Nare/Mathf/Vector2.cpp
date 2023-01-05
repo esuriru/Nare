@@ -3,7 +3,7 @@
 
 
 #include "Mathf.h"
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 
 Vector2::Vector2()
 	: x(0.f)

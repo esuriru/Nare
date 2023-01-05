@@ -1,5 +1,5 @@
 #include "Quaternion.h"
-#include "Nare/NareMath.h"
+#include "Nare/Core/NareMath.h"
 
 const Quaternion& Quaternion::identity = Quaternion(1.0f, 0, 0, 0);
 

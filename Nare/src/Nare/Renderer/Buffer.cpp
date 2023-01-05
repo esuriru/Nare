@@ -1,7 +1,7 @@
 #include "Buffer.h"
 
 #include "Renderer.h"
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 #include "Nare/Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Nare

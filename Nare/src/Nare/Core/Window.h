@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Events/Event.h"
-#include "Mathf/Vector2.h"
+#include "Nare/Events/Event.h"
+#include "Nare/Mathf/Vector2.h"
 
 namespace Nare
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Nare/Input.h"
+#include "Nare/Core/Input.h"
 
 namespace Nare
 {

@@ -2,8 +2,8 @@
 #include "Shader.h"
 #include <GLAD/glad.h>
 
-#include "Nare/Core.h"
-#include "Nare/Log.h"
+#include "Nare/Core/Core.h"
+#include "Nare/Core/Log.h"
 
 namespace Nare
 {

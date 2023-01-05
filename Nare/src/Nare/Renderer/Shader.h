@@ -1,7 +1,7 @@
 #pragma once
 #include "nrpch.h"
 
-#include "Nare/NareMath.h"
+#include "Nare/Core/NareMath.h"
 
 
 namespace Nare

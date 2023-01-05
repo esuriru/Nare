@@ -8,6 +8,8 @@
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Nare/Core/Log.h"
+
 namespace Nare
 {
 	static bool s_GLFWInitialized = false;

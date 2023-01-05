@@ -5,7 +5,7 @@
 // NOTE: Used by other event classes for their ToString implementation
 #include <sstream>
 
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 
 namespace Nare
 {

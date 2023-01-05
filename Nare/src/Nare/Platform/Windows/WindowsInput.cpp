@@ -1,9 +1,9 @@
 #include "nrpch.h"
 #include "WindowsInput.h"
-#include "Nare/Window.h"
+#include "Nare/Core/Window.h"
 
 #include <GLFW/glfw3.h>
-#include "Nare/Application.h"
+#include "Nare/Core/Application.h"
 
 namespace Nare
 {

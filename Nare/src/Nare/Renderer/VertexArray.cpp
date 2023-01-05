@@ -1,6 +1,7 @@
 #include "VertexArray.h"
 
 #include "Renderer.h"
+#include "Nare/Core/Core.h"
 #include "Nare/Platform/OpenGL/OpenGLVertexArray.h"
 
 namespace Nare

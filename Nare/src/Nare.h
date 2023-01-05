@@ -3,19 +3,19 @@
 
 #pragma region HEADERS_FOR_CLIENT_USAGE
 
-#include "Nare/Application.h"
-#include "Nare/Log.h"
-#include "Nare/Layer.h"
-#include "Nare/Input.h"
-#include "Nare/Keycodes.h"
-#include "Nare/MouseButtonCodes.h"
+#include "Nare/Core/Application.h"
+#include "Nare/Core/Log.h"
+#include "Nare/Core/Layer.h"
+#include "Nare/Core/Input.h"
+#include "Nare/Core/Keycodes.h"
+#include "Nare/Core/MouseButtonCodes.h"
 
-#include "Nare/Timestep.h"
+#include "Nare/Core/Timestep.h"
 
 // Math
-#include "Nare/NareMath.h"
+#include "Nare/Core/NareMath.h"
 
 // Entry point
-#include "Nare/Entry.hpp"
+#include "Nare/Core/Entry.hpp"
 
 #pragma endregion HEADERS_FOR_CLIENT_USAGE For use in Nare Applications.

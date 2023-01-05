@@ -2,7 +2,7 @@
 #include "Vector3.h"
 #include "Vector2.h"
 #include "Nare/Mathf/Mathf.h"
-#include "Nare/Core.h"
+#include "Nare/Core/Core.h"
 
 
 float Vector3::operator[](const unsigned int index) const

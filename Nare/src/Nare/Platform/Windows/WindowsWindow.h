@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Nare/Window.h"
+#include "Nare/Core/Window.h"
 #include "Nare/Platform/OpenGL/OpenGLContext.h"
 
 struct GLFWwindow;
