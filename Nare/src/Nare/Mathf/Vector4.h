@@ -26,6 +26,7 @@ struct Vector4
 
 	std::string ToString() const;
 	float operator[](const unsigned int index) const;
+	const float* data() const;
 
 #pragma endregion UTILITY
 	

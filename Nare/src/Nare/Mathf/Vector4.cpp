@@ -16,7 +16,13 @@ float Vector4::operator[](const unsigned int index) const
 		default: break;
 	}
 
-	NR_CORE_ASSERT(false, "This vector: ", ToString(), "was attempted to be accessed in the wrong index using the index operator!");
+	NR_CORE_ASSERT(false, "This vector: ", ToString(), "was attempted to be accessed in the wrong index using the index operator!")
+	return 0.f;
+}
+
+const float* Vector4::data() const
+{
+	return &x;
 }
 
 Vector4 Vector4::operator/(float scalar) const

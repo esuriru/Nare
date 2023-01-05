@@ -24,6 +24,8 @@ struct Vector2
 	// TODO: Might make all classes that can be represented as strings inherit from an interface that implements that.
 	std::string ToString() const;
 
+	const float* data() const;
+
 	float operator[](const unsigned int& index) const;
 
 #pragma endregion UTILITY

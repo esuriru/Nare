@@ -60,6 +60,8 @@ set(Nare
     "src/Nare/Platform/OpenGL/OpenGLVertexArray.cpp"
     "src/Nare/Platform/OpenGL/OpenGLRendererAPI.h"
     "src/Nare/Platform/OpenGL/OpenGLRendererAPI.cpp"
+    "src/Nare/Platform/OpenGL/OpenGLShader.h"
+    "src/Nare/Platform/OpenGL/OpenGLShader.cpp"
 
     # Renderer
     "src/Nare/Renderer/GraphicsContext.h"

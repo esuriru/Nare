@@ -12,9 +12,17 @@ float Vector3::operator[](const unsigned int index) const
 		case 0: return x;
 		case 1: return y;
 		case 2: return z;
+		default: break;
 	}
-	NR_CORE_ASSERT(false, "This vector: ", ToString(), "was attempted to be accessed in the wrong index using the index operator!");
+	NR_CORE_ASSERT(false, "This vector: ", ToString(), "was attempted to be accessed in the wrong index using the index operator!")
+	return 0.f;
 }
+
+const float* Vector3::data() const
+{
+	return &x;
+}
+
 Vector3::Vector3(const float& scalar)
 	: x(scalar), y(scalar), z(scalar)
 {

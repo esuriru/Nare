@@ -63,16 +63,6 @@ namespace Nare
 		bool running_;
 		LayerStack layerStack_;
 
-		// TODO: Shaders (to be asset files)
-		std::shared_ptr<Shader> shader_;
-		std::shared_ptr<Shader> rainbowShader_;
-
-		// TODO: Vertex Arrays, maybe to be in a list.
-		std::shared_ptr<VertexArray> vertexArray_;
-		std::shared_ptr<VertexArray> squareVertexArray_;
-
-		std::shared_ptr<Coordinator> coordinator_;
-
 		float lastTime_{};
 
 

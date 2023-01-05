@@ -42,3 +42,5 @@ C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/tests/CMakeFiles/title.di
 C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/tests/CMakeFiles/triangle-vulkan.dir
 C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/tests/CMakeFiles/windows.dir
 C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/tests/CMakeFiles/INSTALL.dir
+C:/Users/User/source/repos/Nare/build/Nare/vendor/GLAD/CMakeFiles/GLAD.dir
+C:/Users/User/source/repos/Nare/build/Nare/vendor/GLAD/CMakeFiles/INSTALL.dir

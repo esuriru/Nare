@@ -1,5 +1,6 @@
 #pragma once
 #include "RendererAPI.h"
+#include "Nare/Core/Core.h"
 #include "Nare/Mathf/Vector4.h"
 
 namespace Nare
@@ -19,7 +20,7 @@ namespace Nare
 			s_rendererAPI_->Clear();
 		}
 
-		inline static void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray)
+		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray)
 		{
 			s_rendererAPI_->DrawIndexed(vertexArray);
 		}

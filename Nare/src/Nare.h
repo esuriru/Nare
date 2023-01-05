@@ -18,4 +18,16 @@
 // Entry point
 #include "Nare/Core/Entry.hpp"
 
+// Renderer
+#include "Nare/Renderer/Renderer.h"
+#include "Nare/Renderer/RenderCommand.h"
+#include "Nare/Renderer/RendererAPI.h"
+#include "Nare/Renderer/Buffer.h"
+#include "Nare/Renderer/Shader.h"
+#include "Nare/Renderer/VertexArray.h"
+
+// Events
+#include "Nare/Events/Event.h"
+#include "Nare/Events/EventDispatcher.h"
+
 #pragma endregion HEADERS_FOR_CLIENT_USAGE For use in Nare Applications.

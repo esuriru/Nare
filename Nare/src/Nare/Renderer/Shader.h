@@ -1,23 +1,16 @@
 #pragma once
-#include "nrpch.h"
-
-#include "Nare/Core/NareMath.h"
-
 
 namespace Nare
 {
 	class Shader
 	{
 	public:
-		Shader(const std::string& vertex_file_path, const std::string& fragment_file_path);
-		~Shader();
+		virtual ~Shader() = default;
 
-		void Bind() const;
-		void Unbind() const;
+		virtual void Bind() const = 0;
+		virtual void Unbind() const = 0;
 
-		void UploadUniformMat4(const std::string& name, const Matrix4x4& matrix);
-	private:
-		uint32_t rendererID_;
+		static Shader* Create(const std::string& vertex_file_path, const std::string& fragment_file_path);
 
 	};
 }

@@ -2,6 +2,7 @@
 #include "nrpch.h"
 
 // TODO: Make it all in one header to include.
+#include "Nare/Core/Core.h"
 #include "Nare/Core/NareMath.h"
 
 namespace Nare
@@ -20,7 +21,7 @@ namespace Nare
 		virtual void Clear() = 0;
 		virtual void SetClearColour(const Vector4& colour) = 0;
 
-		virtual void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray) = 0;
+		virtual void DrawIndexed(const Ref<VertexArray>& vertexArray) = 0;
 
 		inline static API GetAPI()
 		{

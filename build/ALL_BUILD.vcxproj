@@ -107,6 +107,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLAD\GLAD.vcxproj">
+      <Project>{A7C13850-9876-3D2C-9295-0DE1CB24C32C}</Project>
+      <Name>GLAD</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Launcher\Launcher.vcxproj">
       <Project>{46CA59C3-84BC-3BDB-A7CF-6EC69558BB41}</Project>
       <Name>Launcher</Name>

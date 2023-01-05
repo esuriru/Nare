@@ -5,8 +5,8 @@
 namespace Nare
 {
 	// static loggers
-	std::shared_ptr<Logger> Nare::Log::coreLogger_;
-	std::shared_ptr<Logger> Nare::Log::clientLogger_;
+	std::shared_ptr<Logger> Log::coreLogger_;
+	std::shared_ptr<Logger> Log::clientLogger_;
 
 #ifdef NR_PLATFORM_WINDOWS
 	static HANDLE consoleHandle_ = GetStdHandle(STD_OUTPUT_HANDLE);

@@ -24,13 +24,14 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,35 +42,38 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\win32\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\bin\Debug-x86\Nare\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Nare.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Nare</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\win32\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\bin\Release-x86\Nare\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Nare.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Nare</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <ExceptionHandling>
-      </ExceptionHandling>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>C:/Users/User/source/repos/Nare/build/Nare/Nare.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_DEBUG;WIN32;NR_PLATFORM_WINDOWS;NR_ENABLE_ASSERTS;_CONSOLE;UNICODE;_UNICODE;GLFW_INCLUDE_NONE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;NR_PLATFORM_WINDOWS;NR_ENABLE_ASSERTS;_CONSOLE;UNICODE;_UNICODE;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,24 +83,29 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <ExceptionHandling>
-      </ExceptionHandling>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>C:/Users/User/source/repos/Nare/build/Nare/Nare.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;WIN32;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;GLFW_INCLUDE_NONE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -147,34 +156,160 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/Nare.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare.h" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Application.cpp">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.cpp">
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Application.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Entry.hpp" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Application.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Application.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Core.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Entry.hpp" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Log.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Log.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Window.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Logger.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Logger.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Layer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Layer.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\LayerStack.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\LayerStack.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Input.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Input.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Keycodes.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\MouseButtonCodes.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Timestep.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\ApplicationEvent.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\Event.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\EventDispatcher.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\KeyEvent.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\MouseEvent.h" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Log.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-    </ClCompile>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Log.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Mathf.h" />
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.cpp">
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.h" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.cpp">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector3.cpp">
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector3.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector4.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector4.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Matrix4x4.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Matrix4x4.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Quaternion.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Quaternion.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\Windows\WindowsWindow.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\Windows\WindowsInput.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLContext.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLContext.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLBuffer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\GraphicsContext.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Buffer.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Buffer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RendererAPI.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RendererAPI.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\VertexArray.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\VertexArray.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RenderCommand.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RenderCommand.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Utils\Singleton.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Component.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\IComponentArray.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\ComponentArray.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\ComponentManager.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\System.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\SystemManager.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Coordinator.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Coordinator.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\Debug\cmake_pch.hxx" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\Release\cmake_pch.hxx" />
   </ItemGroup>
@@ -184,6 +319,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLAD\GLAD.vcxproj">
+      <Project>{A7C13850-9876-3D2C-9295-0DE1CB24C32C}</Project>
+      <Name>GLAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\glfw.vcxproj">
+      <Project>{AAD3739D-7AE2-3022-AC5B-B0594096AE74}</Project>
+      <Name>glfw</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

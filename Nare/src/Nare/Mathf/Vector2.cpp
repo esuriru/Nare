@@ -42,6 +42,11 @@ std::string Vector2::ToString() const
 	return ss.str();
 }
 
+const float* Vector2::data() const
+{
+	return &x;
+}
+
 float Vector2::operator[](const unsigned& index) const
 {
 	switch (index)

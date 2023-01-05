@@ -4,58 +4,229 @@
     <ClCompile Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\cmake_pch.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Application.cpp">
-      <Filter>Nare</Filter>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Log.cpp">
-      <Filter>Nare</Filter>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\LayerStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Input.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.cpp">
-      <Filter>Nare</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.cpp">
-      <Filter>Nare</Filter>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Matrix4x4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Quaternion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\Windows\WindowsInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RendererAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\VertexArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RenderCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Coordinator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Application.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Entry.hpp">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\ApplicationEvent.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\Event.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\EventDispatcher.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\KeyEvent.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\MouseEvent.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Log.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Mathf.h">
-      <Filter>Nare</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.h">
-      <Filter>Nare</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\nrpch.h">
-      <Filter>Nare</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Entry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\LayerStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Keycodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\MouseButtonCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Core\Timestep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\ApplicationEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\EventDispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\KeyEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Events\MouseEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Mathf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Vector4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Matrix4x4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Mathf\Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\Windows\WindowsInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\GraphicsContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RendererAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\VertexArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RenderCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Utils\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\IComponentArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\ComponentArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\ComponentManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Coordinator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\Debug\cmake_pch.hxx">
       <Filter>Precompile Header File</Filter>
@@ -68,8 +239,8 @@
     <CustomBuild Include="C:\Users\User\source\repos\Nare\Nare\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Nare">
-      <UniqueIdentifier>{60BE89C3-686F-3612-BA4E-DACA13127DAC}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E78DBC5A-231C-3798-B2B7-484DF31AE9AB}</UniqueIdentifier>
     </Filter>
     <Filter Include="Precompile Header File">
       <UniqueIdentifier>{02CB61E2-E475-3F67-8F7F-B7F2C974E321}</UniqueIdentifier>

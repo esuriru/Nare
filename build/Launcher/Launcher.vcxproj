@@ -24,13 +24,14 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,37 +42,39 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\win32\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\bin\Debug-x86\Launcher\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Launcher.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Launcher</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\win32\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\bin\Release-x86\Launcher\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Launcher.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Launcher</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <ExceptionHandling>
-      </ExceptionHandling>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_DEBUG;WIN32;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,12 +82,12 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\win32\Debug\Nare.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\bin\Debug-x86\Nare\Nare.lib;..\Nare\vendor\GLFW\src\Debug\glfw3.lib;..\Nare\vendor\GLAD\Debug\GLAD.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/User/source/repos/Nare/win32/Debug/Launcher.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/User/source/repos/Nare/win32/Debug/Launcher.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/User/source/repos/Nare/bin/Debug-x86/Launcher/Launcher.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/User/source/repos/Nare/bin/Debug-x86/Launcher/Launcher.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -93,22 +96,27 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <ExceptionHandling>
-      </ExceptionHandling>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;WIN32;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -116,12 +124,14 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\win32\Release\Nare.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\bin\Release-x86\Nare\Nare.lib;..\Nare\vendor\GLFW\src\Release\glfw3.lib;..\Nare\vendor\GLAD\Release\GLAD.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/User/source/repos/Nare/win32/Release/Launcher.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/User/source/repos/Nare/win32/Release/Launcher.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/User/source/repos/Nare/bin/Release-x86/Launcher/Launcher.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/User/source/repos/Nare/bin/Release-x86/Launcher/Launcher.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -169,9 +179,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLAD\GLAD.vcxproj">
+      <Project>{A7C13850-9876-3D2C-9295-0DE1CB24C32C}</Project>
+      <Name>GLAD</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\Nare.vcxproj">
       <Project>{AA9ADA2A-D2F1-3188-8C8D-2D2893BDA0D1}</Project>
       <Name>Nare</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\glfw.vcxproj">
+      <Project>{AAD3739D-7AE2-3022-AC5B-B0594096AE74}</Project>
+      <Name>glfw</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

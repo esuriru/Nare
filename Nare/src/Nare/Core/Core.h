@@ -1,5 +1,7 @@
 #pragma once
+
 #include "Log.h"
+#include <memory>
 
 #ifdef NR_PLATFORM_WINDOWS
 	#ifdef WIN32
@@ -23,4 +25,14 @@
 // Bit-shift to the left (multiply by 2)
 #define BIT(x) (1 << (x))
 
-#define	NR_BIND_EVENT_FUNC(fn) std::bind(&(fn), this, std::placeholders::_1)
+#define	NR_BIND_EVENT_FUNC(fn) std::bind(&fn, this, std::placeholders::_1)
+
+namespace Nare 
+{
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	// TODO: To be handled by an asset manager
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+}
