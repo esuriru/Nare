@@ -52,7 +52,7 @@ void Vector3::Set(float a, float b, float c)
 
 Vector3 Vector3::operator/(float scalar) const
 {
-	assert(Mathf::Approximately(scalar, 0));
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(scalar), "Dividing by zero.");
 	return { x / scalar, y / scalar, z / scalar };
 }
 

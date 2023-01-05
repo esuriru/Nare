@@ -5,16 +5,20 @@
 #include "Layer.h"
 #include "Nare/Platform/OpenGL/OpenGLBuffer.h"
 #include "Nare/Renderer/Renderer.h"
+#include "Nare/Timestep.h"
+#include "Nare/Core.h"
 
 // Events
 #include "Events/ApplicationEvent.h"
 #include "Events/EventDispatcher.h"
 
 #include "Input.h"
+#include "GLFW/glfw3.h"
 
 namespace Nare
 {
-#define	BIND_EVENT_FUNC(x) (std::bind(&Application::x, this, std::placeholders::_1))
+
+#define	BIND_EVENT_FUNC(fn) std::bind(&Application::fn, this, std::placeholders::_1)
 
 	Application* Application::s_instance_ = nullptr;
 
@@ -22,10 +26,11 @@ namespace Nare
 		: window_(std::unique_ptr<Window>(Window::Create()))
 		, running_(true)
 	{
-		NR_CORE_ASSERT(!s_instance_, "Application already exists!");
+		NR_CORE_ASSERT(!s_instance_, "Application already exists!")
 		s_instance_ = this;
 
 		window_->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
+		window_->SetVSyncEnabled(false);
 
 		vertexArray_.reset(VertexArray::Create());
 
@@ -45,8 +50,6 @@ namespace Nare
 			{ ShaderDataType::Float4, "vertexColour" }
 		};
 
-		// TODO: Might want to, instead of caching the vertexBuffer inside of a list in vertex Array, maybe make it so that when it's auto updated
-		// TODO: by having the vertex array parent the vertex buffer in some way.
 		vb->SetLayout(layout);
 		vertexArray_->AddVertexBuffer(vb);
 
@@ -149,6 +152,11 @@ namespace Nare
 		// Runtime loop
 		while (running_)
 		{
+			// TODO: to change into a time class
+			const auto& time = static_cast<float>(glfwGetTime());
+			const Timestep timestep = time - lastTime_;
+			lastTime_ = time;
+
 			RenderCommand::SetClearColour({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
 
@@ -163,7 +171,7 @@ namespace Nare
 			Renderer::EndScene();
 
 			for (const auto& layer : layerStack_)
-				layer->OnUpdate();
+				layer->OnUpdate(timestep);
 
 			window_->OnUpdate();
 		}

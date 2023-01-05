@@ -1,6 +1,8 @@
 #pragma once
 #include "nrpch.h"
 
+#include "Nare/NareMath.h"
+
 
 namespace Nare
 {
@@ -12,6 +14,8 @@ namespace Nare
 
 		void Bind() const;
 		void Unbind() const;
+
+		void UploadUniformMat4(const std::string& name, const Matrix4x4& matrix);
 	private:
 		uint32_t rendererID_;
 

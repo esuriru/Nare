@@ -22,3 +22,5 @@
 
 // Bit-shift to the left (multiply by 2)
 #define BIT(x) (1 << (x))
+
+#define	NR_BIND_EVENT_FUNC(fn) std::bind(&(fn), this, std::placeholders::_1)

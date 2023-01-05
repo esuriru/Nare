@@ -236,6 +236,11 @@ void Matrix4x4::SetTRS(const Vector3& pos, const Quaternion& rot, const Vector3&
 	*this = TRS(pos, rot, scale);
 }
 
+const float* Matrix4x4::data() const
+{
+	return matrix_.data();
+}
+
 std::string Matrix4x4::ToString() const
 {
 	std::stringstream ss;

@@ -1,4 +1,6 @@
 #pragma once
+#include "Timestep.h"
+
 namespace Nare
 {
 	class Event;
@@ -11,7 +13,7 @@ namespace Nare
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnEvent(Event& event) {}
 
 		inline const std::string& GetName() const

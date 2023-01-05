@@ -10,6 +10,8 @@
 #include "Nare/Keycodes.h"
 #include "Nare/MouseButtonCodes.h"
 
+#include "Nare/Timestep.h"
+
 // Math
 #include "Nare/NareMath.h"
 

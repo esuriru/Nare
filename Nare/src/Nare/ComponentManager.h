@@ -30,7 +30,7 @@ namespace Nare
 
 			NR_CORE_ASSERT(componentTypes_.find(typeName) != componentTypes_.end(), "Component not registered before use")
 
-			return mComponentTypes[typeName];
+			return componentTypes_[typeName];
 		}
 
 		template<typename T>
@@ -71,7 +71,7 @@ namespace Nare
 		{
 			const char* typeName = typeid(T).name();
 
-			NR_CORE_ASSERT(componentTypes_.find(typeName) != mComponentTypes.end(), "Component not registered before use.")
+			NR_CORE_ASSERT(componentTypes_.find(typeName) != componentTypes_.end(), "Component not registered before use.")
 
 			return std::static_pointer_cast<ComponentArray<T>>(componentArrays_[typeName]);
 		}

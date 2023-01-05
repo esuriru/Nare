@@ -114,7 +114,7 @@ Vector2& Vector2::operator*=(const float scalar)
 
 Vector2 Vector2::operator/(float scalar) const
 {
-	assert(Mathf::Approximately(scalar, 0));
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(scalar), "Dividing by zero.")
 	return { x / scalar, y / scalar };
 }
 

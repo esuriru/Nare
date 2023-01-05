@@ -13,6 +13,7 @@ float Vector4::operator[](const unsigned int index) const
 		case 1: return y;
 		case 2: return z;
 		case 3: return w;
+		default: break;
 	}
 
 	NR_CORE_ASSERT(false, "This vector: ", ToString(), "was attempted to be accessed in the wrong index using the index operator!");
@@ -20,7 +21,7 @@ float Vector4::operator[](const unsigned int index) const
 
 Vector4 Vector4::operator/(float scalar) const
 {
-	assert(Mathf::Approximately(scalar, 0));
+	NR_CORE_ASSERT(Mathf::ApproximatelyZero(scalar), "Dividing by zero.")
 	return { x / scalar, y / scalar, z / scalar, w / scalar };
 }
 

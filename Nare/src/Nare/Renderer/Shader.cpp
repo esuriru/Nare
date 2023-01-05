@@ -126,4 +126,11 @@ namespace Nare
 	{
 		glUseProgram(NULL);
 	}
+
+	void Shader::UploadUniformMat4(const std::string& name, const Matrix4x4& matrix)
+	{
+		const auto& location = glGetUniformLocation(rendererID_, name.data());
+		// TODO: GL_TRUE for row-major, GL_FALSE for column-major
+		glUniformMatrix4fv(location, 1, GL_FALSE, matrix.data());
+	}
 }

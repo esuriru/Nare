@@ -53,6 +53,8 @@ struct Matrix4x4
 
 	void SetTRS(const Vector3& pos, const Quaternion& rot, const Vector3& scale);
 
+	const float* data() const;
+
 #pragma endregion OPERATORS
 
 #pragma region STATIC

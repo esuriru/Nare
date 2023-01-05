@@ -1,41 +1,44 @@
 #include <Nare.h>
 
-class TestLayer : public Nare::Layer
+namespace Nare
 {
-public:
-	TestLayer()
-		: Layer("Test")
-	{}
-
-	void OnUpdate() override
+	class TestLayer : public Layer
 	{
-		//NR_CLIENT_INFO("Test Layer");
-		if (Nare::Input::GetKeyDown(NR_KEY_TAB))
-			NR_CLIENT_INFO("Tab key is pressed!");
-	}
+	public:
+		TestLayer()
+			: Layer("Test")
+		{}
 
-	void OnEvent(Nare::Event& event) override
-	{
-		if (event.GetEventType() == Nare::EventType::KeyPressed)
+		void OnUpdate(Timestep ts) override
 		{
-			Nare::KeyPressedEvent& e = dynamic_cast<Nare::KeyPressedEvent&>(event);
-			NR_CLIENT_TRACE("Key pressed: ", static_cast<char>(e.GetKeyCode()));
+			//NR_CLIENT_INFO("Test Layer");
+			NR_CLIENT_TRACE("Delta time: ", ts.GetSeconds(), " (", ts.GetMilliseconds(), " ms)");
+			if (Nare::Input::GetKeyDown(NR_KEY_TAB))
+				NR_CLIENT_INFO("Tab key is pressed!");
 		}
-	}
-};
 
-class Launcher : public Nare::Application
-{
-public:
-	Launcher()
+		void OnEvent(Event& event) override
+		{
+			if (event.GetEventType() == EventType::KeyPressed)
+			{
+				auto& e = dynamic_cast<KeyPressedEvent&>(event);
+				NR_CLIENT_TRACE("Key pressed: ", static_cast<char>(e.GetKeyCode()));
+			}
+		}
+	};
+
+	class Launcher : public Nare::Application
 	{
-		PushLayer(new TestLayer());
+	public:
+		Launcher()
+		{
+			PushLayer(new TestLayer());
+		}
+		virtual ~Launcher() = default;
+	};
+
+	Application* Nare::CreateApplication()
+	{
+		return new Launcher();
 	}
-	virtual ~Launcher() = default;
-};
-
-Nare::Application* Nare::CreateApplication()
-{
-	return new Launcher();
 }
-

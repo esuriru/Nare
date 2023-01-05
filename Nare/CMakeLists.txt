@@ -34,6 +34,7 @@ set(Nare
     "src/Nare/SystemManager.h"
     "src/Nare/Coordinator.h"
     "src/Nare/Coordinator.cpp"
+    "src/Nare/Timestep.h"
 
     "src/Nare/Events/ApplicationEvent.h"
     "src/Nare/Events/Event.h"

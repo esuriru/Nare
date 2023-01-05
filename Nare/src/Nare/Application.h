@@ -73,6 +73,9 @@ namespace Nare
 
 		std::shared_ptr<Coordinator> coordinator_;
 
+		float lastTime_{};
+
+
 	protected:
 		static Application* s_instance_;
 
