@@ -62,6 +62,8 @@ set(Nare
     "src/Nare/Platform/OpenGL/OpenGLRendererAPI.cpp"
     "src/Nare/Platform/OpenGL/OpenGLShader.h"
     "src/Nare/Platform/OpenGL/OpenGLShader.cpp"
+    "src/Nare/Platform/OpenGL/OpenGLTexture2D.h"
+    "src/Nare/Platform/OpenGL/OpenGLTexture2D.cpp"
 
     # Renderer
     "src/Nare/Renderer/GraphicsContext.h"
@@ -77,6 +79,8 @@ set(Nare
     "src/Nare/Renderer/VertexArray.cpp"
     "src/Nare/Renderer/RenderCommand.h"
     "src/Nare/Renderer/RenderCommand.cpp"
+    "src/Nare/Renderer/Texture.h"
+    "src/Nare/Renderer/Texture.cpp"
 
     # Utility
     "src/Nare/Utils/Singleton.h"
@@ -94,7 +98,10 @@ set(Nare
     "src/Nare/Scene/Coordinator.cpp"
     "src/Nare/Scene/Entity.h"
     "src/Nare/Scene/Entity.cpp"
-    
+
+    # PNG loader
+    "vendor/stb_image/stb_image.h" 
+    "vendor/stb_image/stb_image.cpp" 
 
 )
 
@@ -154,7 +161,13 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 
         # GLFW
         "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLFW"
+
+        # GLAD
         "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLAD"
+
+        # stb_image
+        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/stb_image"
+
     )
 endif()
 

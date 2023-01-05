@@ -24,7 +24,9 @@
 #include "Nare/Renderer/RendererAPI.h"
 #include "Nare/Renderer/Buffer.h"
 #include "Nare/Renderer/Shader.h"
+#include "Nare/Platform/OpenGL/OpenGLShader.h"
 #include "Nare/Renderer/VertexArray.h"
+#include "Nare/Renderer/Texture.h"
 
 // Events
 #include "Nare/Events/Event.h"

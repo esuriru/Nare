@@ -1,6 +1,7 @@
 #pragma once
 #include "RendererAPI.h"
 #include "RenderCommand.h"
+#include "Shader.h"
 
 namespace Nare
 {
@@ -12,7 +13,7 @@ namespace Nare
 		static void BeginScene();
 		static void EndScene();
 
-		static void Submit(const Ref<VertexArray>& vertexArray);
+		static void Submit(const Ref<VertexArray>& vertexArray, const Ref<Shader>& shader);
 
 		inline static RendererAPI::API GetAPI()
 		{

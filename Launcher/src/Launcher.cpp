@@ -32,17 +32,18 @@ namespace Nare
 			vertexArray_->SetIndexBuffer(ib);
 
 			std::vector<float> square_vertices = {
-				-0.75f, -0.75f, 0.0f, 
-				0.75f, -0.75f, 0.0f, 
-				0.75f, 0.75f, 0.0f,
-				-0.75f, 0.75f, 0.0f,
+				-0.75f, -0.75f, 0.0f, 0.f, 0.f,
+				0.75f, -0.75f, 0.0f, 1.0f, 0.f,
+				0.75f, 0.75f, 0.0f, 1.0f, 1.0f,
+				-0.75f, 0.75f, 0.0f, 0.f, 1.0f
 			};
 
 			squareVertexArray_.reset(VertexArray::Create());
 
 			Ref<VertexBuffer> squareVB(VertexBuffer::Create(square_vertices.data(), square_vertices.size() * sizeof(float)));
 			const BufferLayout squareLayout = {
-				{ ShaderDataType::Float3, "vertexPosition" }
+				{ ShaderDataType::Float3, "vertexPosition" },
+				{ ShaderDataType::Float2, "vertexTexCoords" }
 			};
 
 			squareVB->SetLayout(squareLayout);
@@ -88,6 +89,23 @@ namespace Nare
 				}
 			)";
 
+			std::string textureVertexSrc = R"(
+				#version 330 core
+
+				layout(location = 0) in vec3 vertexPosition;
+				layout(location = 1) in vec2 vertexTexCoords;
+
+				out vec3 vPos;
+				out vec2 texCoords;
+
+				void main()
+				{
+					gl_Position = vec4(vertexPosition, 1.0);
+					vPos = vertexPosition;
+					texCoords = vertexTexCoords;
+				}
+			)";
+
 			std::string fragmentSrc = R"(
 				#version 330 core
 
@@ -116,29 +134,44 @@ namespace Nare
 				}
 			)";
 
+			std::string textureFragmentSrc = R"(
+				#version 330 core
+
+				layout(location = 0) out vec4 color;
+
+				in vec2 texCoords;
+
+				uniform sampler2D texture_;
+
+				void main()
+				{
+					color = texture(texture_, texCoords).rgba;
+				}
+			)";
+
 
 			shader_.reset(Shader::Create(vertexSrc, fragmentSrc));
 			rainbowShader_.reset(Shader::Create(rainbowVertexSrc, rainbowFragmentSrc));
+			textureShader_.reset(Shader::Create(textureVertexSrc, textureFragmentSrc));
+			texture_ = Texture2D::Create(R"(C:\Users\User\Pictures\kassadin.jpg)");
+
+			std::dynamic_pointer_cast<OpenGLShader>(textureShader_)->Bind();
+			std::dynamic_pointer_cast<OpenGLShader>(textureShader_)->UploadUniformInt("texture_", 0);
 		}
 
 		void OnUpdate(Timestep ts) override
 		{
-			//NR_CLIENT_INFO("Test Layer");
-			//NR_CLIENT_TRACE("Delta time: ", ts.GetSeconds(), " (", ts.GetMilliseconds(), " ms)");
-			//if (Nare::Input::GetKeyDown(NR_KEY_TAB))
-			//	NR_CLIENT_INFO("Tab key is pressed!");
-
 			RenderCommand::SetClearColour({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
 
 			Renderer::BeginScene();
 
-			rainbowShader_->Bind();
-			Renderer::Submit(squareVertexArray_);
 
-			shader_->Bind();
-			Renderer::Submit(vertexArray_);
+			Renderer::Submit(squareVertexArray_, textureShader_);
 
+			//Renderer::Submit(vertexArray_, shader_);
+
+			texture_->Bind();
 			Renderer::EndScene();
 		}
 
@@ -161,10 +194,13 @@ namespace Nare
 		// TODO: Shaders (to be asset files)
 		Ref<Shader> shader_;
 		Ref<Shader> rainbowShader_;
+		Ref<Shader> textureShader_;
 
 		// TODO: Vertex Arrays, maybe to be in a list.
 		Ref<VertexArray> vertexArray_;
 		Ref<VertexArray> squareVertexArray_;
+
+		Ref<Texture2D> texture_;
 	};
 
 	class Launcher : public Nare::Application

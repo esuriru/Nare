@@ -14,10 +14,11 @@ namespace Nare
 	{
 	}
 
-	void Renderer::Submit(const Ref<VertexArray>& vertexArray)
+	void Renderer::Submit(const Ref<VertexArray>& vertexArray, const Ref<Shader>& shader)
 	{
-		vertexArray->Bind();
+		shader->Bind();
 
+		vertexArray->Bind();
 		RenderCommand::DrawIndexed(vertexArray);
 	}
 }
