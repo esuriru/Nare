@@ -1,8 +1,13 @@
 #include "Quaternion.h"
 #include "Nare/NareMath.h"
 
-Quaternion::Quaternion(float x, float y, float z, float w)
-	: data_({x, y, z, w})
+const Quaternion& Quaternion::identity = Quaternion(1.0f, 0, 0, 0);
+
+/// <summary>
+/// Quaternions are stored and initialised as (w, x, y, z);
+/// </summary>
+Quaternion::Quaternion(float w, float x, float y, float z)
+	: data_({w, x, y, z})
 {
 }
 

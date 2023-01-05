@@ -38,6 +38,7 @@ namespace Nare
 
 		std::shared_ptr<VertexBuffer> vb(VertexBuffer::Create(vertices, sizeof(vertices)));
 
+		coordinator_.reset(Coordinator::Instance());
 
 		const BufferLayout layout = {
 			{ ShaderDataType::Float3, "vertexPosition" },

@@ -18,11 +18,11 @@ namespace Nare
 		/// <param name="width">: Window width</param>
 		/// <param name="height">: Window height</param>
 		WindowProps(
-			const std::string& title = "Nare Engine",
+			std::string title = "Nare Engine",
 			unsigned int width = 1280,
 			unsigned int height = 720
 			)
-			: Title(title), Width(width), Height(height)
+			: Title(std::move(title)), Width(width), Height(height)
 		{}
 
 	};

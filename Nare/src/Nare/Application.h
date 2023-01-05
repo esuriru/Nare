@@ -1,4 +1,5 @@
 #pragma once
+#include "Coordinator.h"
 #include "LayerStack.h"
 #include "nrpch.h"
 
@@ -69,6 +70,8 @@ namespace Nare
 		// TODO: Vertex Arrays, maybe to be in a list.
 		std::shared_ptr<VertexArray> vertexArray_;
 		std::shared_ptr<VertexArray> squareVertexArray_;
+
+		std::shared_ptr<Coordinator> coordinator_;
 
 	protected:
 		static Application* s_instance_;

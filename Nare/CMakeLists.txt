@@ -82,6 +82,15 @@ set(Nare
     "src/Nare/Renderer/RenderCommand.h"
     "src/Nare/Renderer/RenderCommand.cpp"
 
+    # Utility
+    "src/Nare/Utils/Singleton.h"
+
+    # Scene
+    "src/Nare/Scene/Scene.h"
+    "src/Nare/Scene/Scene.cpp"
+    "src/Nare/Scene/Component.h"
+    
+
 )
 
 set(ALL_FILES

@@ -5,10 +5,11 @@
 #include "ComponentManager.h"
 #include "SystemManager.h"
 #include "Entity.h"
+#include "Nare/Utils/Singleton.h"
 
 namespace Nare
 {
-	class Coordinator
+	class Coordinator : public Utility::Singleton<Coordinator>
 	{
 	public:
 		void Init();
