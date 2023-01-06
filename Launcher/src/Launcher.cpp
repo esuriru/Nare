@@ -154,6 +154,7 @@ namespace Nare
 			rainbowShader_.reset(Shader::Create(rainbowVertexSrc, rainbowFragmentSrc));
 			textureShader_.reset(Shader::Create(textureVertexSrc, textureFragmentSrc));
 			texture_ = Texture2D::Create(R"(C:\Users\User\Pictures\kassadin.jpg)");
+			png_texture_ = Texture2D::Create(R"(C:\Users\User\Downloads\logopng.png)");
 
 			std::dynamic_pointer_cast<OpenGLShader>(textureShader_)->Bind();
 			std::dynamic_pointer_cast<OpenGLShader>(textureShader_)->UploadUniformInt("texture_", 0);
@@ -167,11 +168,14 @@ namespace Nare
 			Renderer::BeginScene();
 
 
+			texture_->Bind();
+			Renderer::Submit(squareVertexArray_, textureShader_);
+
+			png_texture_->Bind();
 			Renderer::Submit(squareVertexArray_, textureShader_);
 
 			//Renderer::Submit(vertexArray_, shader_);
 
-			texture_->Bind();
 			Renderer::EndScene();
 		}
 
@@ -201,6 +205,7 @@ namespace Nare
 		Ref<VertexArray> squareVertexArray_;
 
 		Ref<Texture2D> texture_;
+		Ref<Texture2D> png_texture_;
 	};
 
 	class Launcher : public Nare::Application

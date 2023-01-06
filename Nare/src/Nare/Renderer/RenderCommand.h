@@ -8,8 +8,12 @@ namespace Nare
 	class RenderCommand
 	{
 	public:
-
 #pragma region INLINE_FUNCTIONS
+		inline static void Init()
+		{
+			s_rendererAPI_->Init();
+		}
+
 		inline static void SetClearColour(const Vector4& colour)
 		{
 			s_rendererAPI_->SetClearColour(colour);
@@ -27,6 +31,6 @@ namespace Nare
 #pragma endregion INLINE_FUNCTIONS
 
 	private:
-		static RendererAPI* s_rendererAPI_;
+		static Scope<RendererAPI> s_rendererAPI_;
 	};
 }

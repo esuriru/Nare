@@ -10,6 +10,7 @@ namespace Nare
 	OpenGLTexture2D::OpenGLTexture2D(const std::string& path)
 		: rendererID_(0)
 	{
+		// Create buffers
 		int width, height, channels;
 
 		// Flip the image
@@ -21,13 +22,27 @@ namespace Nare
 		width_ = width;
 		height_ = height;
 
+		GLenum internalFormat = 0, dataFormat = 0;
+		if (channels == 4)
+		{
+			internalFormat = GL_RGBA8;
+			dataFormat = GL_RGBA;
+		}
+		else if (channels == 3)
+		{
+			internalFormat = GL_RGB8;
+			dataFormat = GL_RGB;
+		}
+
+		NR_CORE_ASSERT(internalFormat & dataFormat, "Format not supported")
+
 		glCreateTextures(GL_TEXTURE_2D, 1, &rendererID_);
-		glTextureStorage2D(rendererID_, 1, GL_RGB8, static_cast<GLint>(width_), static_cast<GLint>(height_));
+		glTextureStorage2D(rendererID_, 1, internalFormat, static_cast<GLint>(width_), static_cast<GLint>(height_));
 
 		glTextureParameteri(rendererID_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTextureParameteri(rendererID_, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-		glTextureSubImage2D(rendererID_, 0, 0, 0, static_cast<GLint>(width_), static_cast<GLint>(height_), GL_RGB, GL_UNSIGNED_BYTE, data);
+		glTextureSubImage2D(rendererID_, 0, 0, 0, static_cast<GLint>(width_), static_cast<GLint>(height_), dataFormat, GL_UNSIGNED_BYTE, data);
 
 		stbi_image_free(data);
 	}

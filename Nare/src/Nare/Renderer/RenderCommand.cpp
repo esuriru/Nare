@@ -5,5 +5,5 @@
 namespace Nare
 {
 	// TODO: One byte memory leak.
-	RendererAPI* RenderCommand::s_rendererAPI_ = new OpenGLRendererAPI();
+	Scope<RendererAPI> RenderCommand::s_rendererAPI_ = std::make_unique<OpenGLRendererAPI>();
 }

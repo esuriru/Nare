@@ -29,6 +29,8 @@ namespace Nare
 		NR_CORE_ASSERT(!s_instance_, "Application already exists!")
 		s_instance_ = this;
 
+		Renderer::Init();
+
 		window_->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
 		window_->SetVSyncEnabled(false);
 

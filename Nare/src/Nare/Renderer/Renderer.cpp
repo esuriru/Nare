@@ -6,6 +6,11 @@
 
 namespace Nare
 {
+	void Renderer::Init()
+	{
+		RenderCommand::Init();
+	}
+
 	void Renderer::BeginScene()
 	{
 	}

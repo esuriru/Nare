@@ -17,6 +17,7 @@ namespace Nare
 			None = 0,
 			OpenGL
 		};
+		virtual void Init() = 0;
 
 		virtual void Clear() = 0;
 		virtual void SetClearColour(const Vector4& colour) = 0;

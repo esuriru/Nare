@@ -8,6 +8,8 @@ namespace Nare
 	class OpenGLRendererAPI : public RendererAPI
 	{
 	public:
+		virtual void Init() override;
+
 		virtual void Clear() override;
 		virtual void SetClearColour(const Vector4& colour) override;
 
