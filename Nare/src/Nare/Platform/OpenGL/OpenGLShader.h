@@ -3,12 +3,18 @@
 #include "Nare/Renderer/Shader.h"
 #include "Nare/Core/NareMath.h"
 
+// TODO: REMOVE
+typedef unsigned int GLenum;
+
+
 namespace Nare
 {
+
 	class OpenGLShader : public Shader
 	{
 	public:
-		OpenGLShader(const std::string& vertex_file_path, const std::string& fragment_file_path);
+		OpenGLShader(const std::string& vertex_source, const std::string& fragment_source);
+		OpenGLShader(const std::string& file_path);
 		virtual ~OpenGLShader();
 
 		virtual void Bind() const override;
@@ -26,5 +32,14 @@ namespace Nare
 	private:
 		uint32_t rendererID_;
 
+		std::string ReadFile(const std::string& file_path);
+
+		// TODO: Make this a typedef
+		std::unordered_map<GLenum, std::string> Preprocess(const std::string& source);
+
+		static std::vector<std::string> s_validShaderTypes_;
+		void Compile(std::unordered_map<GLenum, std::string> shaderSources);
+
 	};
+
 }

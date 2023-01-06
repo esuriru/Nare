@@ -23,4 +23,18 @@ namespace Nare
 		return nullptr;
 	}
 
+	Shader* Shader::Create(const std::string& file_path)
+	{
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:
+			NR_CORE_ASSERT(false, "RendererAPI::None is currently not supported")
+			return nullptr;
+		case RendererAPI::API::OpenGL:
+			return new OpenGLShader(file_path);
+		}
+
+		NR_CORE_ASSERT(false, "Shader cannot be generated")
+		return nullptr;
+	}
 }

@@ -8,6 +8,7 @@ set(Source_Files
 )
 source_group("Source Files" FILES ${Source_Files})
 
+
 set(ALL_FILES
     ${Source_Files}
 )
@@ -48,6 +49,15 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     target_include_directories(${PROJECT_NAME} PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/../Nare/src"
     )
+endif()
+
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+	add_custom_command(
+			 TARGET Launcher POST_BUILD
+			 COMMAND ${CMAKE_COMMAND} -E copy_directory              
+				 ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:Launcher>/assets
+			 COMMENT "Copying assets" VERBATIM
+			 )
 endif()
 
 ################################################################################

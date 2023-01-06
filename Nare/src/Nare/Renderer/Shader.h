@@ -11,6 +11,7 @@ namespace Nare
 		virtual void Unbind() const = 0;
 
 		static Shader* Create(const std::string& vertex_file_path, const std::string& fragment_file_path);
+		static Shader* Create(const std::string& file_path);
 
 	};
 }

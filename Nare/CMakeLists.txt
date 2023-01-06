@@ -84,6 +84,7 @@ set(Nare
 
     # Utility
     "src/Nare/Utils/Singleton.h"
+    "src/Nare/Utils/Utility.h"
 
     # Scene
     "src/Nare/Scene/Scene.h"
@@ -160,10 +161,10 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         "${CMAKE_CURRENT_SOURCE_DIR}/src"
 
         # GLFW
-        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLFW"
+        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLFW/include"
 
         # GLAD
-        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLAD"
+        "${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLAD/include"
 
         # stb_image
         "${CMAKE_CURRENT_SOURCE_DIR}/vendor/stb_image"

@@ -149,10 +149,10 @@ namespace Nare
 				}
 			)";
 
-
 			shader_.reset(Shader::Create(vertexSrc, fragmentSrc));
 			rainbowShader_.reset(Shader::Create(rainbowVertexSrc, rainbowFragmentSrc));
-			textureShader_.reset(Shader::Create(textureVertexSrc, textureFragmentSrc));
+			//textureShader_.reset(Shader::Create(textureVertexSrc, textureFragmentSrc));
+			textureShader_.reset(Shader::Create(R"(assets/shaders/Texture.glsl)"));
 			texture_ = Texture2D::Create(R"(C:\Users\User\Pictures\kassadin.jpg)");
 			png_texture_ = Texture2D::Create(R"(C:\Users\User\Downloads\logopng.png)");
 
