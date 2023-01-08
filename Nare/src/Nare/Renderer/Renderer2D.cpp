@@ -62,14 +62,21 @@ namespace Nare
     void Renderer2D::DrawQuad(const Vector2 &pos, const Vector2 &size, const Vector4 &colour)
     {
         DrawQuad({ pos.x, pos.y, 0 }, size, colour);
-
     }
+
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Vector4 &colour)
     {
-        std::dynamic_pointer_cast<OpenGLShader>(s_data->FlatColourShader)->Bind();
-        std::dynamic_pointer_cast<OpenGLShader>(s_data->FlatColourShader)->UploadUniformFloat4("u_Color", colour);
+        s_data->FlatColourShader->Bind();
+        s_data->FlatColourShader->SetFloat4("u_Color", colour);
+
+        const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
+        const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
+        const auto& model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
+
+        s_data->FlatColourShader->SetMat4("model",  projection * view * model);
 
         s_data->QuadVertexArray->Bind();
         RenderCommand::DrawIndexed(s_data->QuadVertexArray);
     }
+
 }

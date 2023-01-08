@@ -51,7 +51,7 @@ Matrix4x4 Matrix4x4::GetInverse() const
 
 	// Get the determinant
 	const float determinant = a0*b5 - a1*b4 + a2*b3 + a3*b2 - a4*b1 + a5*b0;
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(determinant), "Matrix determinant is zero. Cannot divide by zero.")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(determinant), "Matrix determinant is zero. Cannot divide by zero.")
 
 
 	temp.matrix_[ 0] = + matrix_[ 5]*b5 - matrix_[ 6]*b4 + matrix_[ 7]*b3;
@@ -97,7 +97,7 @@ Matrix4x4& Matrix4x4::Inverse()
 
 	// Get the determinant
 	const float determinant = a0*b5 - a1*b4 + a2*b3 + a3*b2 - a4*b1 + a5*b0;
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(determinant), "Matrix determinant is zero. Cannot divide by zero.")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(determinant), "Matrix determinant is zero. Cannot divide by zero.")
 
 
 	matrix_[ 0] = + initialMat[ 5]*b5 - initialMat[ 6]*b4 + initialMat[ 7]*b3;
@@ -127,7 +127,7 @@ Matrix4x4& Matrix4x4::operator*=(const float scalar)
 	return *this;
 }
 
-Matrix4x4 Matrix4x4::operator*(const Matrix4x4& rhs)
+Matrix4x4 Matrix4x4::operator*(const Matrix4x4& rhs) const
 {
 	Matrix4x4 temp;
 	for (int i = 0; i < 4; ++i)
@@ -239,6 +239,7 @@ void Matrix4x4::SetTRS(const Vector3& pos, const Quaternion& rot, const Vector3&
 const float* Matrix4x4::data() const
 {
 	return matrix_.data();
+    // return &matrix_[0];
 }
 
 std::string Matrix4x4::ToString() const
@@ -257,9 +258,9 @@ std::string Matrix4x4::ToString() const
 Matrix4x4 Matrix4x4::Ortho(const float left, const float right, const float bottom, const float top, const float zNear, const float zFar)
 {
 	return Matrix4x4({
-		2 / right - left, 0, 0, 0,
-		0, 2 / top - bottom, 0, 0,
-		0, 0, -2 / zFar - zNear, 0,
+		2 / (right - left), 0, 0, 0,
+		0, 2 / (top - bottom), 0, 0,
+		0, 0, -2 / (zFar - zNear), 0,
 		-((right + left) / (right - left)), -((top + bottom) / (top - bottom)), -((zFar + zNear) / (zFar - zNear)), 1
 		});
 }

@@ -119,7 +119,7 @@ Vector2& Vector2::operator*=(const float scalar)
 
 Vector2 Vector2::operator/(float scalar) const
 {
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(scalar), "Dividing by zero.")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(scalar), "Dividing by zero.")
 	return { x / scalar, y / scalar };
 }
 
@@ -133,14 +133,14 @@ Vector2& Vector2::operator/=(float scalar)
 Vector2& Vector2::Normalize()
 {
 	const float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(l), "Division by zero")
 	return *this /= l;
 }
 
 Vector2 Vector2::Normalized() const
 {
 	const float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(l), "Division by zero")
 	return Vector2(*this) / l;
 }
 

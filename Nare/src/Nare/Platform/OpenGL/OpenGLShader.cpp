@@ -69,7 +69,37 @@ namespace Nare
 		glUseProgram(NULL);
 	}
 
-	void OpenGLShader::UploadUniformInt(const std::string& name, int value)
+    void OpenGLShader::SetMat4(const std::string& name, const Matrix4x4 &mat)
+    {
+        UploadUniformMat4(name, mat);
+    }
+
+    void OpenGLShader::SetFloat(const std::string& name, const float &val)
+    {
+        UploadUniformFloat(name, val);
+    }
+
+    void OpenGLShader::SetFloat2(const std::string& name, const Vector2 &vec)
+    {
+        UploadUniformFloat2(name, vec);
+    }
+
+    void OpenGLShader::SetFloat3(const std::string& name, const Vector3 &vec)
+    {
+        UploadUniformFloat3(name, vec);
+    }
+
+    void OpenGLShader::SetFloat4(const std::string& name, const Vector4 &vec)
+    {
+        UploadUniformFloat4(name, vec);
+    }
+
+    void OpenGLShader::SetInt(const std::string& name, const int &val)
+    {
+        UploadUniformInt(name, val);
+    }
+
+    void OpenGLShader::UploadUniformInt(const std::string& name, int value)
 	{
 		const auto& location = glGetUniformLocation(rendererID_, name.data());
 		glUniform1i(location, value);

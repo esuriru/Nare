@@ -27,7 +27,7 @@ const float* Vector4::data() const
 
 Vector4 Vector4::operator/(float scalar) const
 {
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(scalar), "Dividing by zero.")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(scalar), "Dividing by zero.")
 	return { x / scalar, y / scalar, z / scalar, w / scalar };
 }
 
@@ -175,14 +175,14 @@ float Vector4::Dot(const Vector4& rhs) const
 Vector4 Vector4::Normalized(void) const 
 {
 	float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(l), "Division by zero")
 	return Vector4(*this) /= l;
 }
 
 Vector4& Vector4::Normalize(void)
 {
 	float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(l), "Division by zero")
 	return *this /= l;
 }
 

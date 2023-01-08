@@ -34,7 +34,7 @@ struct Matrix4x4
 
 	Matrix4x4& operator*=(const float scalar);
 
-	Matrix4x4 operator*(const Matrix4x4& rhs);
+	Matrix4x4 operator*(const Matrix4x4& rhs) const;
 	Matrix4x4 operator*(const float scalar);
 
 	Matrix4x4 operator+(const Matrix4x4& rhs) const;

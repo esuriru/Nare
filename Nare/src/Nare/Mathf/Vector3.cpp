@@ -193,14 +193,14 @@ Vector3 Vector3::Cross(const Vector3& rhs) const
 Vector3 Vector3::Normalized(void) const 
 {
 	float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(l), "Division by zero")
 	return Vector3(*this) /= l;
 }
 
 Vector3& Vector3::Normalize(void)
 {
 	float l = Length();
-	NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Division by zero")
+	NR_CORE_ASSERT(!Mathf::ApproximatelyZero(l), "Division by zero")
 	return *this /= l;
 }
 

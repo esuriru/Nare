@@ -56,7 +56,7 @@ namespace Nare
         // std::dynamic_pointer_cast<OpenGLShader>(_shader)->UploadUniformFloat4("u_Color", { 1.0f, 0.f, 1.0f, 1.0f });
         
         // Renderer::Submit(_squareVA, _shader);
-        Renderer2D::DrawQuad(Vector2(0.f, 0.f), { 0.f , 0.f }, { 1.0f, 0.f, 1.0f, 1.0f });
+        Renderer2D::DrawQuad(Vector2(0.5f, 0.5f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
 
         Renderer::EndScene();
 
