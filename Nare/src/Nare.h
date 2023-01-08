@@ -15,11 +15,10 @@
 // Math
 #include "Nare/Core/NareMath.h"
 
-// Entry point
-#include "Nare/Core/Entry.hpp"
 
 // Renderer
 #include "Nare/Renderer/Renderer.h"
+#include "Nare/Renderer/Renderer2D.h"
 #include "Nare/Renderer/RenderCommand.h"
 #include "Nare/Renderer/RendererAPI.h"
 #include "Nare/Renderer/Buffer.h"

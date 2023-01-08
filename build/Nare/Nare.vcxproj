@@ -53,7 +53,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -70,10 +70,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;NR_PLATFORM_WINDOWS;NR_ENABLE_ASSERTS;_CONSOLE;UNICODE;_UNICODE;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -83,7 +83,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -102,10 +102,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -257,6 +257,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLShader.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLShader.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLTexture2D.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLTexture2D.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\GraphicsContext.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.h" />
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.cpp">
@@ -270,6 +280,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.h" />
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer2D.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer2D.cpp">
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
@@ -288,7 +303,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Texture.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Texture.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Utils\Singleton.h" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Utils\Utility.h" />
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.h" />
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.cpp">
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -307,6 +328,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.h" />
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\stb_image\stb_image.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\stb_image\stb_image.cpp">
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:/Users/User/source/repos/Nare/build/Nare/CMakeFiles/Nare.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>

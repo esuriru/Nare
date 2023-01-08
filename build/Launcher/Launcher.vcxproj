@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -71,16 +71,28 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <PostBuildEvent>
+      <Message>Copying assets</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/User/source/repos/Nare/Launcher/assets/ C:/Users/User/source/repos/Nare/bin/Debug-x86/Launcher/assets
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
     <Link>
       <AdditionalDependencies>..\..\bin\Debug-x86\Nare\Nare.lib;..\Nare\vendor\GLFW\src\Debug\glfw3.lib;..\Nare\vendor\GLAD\Debug\GLAD.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -96,7 +108,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -113,16 +125,28 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <PostBuildEvent>
+      <Message>Copying assets</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/User/source/repos/Nare/Launcher/assets/ C:/Users/User/source/repos/Nare/bin/Release-x86/Launcher/assets
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
     <Link>
       <AdditionalDependencies>..\..\bin\Release-x86\Nare\Nare.lib;..\Nare\vendor\GLFW\src\Release\glfw3.lib;..\Nare\vendor\GLAD\Release\GLAD.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -171,6 +195,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher.cpp" />
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.h" />
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ZERO_CHECK.vcxproj">

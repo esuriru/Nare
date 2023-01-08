@@ -58,6 +58,12 @@
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLTexture2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -65,6 +71,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RendererAPI.cpp">
@@ -76,6 +85,9 @@
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RenderCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,6 +95,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\stb_image\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -177,6 +192,12 @@
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLRendererAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Platform\OpenGL\OpenGLTexture2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\GraphicsContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -189,6 +210,9 @@
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Renderer2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RendererAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -198,7 +222,13 @@
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\RenderCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Renderer\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Utils\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Utils\Utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Scene.h">
@@ -226,6 +256,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\src\Nare\Scene\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\stb_image\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\CMakeFiles\Nare.dir\Debug\cmake_pch.hxx">

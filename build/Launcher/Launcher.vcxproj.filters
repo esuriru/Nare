@@ -4,6 +4,14 @@
     <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\User\source\repos\Nare\Launcher\CMakeLists.txt" />

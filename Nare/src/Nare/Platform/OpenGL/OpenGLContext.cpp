@@ -24,6 +24,15 @@ namespace Nare
 		NR_CORE_INFO("	Vendor: ", glGetString(GL_VENDOR));
 		NR_CORE_INFO("	Renderer: ", glGetString(GL_RENDERER));
 		NR_CORE_INFO("	Version: ", glGetString(GL_VERSION));
+
+        #ifdef NR_ENABLE_ASSERTS
+            int versionMajor;
+            int versionMinor;
+
+            glGetIntegerv(GL_MAJOR_VERSION, &versionMajor);
+            glGetIntegerv(GL_MINOR_VERSION, &versionMinor);
+            NR_CORE_ASSERT(versionMajor > 4 || (versionMajor == 4 && versionMinor >= 5), "Nare requires at least OpenGL version 4.5!");
+        #endif
 	}
 
 	void OpenGLContext::SwapBuffers()

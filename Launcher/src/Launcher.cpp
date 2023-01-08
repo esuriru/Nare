@@ -1,4 +1,7 @@
 #include <Nare.h>
+#include <Nare/Core/Entry.hpp>
+
+#include "Launcher2D.h"
 
 namespace Nare
 {
@@ -8,7 +11,7 @@ namespace Nare
 		LauncherLayer()
 			: Layer("Test")
 		{
-			vertexArray_.reset(VertexArray::Create());
+			vertexArray_ = VertexArray::Create();
 
 			// For testing
 			float vertices[21] = {
@@ -38,7 +41,7 @@ namespace Nare
 				-0.75f, 0.75f, 0.0f, 0.f, 1.0f
 			};
 
-			squareVertexArray_.reset(VertexArray::Create());
+            squareVertexArray_ = VertexArray::Create();
 
 			Ref<VertexBuffer> squareVB(VertexBuffer::Create(square_vertices.data(), square_vertices.size() * sizeof(float)));
 			const BufferLayout squareLayout = {
@@ -149,18 +152,18 @@ namespace Nare
 				}
 			)";
 
-			shader_.reset(Shader::Create(vertexSrc, fragmentSrc));
-			rainbowShader_.reset(Shader::Create(rainbowVertexSrc, rainbowFragmentSrc));
-			//textureShader_.reset(Shader::Create(textureVertexSrc, textureFragmentSrc));
-			textureShader_.reset(Shader::Create(R"(assets/shaders/Texture.glsl)"));
+            auto textureShader = shaderLib_.Load("assets/shaders/Texture.glsl");
+
+
+
 			texture_ = Texture2D::Create(R"(C:\Users\User\Pictures\kassadin.jpg)");
 			png_texture_ = Texture2D::Create(R"(C:\Users\User\Downloads\logopng.png)");
 
-			std::dynamic_pointer_cast<OpenGLShader>(textureShader_)->Bind();
-			std::dynamic_pointer_cast<OpenGLShader>(textureShader_)->UploadUniformInt("texture_", 0);
+			std::dynamic_pointer_cast<OpenGLShader>(textureShader)->Bind();
+			std::dynamic_pointer_cast<OpenGLShader>(textureShader)->UploadUniformInt("texture_", 0);
 		}
 
-		void OnUpdate(Timestep ts) override
+		inline void OnUpdate(Timestep ts) override
 		{
 			RenderCommand::SetClearColour({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
@@ -168,24 +171,31 @@ namespace Nare
 			Renderer::BeginScene();
 
 
+            auto textureShader = shaderLib_.Get("Texture");
 			texture_->Bind();
-			Renderer::Submit(squareVertexArray_, textureShader_);
+			Renderer::Submit(squareVertexArray_, textureShader);
 
 			png_texture_->Bind();
-			Renderer::Submit(squareVertexArray_, textureShader_);
+			Renderer::Submit(squareVertexArray_, textureShader);
 
 			//Renderer::Submit(vertexArray_, shader_);
 
 			Renderer::EndScene();
 		}
 
-		void OnEvent(Event& event) override
+		inline void OnEvent(Event& event) override
 		{
 			EventDispatcher dispatcher(event);
 			dispatcher.Dispatch<KeyPressedEvent>(NR_BIND_EVENT_FUNC(LauncherLayer::OnKeyPressedEvent));
+
+            if (event.GetEventType() == EventType::WindowResize)
+            {
+                auto& re = dynamic_cast<WindowResizeEvent&>(event);
+
+            }
 		}
 
-		bool OnKeyPressedEvent(KeyPressedEvent& event)
+		inline bool OnKeyPressedEvent(KeyPressedEvent& event)
 		{
 			if (event.GetKeyCode() == NR_KEY_LEFT)
 			{
@@ -196,9 +206,8 @@ namespace Nare
 		}
 	private:
 		// TODO: Shaders (to be asset files)
-		Ref<Shader> shader_;
-		Ref<Shader> rainbowShader_;
-		Ref<Shader> textureShader_;
+
+        ShaderLibrary shaderLib_;
 
 		// TODO: Vertex Arrays, maybe to be in a list.
 		Ref<VertexArray> vertexArray_;
@@ -213,7 +222,8 @@ namespace Nare
 	public:
 		Launcher()
 		{
-			PushLayer(new LauncherLayer());
+			// PushLayer(new LauncherLayer());
+            PushLayer(new Launcher2D());
 		}
 		virtual ~Launcher() = default;
 	};

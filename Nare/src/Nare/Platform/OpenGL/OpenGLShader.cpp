@@ -24,8 +24,9 @@ namespace Nare
 		return 0;
 	}
 
-	OpenGLShader::OpenGLShader(const std::string& vertex_source, const std::string& fragment_source)
+	OpenGLShader::OpenGLShader(const std::string& name, const std::string& vertex_source, const std::string& fragment_source)
 		: rendererID_(NULL)
+        , name_(name)
 	{
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertex_source;
@@ -40,6 +41,17 @@ namespace Nare
 		auto shaderSources = Preprocess(shaderSource);
 
 		Compile(shaderSources);
+
+        // Extract name from filepath
+
+        // e.g Texture.glsl
+        auto lastSlash = file_path.find_last_of("/\\");
+        lastSlash = lastSlash == std::string::npos ? 0 : lastSlash + 1;
+
+        auto lastDot = file_path.rfind('.');
+        auto count = lastDot == std::string::npos ? file_path.size() - lastSlash : lastDot - lastSlash;
+
+        name_ = file_path.substr(lastSlash, count);
 	}
 
 	OpenGLShader::~OpenGLShader()
@@ -92,7 +104,10 @@ namespace Nare
 	{
 		// Create the program that the fragment and vertex shader into
 		GLuint program = glCreateProgram();
-		std::vector<GLenum> shaderIDs(shaderSources.size());
+        NR_CORE_ASSERT(shaderSources.size() <= 2, "Nare only supports a maximum of 2 shaders for now.")
+        std::array<GLenum, 2> shaderIDs;
+        int shaderIDindex = 0;
+
 
 		for (auto& kv_pair : shaderSources)
 		{
@@ -136,7 +151,7 @@ namespace Nare
 			}
 			// Attach the compiled shader
 			glAttachShader(program, shader);
-			shaderIDs.push_back(type);
+            shaderIDs[shaderIDindex++] = shader;
 		}
 
 		rendererID_ = program;
@@ -228,4 +243,42 @@ namespace Nare
 		const auto& location = glGetUniformLocation(rendererID_, name.data());
 		glUniform4fv(location, 1, vec.data());
 	}
+
+    void ShaderLibrary::Add(const Ref<Shader> &shader)
+    {
+        auto& name = shader->GetName();
+        Add(name, shader);
+    }
+
+    void ShaderLibrary::Add(const std::string &name, const Ref<Shader> &shader)
+    {
+        NR_CORE_ASSERT(!Exists(name), "Shader already exists.");
+        shaders_[name] = shader;
+    }
+
+    Ref<Shader> ShaderLibrary::Load(const std::string &name, const std::string &filepath)
+    {
+        auto shader = Shader::Create(filepath);
+        Add(name, shader);
+        return shader;
+    }
+
+    Ref<Shader> ShaderLibrary::Load(const std::string &filepath)
+    {
+        auto shader = Shader::Create(filepath);
+        Add(shader);
+        return shader;
+    }
+
+    Ref<Shader> ShaderLibrary::Get(const std::string &name)
+    {
+        // TODO: Should not be fatal
+        NR_CORE_ASSERT(Exists(name), "Shader not found.");
+        return shaders_[name];
+    }
+
+    bool ShaderLibrary::Exists(const std::string &name) const
+    {
+        return shaders_.find(name) != shaders_.end();
+    }
 }

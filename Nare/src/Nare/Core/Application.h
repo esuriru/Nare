@@ -58,10 +58,13 @@ namespace Nare
 #pragma endregion LAYER_STACK
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
+        bool OnWindowResize(WindowResizeEvent& e);
 
 		std::unique_ptr<Window> window_;
 		bool running_;
 		LayerStack layerStack_;
+
+        bool minimized_;
 
 		float lastTime_{};
 

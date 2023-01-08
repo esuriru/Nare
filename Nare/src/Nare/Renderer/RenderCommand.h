@@ -28,6 +28,11 @@ namespace Nare
 		{
 			s_rendererAPI_->DrawIndexed(vertexArray);
 		}
+
+        inline static void SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)
+        {
+            s_rendererAPI_->SetViewport(x, y, width, height);
+        }
 #pragma endregion INLINE_FUNCTIONS
 
 	private:

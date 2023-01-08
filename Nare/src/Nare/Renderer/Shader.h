@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Nare/Core/Core.h"
+
 namespace Nare
 {
 	class Shader
@@ -10,8 +12,11 @@ namespace Nare
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
 
-		static Shader* Create(const std::string& vertex_file_path, const std::string& fragment_file_path);
-		static Shader* Create(const std::string& file_path);
+        virtual const std::string& GetName() const = 0;
+
+		static Ref<Shader> Create(const std::string& name, const std::string& vertex_file_path, const std::string& fragment_file_path);
+		static Ref<Shader> Create(const std::string& file_path);
+
 
 	};
 }

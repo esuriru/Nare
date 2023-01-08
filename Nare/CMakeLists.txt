@@ -73,6 +73,8 @@ set(Nare
     "src/Nare/Renderer/Buffer.cpp"
     "src/Nare/Renderer/Renderer.h"
     "src/Nare/Renderer/Renderer.cpp"
+    "src/Nare/Renderer/Renderer2D.h"
+    "src/Nare/Renderer/Renderer2D.cpp"
     "src/Nare/Renderer/RendererAPI.h"
     "src/Nare/Renderer/RendererAPI.cpp"
     "src/Nare/Renderer/VertexArray.h"

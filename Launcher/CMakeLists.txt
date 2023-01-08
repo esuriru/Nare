@@ -5,6 +5,8 @@ set(PROJECT_NAME Launcher)
 ################################################################################
 set(Source_Files
     "src/Launcher.cpp"
+    "src/Launcher2D.h"
+    "src/Launcher2D.cpp"
 )
 source_group("Source Files" FILES ${Source_Files})
 

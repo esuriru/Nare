@@ -17,11 +17,13 @@ namespace Nare
 	void LayerStack::PushLayer(Layer* layer)
 	{
 		layerIterator_ = layers_.emplace(layerIterator_, layer);
+        layer->OnAttach();
 	}
 
 	void LayerStack::PushOverlay(Layer* overlay)
 	{
 		layers_.emplace_back(overlay);
+        overlay->OnAttach();
 	}
 
 	void LayerStack::PopLayer(Layer* layer)
@@ -33,6 +35,7 @@ namespace Nare
 			layers_.erase(it);
 			--layerIterator_;
 		}
+        layer->OnDetach();
 	}
 
 	void LayerStack::PopOverlay(Layer* overlay)
@@ -40,5 +43,7 @@ namespace Nare
 		auto it = std::find(layers_.begin(), layers_.end(), overlay);
 		if (it != layers_.end())
 			layers_.erase(it);
+
+        overlay->OnDetach();
 	}
 }

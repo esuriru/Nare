@@ -25,6 +25,7 @@ namespace Nare
 	Application::Application()
 		: window_(std::unique_ptr<Window>(Window::Create()))
 		, running_(true)
+        , minimized_(false)
 	{
 		NR_CORE_ASSERT(!s_instance_, "Application already exists!")
 		s_instance_ = this;
@@ -47,8 +48,11 @@ namespace Nare
 			lastTime_ = time;
 
 
-			for (const auto& layer : layerStack_)
-				layer->OnUpdate(timestep);
+            if (!minimized_)
+            {
+                for (const auto& layer : layerStack_)
+                    layer->OnUpdate(timestep);
+            }
 
 			window_->OnUpdate();
 		}
@@ -58,6 +62,7 @@ namespace Nare
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FUNC(OnWindowResize));
 
 		//NR_CORE_INFO(e);
 
@@ -86,8 +91,20 @@ namespace Nare
 		return true;
 	}
 
+    bool Application::OnWindowResize(WindowResizeEvent &e)
+    {
+        if (e.GetWidth() == 0 || e.GetHeight() == 0)
+        {
+            minimized_ = true;
+            return false;
+        }
 
-	Application::~Application()
+        minimized_ = false;
+        Renderer::OnWindowResize(e.GetWidth(), e.GetHeight());
+        return true;
+    }
+
+    Application::~Application()
 	{
 
 	}
