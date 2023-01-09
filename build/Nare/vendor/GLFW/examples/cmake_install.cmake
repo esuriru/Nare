@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/examples
+# Install script for directory: C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

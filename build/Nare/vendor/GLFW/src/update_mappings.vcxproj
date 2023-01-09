@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{17A925F2-951F-36C2-9D4F-638BCC7CF7B7}</ProjectGuid>
+    <ProjectGuid>{70EA6DE2-9D0E-3F89-A1B0-2A9B39B33B40}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>win32</Platform>
@@ -65,14 +65,14 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\build\CMakeFiles\b6fca9bcabf1320d4cd091b62a0098c5\update_mappings.rule">
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\build\CMakeFiles\d16a4086ce3b73d7aebdc84752927174\update_mappings.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Updating gamepad mappings from upstream repository</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
-cd C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src
+cd C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -81,16 +81,16 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Updating gamepad mappings from upstream repository</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
-cd C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src
+cd C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -99,17 +99,17 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/logic/Downloads/Nare/Nare -BC:/Users/logic/Downloads/Nare/Nare/build --check-stamp-file C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -118,11 +118,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/logic/Downloads/Nare/Nare -BC:/Users/logic/Downloads/Nare/Nare/build --check-stamp-file C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -131,21 +131,21 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\mappings.h.in">
+    <None Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\mappings.h.in">
     </None>
-    <None Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\CMake\GenerateMappings.cmake">
+    <None Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\CMake\GenerateMappings.cmake">
     </None>
-    <None Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings">
+    <None Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings">
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\ZERO_CHECK.vcxproj">
-      <Project>{73F8CF00-B47B-34E0-9A90-4D994AFAD9A2}</Project>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ZERO_CHECK.vcxproj">
+      <Project>{852BE6D9-6ABB-321F-B13B-BCE0B61FE248}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

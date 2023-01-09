@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW
+# Install script for directory: C:/Users/User/source/repos/Nare/Nare/vendor/GLFW
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,27 +34,27 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/cmake_install.cmake")
+  include("C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/examples/cmake_install.cmake")
+  include("C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/examples/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/tests/cmake_install.cmake")
+  include("C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/tests/cmake_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/include/GLFW" FILES_MATCHING REGEX "/glfw3\\.h$" REGEX "/glfw3native\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/include/GLFW" FILES_MATCHING REGEX "/glfw3\\.h$" REGEX "/glfw3native\\.h$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES
-    "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/glfw3Config.cmake"
-    "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/glfw3ConfigVersion.cmake"
+    "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/glfw3Config.cmake"
+    "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/glfw3ConfigVersion.cmake"
     )
 endif()
 
@@ -62,7 +62,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3/glfw3Targets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3/glfw3Targets.cmake"
-         "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets.cmake")
+         "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3/glfw3Targets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -71,16 +71,16 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets-debug.cmake")
   endif()
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw3" TYPE FILE FILES "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/CMakeFiles/Export/lib/cmake/glfw3/glfw3Targets-release.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/glfw3.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/glfw3.pc")
 endif()
 

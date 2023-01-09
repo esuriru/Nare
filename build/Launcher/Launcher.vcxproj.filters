@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\src\Launcher.cpp">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\src\Launcher2D.cpp">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\src\Launcher2D.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\Launcher\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D568F814-D953-30B5-8E01-9E1DC14BBA3A}</UniqueIdentifier>
+      <UniqueIdentifier>{6956CE17-C0F8-3FC6-AE75-224F4BFB81F4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

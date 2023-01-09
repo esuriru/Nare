@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{398C37F6-72F5-3146-AF7E-BC7AD6754726}</ProjectGuid>
+    <ProjectGuid>{F3445643-583F-339D-905D-F265FAE3F44A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>win32</Platform>
@@ -75,7 +75,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\build\CMakeFiles\b6fca9bcabf1320d4cd091b62a0098c5\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\build\CMakeFiles\d16a4086ce3b73d7aebdc84752927174\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
 cd .
@@ -87,7 +87,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'"> </Message>
@@ -101,20 +101,20 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\ZERO_CHECK.vcxproj">
-      <Project>{73F8CF00-B47B-34E0-9A90-4D994AFAD9A2}</Project>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ZERO_CHECK.vcxproj">
+      <Project>{852BE6D9-6ABB-321F-B13B-BCE0B61FE248}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\ALL_BUILD.vcxproj">
-      <Project>{A14384D1-2610-3B04-AD53-59CFD24A6554}</Project>
+    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ALL_BUILD.vcxproj">
+      <Project>{88A6EEA7-8F7D-3239-BEA4-6FFB37B7BF03}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

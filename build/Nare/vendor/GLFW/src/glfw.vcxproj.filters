@@ -1,93 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\context.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\init.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\init.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\input.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\input.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\monitor.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\monitor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\vulkan.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\vulkan.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\window.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_init.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_init.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_joystick.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_joystick.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_monitor.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_monitor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_time.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_time.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_thread.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_thread.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_window.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\wgl_context.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\wgl_context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\egl_context.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\egl_context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\osmesa_context.c">
+    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\osmesa_context.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\internal.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\mappings.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\mappings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\glfw_config.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\glfw_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include\GLFW\glfw3.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include\GLFW\glfw3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include\GLFW\glfw3native.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include\GLFW\glfw3native.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_platform.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_joystick.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_joystick.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\wgl_context.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\wgl_context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\egl_context.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\egl_context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\osmesa_context.h">
+    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\osmesa_context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{973758EA-850C-3080-9948-CC5713F2A83C}</UniqueIdentifier>
+      <UniqueIdentifier>{E78DBC5A-231C-3798-B2B7-484DF31AE9AB}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D568F814-D953-30B5-8E01-9E1DC14BBA3A}</UniqueIdentifier>
+      <UniqueIdentifier>{6956CE17-C0F8-3FC6-AE75-224F4BFB81F4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
