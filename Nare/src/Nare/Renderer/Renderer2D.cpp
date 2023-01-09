@@ -94,6 +94,7 @@ namespace Nare
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture)
     {
         s_data->TextureShader->Bind();
+        s_data->TextureShader->SetFloat4("u_Color", { 1.0f, 1.0f, 1.0f, 1.0f });
 
         const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
         const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
