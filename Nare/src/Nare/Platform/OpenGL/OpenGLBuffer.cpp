@@ -14,7 +14,14 @@ namespace Nare
 		glBufferData(GL_ARRAY_BUFFER, static_cast<GLint>(size), vertices, GL_STATIC_DRAW);
 	}
 
-	OpenGLVertexBuffer::~OpenGLVertexBuffer()
+    OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
+    {
+		glCreateBuffers(1, &rendererID_);
+		glBindBuffer(GL_ARRAY_BUFFER, rendererID_);
+		glBufferData(GL_ARRAY_BUFFER, static_cast<GLint>(size), nullptr, GL_DYNAMIC_DRAW);
+    }
+
+    OpenGLVertexBuffer::~OpenGLVertexBuffer()
 	{
 		glDeleteBuffers(1, &rendererID_);
 	}
@@ -29,6 +36,11 @@ namespace Nare
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
+    void OpenGLVertexBuffer::SetData(const void *data, uint32_t size)
+    {
+        glBindBuffer(GL_ARRAY_BUFFER, rendererID_);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, size);
+    }
 
 #pragma endregion VERTEX_BUFFER
 

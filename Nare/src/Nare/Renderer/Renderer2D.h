@@ -13,6 +13,8 @@ namespace Nare
         static void BeginScene();
         static void EndScene();
 
+        static void Flush();
+
         // Primitives
 
 #pragma region QUAD
@@ -20,7 +22,6 @@ namespace Nare
         static void DrawQuad(const Vector2& pos, const Vector2& size, const Vector4& colour);
         static void DrawQuad(const Vector3& pos, const Vector2& size, const Vector4& colour);
 
-        static void DrawRotatedQuad(const Vector2& pos, const Vector2& size, float rotation, const Vector4& colour);
         static void DrawRotatedQuad(const Vector3& pos, const Vector2& size, float rotation, const Vector4& colour);
 
         // Textures
