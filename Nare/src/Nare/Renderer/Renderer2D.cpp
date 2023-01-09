@@ -112,13 +112,21 @@ namespace Nare
     }
     void Renderer2D::DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotationDegrees, const Ref<Texture2D> &texture, float tilingFactor)
     {
+        s_data->TextureShader->Bind();
+        s_data->TextureShader->SetFloat4("u_Color", Vector4(1.0f));
+        s_data->TextureShader->SetFloat("u_tilingFactor", tilingFactor);
+
+        const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
+        const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
+        const auto& model = Matrix4x4::TRS(pos, Quaternion::Euler(0, 0, rotationDegrees), size);
+
+        s_data->TextureShader->SetMat4("MVP",  projection * view * model);
+        texture->Bind();
+
+        s_data->QuadVertexArray->Bind();
+        RenderCommand::DrawIndexed(s_data->QuadVertexArray);
     }
 
-    void Renderer2D::DrawQuad(const Vector2 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor)
-    {
-        // TODO - This doesn't really need to exist because Vector2 gets implicitly converted into Vector3 which is essentially what this does.
-        DrawQuad({pos, 0}, size, texture, tilingFactor);
-    }
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor)
     {
