@@ -1,5 +1,6 @@
 #pragma once
 
+#include <glad/glad.h>
 #include "Nare/Renderer/Texture.h"
 
 namespace Nare
@@ -8,7 +9,10 @@ namespace Nare
 	{
 	public:
 		OpenGLTexture2D(const std::string& path);
+		OpenGLTexture2D(uint32_t width, uint32_t height);
 		virtual ~OpenGLTexture2D();
+
+        virtual void SetData(void* data, uint32_t size) override;
 
 		inline virtual uint32_t GetWidth() const override
 		{
@@ -27,5 +31,6 @@ namespace Nare
 		uint32_t width_, height_;
 
 		uint32_t rendererID_;
+        GLenum internalFormat_, dataFormat_;
 	};
 }

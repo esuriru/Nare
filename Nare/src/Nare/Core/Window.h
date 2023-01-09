@@ -50,6 +50,6 @@ namespace Nare
 
 		virtual void* GetNativeWindow() const = 0;
 		
-		static Window* Create(const WindowProps& props = WindowProps());
+		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};
 }
