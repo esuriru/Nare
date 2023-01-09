@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Nare/Core/Window.h"
+#include "Nare/Core/Core.h"
 #include "Nare/Platform/OpenGL/OpenGLContext.h"
 
 struct GLFWwindow;
@@ -48,7 +49,7 @@ namespace Nare
 #pragma endregion PRIVATE_FUNCTIONS
 
 #pragma region PRIVATE_DATA_MEMBERS
-		GLFWwindow* window_{};
+        GLFWwindow* window_;
 
 		GraphicsContext* context_;
 

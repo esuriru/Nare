@@ -11,6 +11,7 @@ namespace Nare
         Ref<VertexArray> QuadVertexArray;
         Ref<Shader> FlatColourShader;
         Ref<Shader> TextureShader;
+        Ref<Texture> WhiteTexture;
     };
 
     static Renderer2DStorage* s_data;
@@ -45,6 +46,10 @@ namespace Nare
         Ref<IndexBuffer> squareIB(IndexBuffer::Create(square_indices.data(), square_indices.size()));
         s_data->QuadVertexArray->SetIndexBuffer(squareIB);
 
+        s_data->WhiteTexture = Texture2D::Create(1, 1);
+        uint32_t whiteTextureData = 0xffffffff;
+        s_data->WhiteTexture->SetData(&whiteTextureData, sizeof(uint32_t));
+
         s_data->FlatColourShader = Shader::Create("assets/shaders/FlatColour.glsl");
         s_data->TextureShader = Shader::Create("assets/shaders/Texture.glsl");
         s_data->TextureShader->Bind();
@@ -73,14 +78,15 @@ namespace Nare
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Vector4 &colour)
     {
-        s_data->FlatColourShader->Bind();
-        s_data->FlatColourShader->SetFloat4("u_Color",  colour);
+        s_data->TextureShader->Bind();
+        s_data->WhiteTexture->Bind();
+        s_data->TextureShader->SetFloat4("u_Color",  colour);
 
         const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
         const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
         const auto& model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
 
-        s_data->FlatColourShader->SetMat4("model",  projection * view * model);
+        s_data->TextureShader->SetMat4("MVP",  projection * view * model);
 
         s_data->QuadVertexArray->Bind();
         RenderCommand::DrawIndexed(s_data->QuadVertexArray);
