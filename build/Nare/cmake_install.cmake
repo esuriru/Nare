@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/source/repos/Nare/Nare
+# Install script for directory: C:/Users/logic/Downloads/Nare/Nare/Nare
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

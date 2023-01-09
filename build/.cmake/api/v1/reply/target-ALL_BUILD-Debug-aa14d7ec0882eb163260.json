@@ -1,0 +1,127 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"Nare/vendor/GLFW/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "glfw::@7b9e5cd03396804e7459"
+		},
+		{
+			"id" : "boing::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "gears::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "heightmap::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "offscreen::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "particles::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "sharing::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "glfwinfo::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "reopen::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "cursor::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "simple::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "clipboard::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "splitview::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "wave::@b71cae141b1a427de3f5"
+		},
+		{
+			"id" : "msaa::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "events::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "iconify::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "monitors::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "empty::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "tearing::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "threads::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "title::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "icon::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "inputlag::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "windows::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "joysticks::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "gamma::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "triangle-vulkan::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "opacity::@883862712c0b9cd2ebc2"
+		},
+		{
+			"id" : "timeout::@883862712c0b9cd2ebc2"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@5e7ffd295ce9a967fcf9",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "Nare/vendor/GLFW",
+		"source" : "Nare/vendor/GLFW"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
