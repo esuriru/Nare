@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/logic/Downloads/Nare/Nare/bin/Release-x86/Launcher/Launcher.exe"
+			"path" : "C:/Users/logic/Downloads/Nare/Nare/bin/Debug-x86/Launcher/Launcher.exe"
 		},
 		{
-			"path" : "C:/Users/logic/Downloads/Nare/Nare/bin/Release-x86/Launcher/Launcher.pdb"
+			"path" : "C:/Users/logic/Downloads/Nare/Nare/bin/Debug-x86/Launcher/Launcher.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -83,15 +83,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-MD /GL"
-				},
-				{
-					"backtrace" : 6,
-					"fragment" : "/Oi"
-				},
-				{
-					"backtrace" : 6,
-					"fragment" : "/Gy"
+					"fragment" : "-MDd"
 				},
 				{
 					"backtrace" : 6,
@@ -118,10 +110,6 @@
 			[
 				{
 					"backtrace" : 7,
-					"define" : "NDEBUG"
-				},
-				{
-					"backtrace" : 7,
 					"define" : "NR_PLATFORM_WINDOWS"
 				},
 				{
@@ -135,6 +123,10 @@
 				{
 					"backtrace" : 7,
 					"define" : "_CONSOLE"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "_DEBUG"
 				},
 				{
 					"backtrace" : 7,
@@ -176,18 +168,18 @@
 	[
 		{
 			"backtrace" : 3,
+			"id" : "Nare::@9174a84adb119cf68f03"
+		},
+		{
+			"backtrace" : 3,
 			"id" : "glfw::@7b9e5cd03396804e7459"
 		},
 		{
 			"backtrace" : 3,
-			"id" : "Nare::@9174a84adb119cf68f03"
+			"id" : "GLAD::@715039f159404ce4b448"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 3,
-			"id" : "GLAD::@715039f159404ce4b448"
 		}
 	],
 	"id" : "Launcher::@ba36c63cfd3c7f5c573b",
@@ -196,7 +188,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-MD /GL",
+				"fragment" : "-MDd",
 				"role" : "flags"
 			},
 			{
@@ -205,17 +197,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/OPT:REF",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "/OPT:ICF",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "/INCREMENTAL:NO",
+				"fragment" : "/INCREMENTAL",
 				"role" : "flags"
 			},
 			{
@@ -229,22 +211,18 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/INCREMENTAL:NO /LTCG",
-				"role" : "flags"
-			},
-			{
 				"backtrace" : 3,
-				"fragment" : "..\\..\\bin\\Release-x86\\Nare\\Nare.lib",
+				"fragment" : "..\\..\\bin\\Debug-x86\\Nare\\Nare.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "..\\Nare\\vendor\\GLFW\\src\\Release\\glfw3.lib",
+				"fragment" : "..\\Nare\\vendor\\GLFW\\src\\Debug\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "..\\Nare\\vendor\\GLAD\\Release\\GLAD.lib",
+				"fragment" : "..\\Nare\\vendor\\GLAD\\Debug\\GLAD.lib",
 				"role" : "libraries"
 			},
 			{
@@ -257,8 +235,7 @@
 				"role" : "libraries"
 			}
 		],
-		"language" : "CXX",
-		"lto" : true
+		"language" : "CXX"
 	},
 	"name" : "Launcher",
 	"nameOnDisk" : "Launcher.exe",

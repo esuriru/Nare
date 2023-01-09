@@ -15,9 +15,10 @@ namespace Nare
         void OnEvent(Event& event) override;
     private:
         Ref<Shader> _shader; 
-        Ref<Texture> _texture;
+        Ref<Texture2D> _poppyTexture;
 
         Ref<VertexArray> _squareVA;
+
     };
 
 }
