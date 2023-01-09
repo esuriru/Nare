@@ -16,7 +16,8 @@ struct Vector4
 
 #pragma region CONSTRUCTORS
 	explicit Vector4(const float& scalar);
-	Vector4(float x = 0.0, float y = 0.0, float z = 0.0, float w = 0.0);
+    Vector4();
+	Vector4(float x, float y, float z, float w);
 	Vector4(const Vector3& rhs);
 	~Vector4();
 

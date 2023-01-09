@@ -62,7 +62,6 @@ namespace Nare
 		if (!window_)
 			NR_CORE_FATAL("Could not create the window.");
 
-
 		glfwSetWindowUserPointer(window_, &data_);
 		SetVSyncEnabled(true);
 
