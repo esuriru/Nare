@@ -12,16 +12,17 @@ namespace Nare
         _squareVA = VertexArray::Create();
 
         std::vector<float> square_vertices = {
-            -0.75f, -0.75f, 0.0f,
-            0.75f, -0.75f, 0.0f,
-            0.75f, 0.75f, 0.0f,
-            -0.75f, 0.75f, 0.0f
+            -0.75f, -0.75f, 0.0f, 0.f, 0.f,
+            0.75f, -0.75f, 0.0f, 1.0f, 0.f,
+            0.75f, 0.75f, 0.0f, 1.0f, 1.0f,
+            -0.75f, 0.75f, 0.0f, 0.f, 1.0f
         };
 
 
         Ref<VertexBuffer> squareVB(VertexBuffer::Create(square_vertices.data(), square_vertices.size() * sizeof(float)));
         const BufferLayout squareLayout = {
             { ShaderDataType::Float3, "vertexPosition" },
+            { ShaderDataType::Float2, "vertexTexCoords" },
         };
 
         squareVB->SetLayout(squareLayout);
@@ -36,6 +37,7 @@ namespace Nare
         _squareVA->SetIndexBuffer(squareIB);
 
         _shader = Shader::Create("assets/shaders/FlatColour.glsl");
+        _poppyTexture = Texture2D::Create("assets/textures/poppychibi.png");
     }
 
     void Launcher2D::OnDetach()
@@ -46,7 +48,7 @@ namespace Nare
 
     void Launcher2D::OnUpdate(Timestep ts)
     {
-        RenderCommand::SetClearColour({ 0.1f,  0.1f, 0.1f, 1.f });
+        RenderCommand::SetClearColour({ 0.3f,  0.3f, 0.3f, 1.f });
         RenderCommand::Clear();
         
         Renderer::BeginScene();
@@ -61,7 +63,6 @@ namespace Nare
         Renderer2D::DrawQuad(Vector2(0.5f, 0.5f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
 
         Renderer::EndScene();
-
     }
 
     void Launcher2D::OnEvent(Event &event)

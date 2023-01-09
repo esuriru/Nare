@@ -1,5 +1,6 @@
 #pragma once
 #include "Nare/Core/NareMath.h"
+#include "Nare/Renderer/Texture.h"
 
 namespace Nare
 {

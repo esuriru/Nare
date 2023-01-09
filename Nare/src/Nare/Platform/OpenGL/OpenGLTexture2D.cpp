@@ -34,6 +34,9 @@ namespace Nare
 			dataFormat = GL_RGB;
 		}
 
+        internalFormat_ = internalFormat;
+        dataFormat_ = dataFormat;
+
 		NR_CORE_ASSERT(internalFormat & dataFormat, "Format not supported")
 
 		glCreateTextures(GL_TEXTURE_2D, 1, &rendererID_);
@@ -41,18 +44,46 @@ namespace Nare
 
 		glTextureParameteri(rendererID_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTextureParameteri(rendererID_, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        
+		glTextureParameteri(rendererID_, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTextureParameteri(rendererID_, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 		glTextureSubImage2D(rendererID_, 0, 0, 0, static_cast<GLint>(width_), static_cast<GLint>(height_), dataFormat, GL_UNSIGNED_BYTE, data);
 
 		stbi_image_free(data);
 	}
 
-	OpenGLTexture2D::~OpenGLTexture2D()
+    OpenGLTexture2D::OpenGLTexture2D(uint32_t width, uint32_t height)
+        : width_(width), height_(height)
+    {
+        internalFormat_ = GL_RGBA8;
+        dataFormat_ = GL_RGBA;
+
+		glCreateTextures(GL_TEXTURE_2D, 1, &rendererID_);
+		glTextureStorage2D(rendererID_, 1, internalFormat_, static_cast<GLint>(width_), static_cast<GLint>(height_));
+
+		glTextureParameteri(rendererID_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTextureParameteri(rendererID_, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+		glTextureParameteri(rendererID_, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTextureParameteri(rendererID_, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    }
+
+    OpenGLTexture2D::~OpenGLTexture2D()
 	{
 		glDeleteTextures(1, &rendererID_);
 	}
 
-	void OpenGLTexture2D::Bind(uint32_t slot) const
+    void OpenGLTexture2D::SetData(void *data, uint32_t size)
+    {
+#ifdef NR_ENABLE_ASSERTS
+        uint32_t bytes_per_channel = dataFormat_ == GL_RGBA ? 4 : 3;
+#endif
+        NR_CORE_ASSERT(size == width_ * height_ * bytes_per_channel, "Data must be the entire texture.");
+		glTextureSubImage2D(rendererID_, 0, 0, 0, static_cast<GLint>(width_), static_cast<GLint>(height_), dataFormat_, GL_UNSIGNED_BYTE, data);
+    }
+
+    void OpenGLTexture2D::Bind(uint32_t slot) const
 	{
 		glBindTextureUnit(slot, rendererID_);
 	}

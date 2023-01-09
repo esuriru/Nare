@@ -12,16 +12,16 @@
 
 namespace Nare
 {
-	static bool s_GLFWInitialized = false;
+    static uint8_t s_GLFWWindowCount = 0;
 
 	static void GLFWErrorCallback(int error, const char* desc)
 	{
 		NR_CORE_ERROR("GLFW Error: (", error, "): {", desc, "}");
 	}
 
-	Window* Window::Create(const WindowProps& props)
+	Scope<Window> Window::Create(const WindowProps& props)
 	{
-		return new WindowsWindow(props);
+		return CreateScope<WindowsWindow>(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -44,17 +44,17 @@ namespace Nare
 		NR_CORE_INFO("Creating window ", props.Title, "(", props.Width, ", ", props.Height, ")");
 
 
-		if (!s_GLFWInitialized)
+		if (s_GLFWWindowCount == 0)
 		{
 			const int glfw_init_success = glfwInit();
 
 			// TODO: glfwTerminate on system shutdown
 			NR_CORE_ASSERT(glfw_init_success, "Could not initialize GLFW.")
 			glfwSetErrorCallback(GLFWErrorCallback);
-			s_GLFWInitialized = true;
 		}
 
 		window_ = glfwCreateWindow(static_cast<int>(props.Width), static_cast<int>(props.Height), data_.Title.data(), nullptr, nullptr);
+        ++s_GLFWWindowCount;
 
 		context_ = new OpenGLContext(window_);
 		context_->Init();
