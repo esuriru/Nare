@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{46CA59C3-84BC-3BDB-A7CF-6EC69558BB41}</ProjectGuid>
+    <ProjectGuid>{66C40584-7C2E-3A13-85DD-AE6351472B98}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>win32</Platform>
@@ -42,13 +42,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\bin\Debug-x86\Launcher\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\bin\Debug-x86\Launcher\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Launcher.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Launcher</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\bin\Release-x86\Launcher\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\bin\Release-x86\Launcher\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Launcher.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Launcher</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.exe</TargetExt>
@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Launcher\..\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLAD\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -71,10 +71,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Launcher\..\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLAD\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Launcher\..\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLAD\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -84,7 +84,7 @@
     <PostBuildEvent>
       <Message>Copying assets</Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/User/source/repos/Nare/Launcher/assets/ C:/Users/User/source/repos/Nare/bin/Debug-x86/Launcher/assets
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/logic/Downloads/Nare/Nare/Launcher/assets/ C:/Users/logic/Downloads/Nare/Nare/bin/Debug-x86/Launcher/assets
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -98,8 +98,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/User/source/repos/Nare/bin/Debug-x86/Launcher/Launcher.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/User/source/repos/Nare/bin/Debug-x86/Launcher/Launcher.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/logic/Downloads/Nare/Nare/bin/Debug-x86/Launcher/Launcher.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/logic/Downloads/Nare/Nare/bin/Debug-x86/Launcher/Launcher.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -108,7 +108,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Launcher\..\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLAD\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -125,10 +125,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;NR_PLATFORM_WINDOWS;_CONSOLE;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Launcher\..\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLAD\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Launcher\..\Nare\src;C:\Users\User\source\repos\Nare\Nare\src;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLAD\include;C:\Users\User\source\repos\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Launcher\..\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\src;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLAD\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -138,7 +138,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message>Copying assets</Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/User/source/repos/Nare/Launcher/assets/ C:/Users/User/source/repos/Nare/bin/Release-x86/Launcher/assets
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/logic/Downloads/Nare/Nare/Launcher/assets/ C:/Users/logic/Downloads/Nare/Nare/bin/Release-x86/Launcher/assets
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -153,9 +153,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/User/source/repos/Nare/bin/Release-x86/Launcher/Launcher.lib</ImportLibrary>
+      <ImportLibrary>C:/Users/logic/Downloads/Nare/Nare/bin/Release-x86/Launcher/Launcher.lib</ImportLibrary>
       <OptimizeReferences>true</OptimizeReferences>
-      <ProgramDataBaseFile>C:/Users/User/source/repos/Nare/bin/Release-x86/Launcher/Launcher.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>C:/Users/logic/Downloads/Nare/Nare/bin/Release-x86/Launcher/Launcher.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -163,11 +163,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\User\source\repos\Nare\Launcher\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/Launcher/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/logic/Downloads/Nare/Nare/Launcher/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/Launcher/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/logic/Downloads/Nare/Nare -BC:/Users/logic/Downloads/Nare/Nare/build --check-stamp-file C:/Users/logic/Downloads/Nare/Nare/build/Launcher/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -175,12 +175,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\CMake\Default.cmake;C:\Users\User\source\repos\Nare\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\Launcher\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\CMake\Default.cmake;C:\Users\logic\Downloads\Nare\Nare\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Launcher\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/Launcher/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/logic/Downloads/Nare/Nare/Launcher/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/Launcher/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/logic/Downloads/Nare/Nare -BC:/Users/logic/Downloads/Nare/Nare/build --check-stamp-file C:/Users/logic/Downloads/Nare/Nare/build/Launcher/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -188,33 +188,33 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\CMake\Default.cmake;C:\Users\User\source\repos\Nare\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\Launcher\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\CMake\Default.cmake;C:\Users\logic\Downloads\Nare\Nare\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Launcher\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher.cpp" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.h" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Launcher\src\Launcher2D.cpp" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\src\Launcher.cpp" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\src\Launcher2D.h" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Launcher\src\Launcher2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ZERO_CHECK.vcxproj">
-      <Project>{852BE6D9-6ABB-321F-B13B-BCE0B61FE248}</Project>
+    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\ZERO_CHECK.vcxproj">
+      <Project>{73F8CF00-B47B-34E0-9A90-4D994AFAD9A2}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLAD\GLAD.vcxproj">
-      <Project>{A7C13850-9876-3D2C-9295-0DE1CB24C32C}</Project>
+    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLAD\GLAD.vcxproj">
+      <Project>{CA8C0989-4EAA-3B81-912E-9AD003FF7DAB}</Project>
       <Name>GLAD</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\Nare.vcxproj">
-      <Project>{AA9ADA2A-D2F1-3188-8C8D-2D2893BDA0D1}</Project>
+    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\Nare.vcxproj">
+      <Project>{E3539AE9-A7CD-3828-88BF-9030E750A38D}</Project>
       <Name>Nare</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\glfw.vcxproj">
-      <Project>{AAD3739D-7AE2-3022-AC5B-B0594096AE74}</Project>
+    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\glfw.vcxproj">
+      <Project>{E8480788-DAD7-332D-B1F1-18F4A49EAF91}</Project>
       <Name>glfw</Name>
     </ProjectReference>
   </ItemGroup>

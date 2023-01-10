@@ -37,14 +37,6 @@ namespace Nare
     {
         s_data.QuadVertexArray = VertexArray::Create();
 
-        // std::vector<float> square_vertices = {
-        //     -0.75f, -0.75f, 0.0f, 0.f, 0.f,
-        //     0.75f, -0.75f, 0.0f, 1.0f, 0.f,
-        //     0.75f, 0.75f, 0.0f, 1.0f, 1.0f,
-        //     -0.75f, 0.75f, 0.0f, 0.0f, 1.0f
-        // };
-
-
         s_data.QuadVertexBuffer = VertexBuffer::Create(s_data.MaxVertices * sizeof(QuadVertex));
 
         s_data.QuadVertexBuffer->SetLayout({
@@ -53,11 +45,25 @@ namespace Nare
             { ShaderDataType::Float2, "vertexTexCoords" },
         });
 
-        s_data.QuadVertexArray->AddVertexBuffer(quadVB);
+        s_data.QuadVertexArray->AddVertexBuffer(s_data.QuadVertexBuffer);
 
         s_data.QuadVertexBufferBase = new QuadVertex[s_data.MaxVertices];
 
         uint32_t* quadIndices = new uint32_t[s_data.MaxIndices];
+
+        uint32_t offset = 0;
+        for (uint32_t i = 0; i < s_data.MaxIndices; i+=6)
+        {
+            quadIndices[i + 0] = offset + 0;
+            quadIndices[i + 1] = offset + 1;
+            quadIndices[i + 2] = offset + 2;
+
+            quadIndices[i + 3] = offset + 2;
+            quadIndices[i + 4] = offset + 3;
+            quadIndices[i + 5] = offset + 0;
+
+            offset += 4;
+        }
         Ref<IndexBuffer> squareIB = IndexBuffer::Create(quadIndices, s_data.MaxIndices);
         s_data.QuadVertexArray->SetIndexBuffer(squareIB);
         delete[] quadIndices;
@@ -74,23 +80,29 @@ namespace Nare
 
     void Renderer2D::Exit()
     {
+        delete[] s_data.QuadVertexBufferBase;
     }
 
     void Renderer2D::BeginScene()
     {
+        s_data.TextureShader->Bind();
+
+        s_data.QuadIndexCount = 0;
         s_data.QuadVertexBufferPtr = s_data.QuadVertexBufferBase;
     }
 
     void Renderer2D::EndScene()
     {
 
-        s_data.QuadVertexBuffer->SetData();
+        uint32_t dataSize = (uint8_t*)s_data.QuadVertexBufferPtr - (uint8_t*)s_data.QuadVertexBufferBase;
+        s_data.QuadVertexBuffer->SetData(s_data.QuadVertexBufferBase, dataSize);
+
         Flush();
     }
 
     void Renderer2D::Flush()
     {
-
+        RenderCommand::DrawIndexed(s_data.QuadVertexArray, s_data.QuadIndexCount);
     }
 
     void Renderer2D::DrawQuad(const Vector2 &pos, const Vector2 &size, const Vector4 &colour)
@@ -103,36 +115,37 @@ namespace Nare
         s_data.QuadVertexBufferPtr->position = pos;
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
-        ++s_data.QuadVertexBufferPtr;
+        ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y, 0.f };
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
-        ++s_data.QuadVertexBufferPtr;
+        ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y + size.y, 0 };
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
-        ++s_data.QuadVertexBufferPtr;
+        ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x, pos.y + size.y, 0.f };
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
-        ++s_data.QuadVertexBufferPtr;
+        ++(s_data.QuadVertexBufferPtr);
 
-        s_data.TextureShader->Bind();
-        s_data.WhiteTexture->Bind();
-        s_data.TextureShader->SetFloat4("u_Color",  colour);
-        s_data.TextureShader->SetFloat("u_tilingFactor", 1.0f);
+        s_data.QuadIndexCount += 6;
+        // s_data.TextureShader->Bind();
+        // s_data.WhiteTexture->Bind();
+        // s_data.TextureShader->SetFloat4("u_Color",  colour);
+        // s_data.TextureShader->SetFloat("u_tilingFactor", 1.0f);
 
-        const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
-        const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
-        const auto& model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
+        // const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
+        // const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
+        // const auto& model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
 
-        s_data.TextureShader->SetMat4("MVP",  projection * view * model);
+        // s_data.TextureShader->SetMat4("MVP",  projection * view * model);
 
-        s_data.QuadVertexArray->Bind();
-        RenderCommand::DrawIndexed(s_data.QuadVertexArray);
+        // s_data.QuadVertexArray->Bind();
+        // RenderCommand::DrawIndexed(s_data.QuadVertexArray);
     }
 
 

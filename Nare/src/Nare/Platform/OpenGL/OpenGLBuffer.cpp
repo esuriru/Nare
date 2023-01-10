@@ -39,7 +39,7 @@ namespace Nare
     void OpenGLVertexBuffer::SetData(const void *data, uint32_t size)
     {
         glBindBuffer(GL_ARRAY_BUFFER, rendererID_);
-        glBufferSubData(GL_ARRAY_BUFFER, 0, size);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
     }
 
 #pragma endregion VERTEX_BUFFER

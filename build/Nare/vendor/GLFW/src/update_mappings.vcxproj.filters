@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\User\source\repos\Nare\build\CMakeFiles\d16a4086ce3b73d7aebdc84752927174\update_mappings.rule">
+    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\build\CMakeFiles\b6fca9bcabf1320d4cd091b62a0098c5\update_mappings.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\mappings.h.in">
+    <None Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\mappings.h.in">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\CMake\GenerateMappings.cmake" />
-    <None Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings" />
+    <None Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\update_mappings" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{53564113-AC9D-33DE-8A42-E75F81321D83}</UniqueIdentifier>
+      <UniqueIdentifier>{53FC8B72-6617-3710-8EB6-00B36024B3ED}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{E78DBC5A-231C-3798-B2B7-484DF31AE9AB}</UniqueIdentifier>
+      <UniqueIdentifier>{973758EA-850C-3080-9948-CC5713F2A83C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

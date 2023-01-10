@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AAD3739D-7AE2-3022-AC5B-B0594096AE74}</ProjectGuid>
+    <ProjectGuid>{E8480788-DAD7-332D-B1F1-18F4A49EAF91}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>win32</Platform>
@@ -41,18 +41,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">glfw.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">glfw.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src;C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src;C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -67,10 +67,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_GLFW_USE_CONFIG_H;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src;C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src;C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src;C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src;C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -80,7 +80,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src;C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src;C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -95,10 +95,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_GLFW_USE_CONFIG_H;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src;C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src;C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include;C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src;C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include;C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src;C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -107,11 +107,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/logic/Downloads/Nare/Nare -BC:/Users/logic/Downloads/Nare/Nare/build --check-stamp-file C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,11 +120,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/Nare -BC:/Users/User/source/repos/Nare/build --check-stamp-file C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/logic/Downloads/Nare/Nare -BC:/Users/logic/Downloads/Nare/Nare/build --check-stamp-file C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,40 +133,40 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\context.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\init.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\input.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\monitor.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\vulkan.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\window.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_init.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_joystick.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_monitor.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_time.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_thread.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_window.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\wgl_context.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\egl_context.c" />
-    <ClCompile Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\osmesa_context.c" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\internal.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\mappings.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\build\Nare\vendor\GLFW\src\glfw_config.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include\GLFW\glfw3.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\include\GLFW\glfw3native.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_platform.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\win32_joystick.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\wgl_context.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\egl_context.h" />
-    <ClInclude Include="C:\Users\User\source\repos\Nare\Nare\vendor\GLFW\src\osmesa_context.h" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\context.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\init.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\input.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\monitor.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\vulkan.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\window.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_init.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_joystick.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_monitor.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_time.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_thread.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_window.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\wgl_context.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\egl_context.c" />
+    <ClCompile Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\osmesa_context.c" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\internal.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\mappings.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\build\Nare\vendor\GLFW\src\glfw_config.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_platform.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\win32_joystick.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\wgl_context.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\egl_context.h" />
+    <ClInclude Include="C:\Users\logic\Downloads\Nare\Nare\Nare\vendor\GLFW\src\osmesa_context.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\User\source\repos\Nare\build\ZERO_CHECK.vcxproj">
-      <Project>{852BE6D9-6ABB-321F-B13B-BCE0B61FE248}</Project>
+    <ProjectReference Include="C:\Users\logic\Downloads\Nare\Nare\build\ZERO_CHECK.vcxproj">
+      <Project>{73F8CF00-B47B-34E0-9A90-4D994AFAD9A2}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

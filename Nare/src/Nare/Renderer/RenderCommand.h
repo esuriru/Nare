@@ -24,9 +24,9 @@ namespace Nare
 			s_rendererAPI_->Clear();
 		}
 
-		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray)
+		inline static void DrawIndexed(const Ref<VertexArray>& vertexArray, uint32_t indexCount = 0)
 		{
-			s_rendererAPI_->DrawIndexed(vertexArray);
+			s_rendererAPI_->DrawIndexed(vertexArray, indexCount);
 		}
 
         inline static void SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)

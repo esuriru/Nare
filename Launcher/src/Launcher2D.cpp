@@ -18,6 +18,8 @@ namespace Nare
             -0.75f, 0.75f, 0.0f, 0.f, 1.0f
         };
 
+        Vector4 t = { 0.1f, 0.2f, 0.3f, 0.4f };
+        Vector4* test = &t;
 
         Ref<VertexBuffer> squareVB(VertexBuffer::Create(square_vertices.data(), square_vertices.size() * sizeof(float)));
         const BufferLayout squareLayout = {
@@ -51,19 +53,19 @@ namespace Nare
         RenderCommand::SetClearColour({ 0.3f,  0.3f, 0.3f, 1.f });
         RenderCommand::Clear();
         
-        Renderer::BeginScene();
+        Renderer2D::BeginScene();
 
         // TODO: Add these functions: Shader::SetMat4, Shader::SetFloat4
         // std::dynamic_pointer_cast<OpenGLShader>(_shader)->Bind();
         // std::dynamic_pointer_cast<OpenGLShader>(_shader)->UploadUniformFloat4("u_Color", { 1.0f, 0.f, 1.0f, 1.0f });
         
         // Renderer::Submit(_squareVA, _shader);
-        Renderer2D::DrawRotatedQuad(Vector2(0.0f, 0.0f), { 0.4f , 0.2f }, 50.f, { 0.5f, 0.f, 1.0f, 1.0f });
-        Renderer2D::DrawQuad(Vector2(-0.5f, 0.f), { 1.f , 1.f }, _poppyTexture, 2.0f);
-        Renderer2D::DrawRotatedQuad(Vector2(0.2f, -0.2f), { 1.5f , 1.5f }, 42.f, _poppyTexture, 1.0f);
-        Renderer2D::DrawQuad(Vector2(0.5f, 0.5f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
+        // Renderer2D::DrawRotatedQuad(Vector2(0.0f, 0.0f), { 0.4f , 0.2f }, 50.f, { 0.5f, 0.f, 1.0f, 1.0f });
+        // Renderer2D::DrawQuad(Vector2(-0.5f, 0.f), { 1.f , 1.f }, _poppyTexture, 2.0f);
+        // Renderer2D::DrawRotatedQuad(Vector2(0.2f, -0.2f), { 1.5f , 1.5f }, 42.f, _poppyTexture, 1.0f);
+        Renderer2D::DrawQuad(Vector2(0.5f, 0.8f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
 
-        Renderer::EndScene();
+        Renderer2D::EndScene();
     }
 
     void Launcher2D::OnEvent(Event &event)

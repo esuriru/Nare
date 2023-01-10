@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/source/repos/Nare
+# Install script for directory: C:/Users/logic/Downloads/Nare/Nare
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,22 +34,22 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/User/source/repos/Nare/build/Launcher/cmake_install.cmake")
+  include("C:/Users/logic/Downloads/Nare/Nare/build/Launcher/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/User/source/repos/Nare/build/Nare/cmake_install.cmake")
+  include("C:/Users/logic/Downloads/Nare/Nare/build/Nare/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/cmake_install.cmake")
+  include("C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/User/source/repos/Nare/build/Nare/vendor/GLAD/cmake_install.cmake")
+  include("C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLAD/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/User/source/repos/Nare/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/logic/Downloads/Nare/Nare/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

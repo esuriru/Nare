@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.fragmentshader": "glsl",
+        "*.vertexshader": "glsl",
+        "vector": "cpp"
+    }
+}

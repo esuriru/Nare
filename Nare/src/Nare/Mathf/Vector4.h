@@ -6,13 +6,12 @@ struct Vector3;
 
 struct Vector4
 {
-	float x, y, z, w;
+	// Use a union because it allows access to the variable through a different name
+	union { float x, r; };
+	union { float y, g; };
+	union { float z, b; };
+	union { float w, a; };
 
-	// For colours
-	float& r = x;
-	float& g = y;
-	float& b = z;
-	float& a = w;
 
 #pragma region CONSTRUCTORS
 	explicit Vector4(const float& scalar);
