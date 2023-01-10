@@ -64,6 +64,9 @@ namespace Nare
         // Renderer2D::DrawQuad(Vector2(-0.5f, 0.f), { 1.f , 1.f }, _poppyTexture, 2.0f);
         // Renderer2D::DrawRotatedQuad(Vector2(0.2f, -0.2f), { 1.5f , 1.5f }, 42.f, _poppyTexture, 1.0f);
         Renderer2D::DrawQuad(Vector2(0.5f, 0.8f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
+        Renderer2D::DrawQuad(Vector2(-0.2f, 0.0f), { 1.5f , 1.f }, { 1.0f, 0.f, 1.0f, 1.0f });
+        Renderer2D::DrawQuad(Vector2(-0.4f, 0.2f), { 0.3f , 1.f }, { 0.0f, 1.f, 1.0f, 1.0f });
+        Renderer2D::DrawQuad(Vector2(0.7f, -0.4f), { 1.f , 1.5f }, { 0.0f, 1.f, 0.0f, 1.0f });
 
         Renderer2D::EndScene();
     }

@@ -11,6 +11,8 @@ namespace Nare
         Vector3 position;
         Vector4 colour;
         Vector2 texCoord;
+
+
     };
 
     struct Renderer2DData
@@ -18,9 +20,11 @@ namespace Nare
         const uint32_t MaxQuads = 10000;
         const uint32_t MaxVertices = MaxQuads * 4;
         const uint32_t MaxIndices = MaxQuads * 6;
+        static const uint32_t MaxTextureSlots = 32; // TODO - Render capabilities
 
         Ref<VertexArray> QuadVertexArray;
         Ref<VertexBuffer> QuadVertexBuffer;
+
         Ref<Shader> TextureShader;
         Ref<Texture> WhiteTexture;
 
@@ -28,6 +32,9 @@ namespace Nare
 
         QuadVertex* QuadVertexBufferBase = nullptr;
         QuadVertex* QuadVertexBufferPtr = nullptr;
+
+        std::array<uint32_t, MaxTextureSlots> TextureSlots;
+        uint32_t TextureSlotIndex = 1;
     };
 
 
@@ -76,6 +83,9 @@ namespace Nare
         s_data.TextureShader = Shader::Create("assets/shaders/Texture.glsl");
         s_data.TextureShader->Bind();
         s_data.TextureShader->SetInt("texture_", 0);
+
+        // Set all texture slots to 0
+        s_data.TextureSlots = {0};
     }
 
     void Renderer2D::Exit()
@@ -89,6 +99,8 @@ namespace Nare
 
         s_data.QuadIndexCount = 0;
         s_data.QuadVertexBufferPtr = s_data.QuadVertexBufferBase;
+
+        s_data.TextureSlotIndex = 1;
     }
 
     void Renderer2D::EndScene()
@@ -105,10 +117,6 @@ namespace Nare
         RenderCommand::DrawIndexed(s_data.QuadVertexArray, s_data.QuadIndexCount);
     }
 
-    void Renderer2D::DrawQuad(const Vector2 &pos, const Vector2 &size, const Vector4 &colour)
-    {
-        DrawQuad({ pos.x, pos.y, 0 }, size, colour);
-    }
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Vector4 &colour)
     {
@@ -186,6 +194,29 @@ namespace Nare
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor)
     {
+        s_data.QuadVertexBufferPtr->position = pos;
+        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
+        ++(s_data.QuadVertexBufferPtr);
+
+        s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y, 0.f };
+        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
+        ++(s_data.QuadVertexBufferPtr);
+
+        s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y + size.y, 0 };
+        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
+        ++(s_data.QuadVertexBufferPtr);
+
+        s_data.QuadVertexBufferPtr->position = { pos.x, pos.y + size.y, 0.f };
+        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
+        ++(s_data.QuadVertexBufferPtr);
+
+        s_data.QuadIndexCount += 6;
+
+#if 0
         s_data.TextureShader->Bind();
         s_data.TextureShader->SetFloat4("u_Color", Vector4(1.0f));
         s_data.TextureShader->SetFloat("u_tilingFactor", tilingFactor);
@@ -199,5 +230,6 @@ namespace Nare
 
         s_data.QuadVertexArray->Bind();
         RenderCommand::DrawIndexed(s_data.QuadVertexArray);
+#endif
     }
 }

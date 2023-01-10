@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/logic/Downloads/Nare/Nare/Nare/vendor/GLFW/src
+# Install script for directory: C:/Users/User/source/repos/Nare/Nare/vendor/GLFW/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,9 +34,9 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/Debug/glfw3.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/Debug/glfw3.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/logic/Downloads/Nare/Nare/build/Nare/vendor/GLFW/src/Release/glfw3.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/User/source/repos/Nare/build/Nare/vendor/GLFW/src/Release/glfw3.lib")
   endif()
 endif()
 
