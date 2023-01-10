@@ -8,8 +8,8 @@
 namespace Nare
 {
     // TODO - To make a camera
-    const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
-    const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
+    // const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
+    // const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
     struct QuadVertex
     {
         Vector3 position;
@@ -21,9 +21,9 @@ namespace Nare
 
     struct Renderer2DData
     {
-        const uint32_t MaxQuads = 10000;
-        const uint32_t MaxVertices = MaxQuads * 4;
-        const uint32_t MaxIndices = MaxQuads * 6;
+        static const uint32_t MaxQuads = 10000;
+        static const uint32_t MaxVertices = MaxQuads * 4;
+        static const uint32_t MaxIndices = MaxQuads * 6;
         static const uint32_t MaxTextureSlots = 32; // TODO - Render capabilities
 
         Ref<VertexArray> QuadVertexArray;
@@ -41,6 +41,9 @@ namespace Nare
         uint32_t TextureSlotIndex = 1; // 0 = white texture
 
         Vector4 QuadVertexPositions[4]; 
+
+        // TODO - Make a macro that makes it so that stats aren't calculated.
+        Renderer2D::Stats stats;
     };
 
 
@@ -134,6 +137,17 @@ namespace Nare
             s_data.TextureSlots[i]->Bind(i);
 
         RenderCommand::DrawIndexed(s_data.QuadVertexArray, s_data.QuadIndexCount);
+        ++s_data.stats.DrawCalls;
+    }
+
+    void Renderer2D::FlushAndReset()
+    {
+        EndScene();
+
+        s_data.QuadIndexCount = 0;
+        s_data.QuadVertexBufferPtr = s_data.QuadVertexBufferBase;
+
+        s_data.TextureSlotIndex = 1;
     }
 
 
@@ -141,6 +155,9 @@ namespace Nare
     {
         constexpr float texIndex = 0.0f; // White texture
         constexpr float tilingFactor = 0.0f; 
+
+        if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
         Matrix4x4 model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
 
@@ -173,6 +190,7 @@ namespace Nare
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadIndexCount += 6;
+        ++s_data.stats.QuadCount;
         // s_data.TextureShader->Bind();
         // s_data.WhiteTexture->Bind();
         // s_data.TextureShader->SetFloat4("u_Color",  colour);
@@ -193,6 +211,9 @@ namespace Nare
     {
         constexpr float texIndex = 0.0f; // White texture
         constexpr float tilingFactor = 0.0f; 
+
+        if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
         Matrix4x4 model = Matrix4x4::TRS(pos, Quaternion::Euler(0, 0, rotationDegrees), colour);
 
@@ -225,12 +246,16 @@ namespace Nare
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadIndexCount += 6;
+        ++s_data.stats.QuadCount;
     }
 
     void Renderer2D::DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotationDegrees, const Ref<Texture2D> &texture, float tilingFactor)
     {
         // TODO - make this a static colour, or even make a helper class that stores a Vector4.
         constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+        if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
         float textureIndex = 0.0f;
         for (uint32_t i = 1; i < s_data.TextureSlotIndex; ++i)
@@ -281,13 +306,27 @@ namespace Nare
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadIndexCount += 6;
+
+        ++s_data.stats.QuadCount;
     }
 
+    Renderer2D::Stats Renderer2D::GetStats()
+    {
+        return s_data.stats;
+    }
+
+    void Renderer2D::ResetStats()
+    {
+        memset(&s_data.stats, 0, sizeof(Stats));
+    }
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor)
     {
         // TODO - make this a static colour, or even make a helper class that stores a Vector4.
         constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+        if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
         float textureIndex = 0.0f;
         for (uint32_t i = 1; i < s_data.TextureSlotIndex; ++i)
@@ -337,21 +376,7 @@ namespace Nare
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadIndexCount += 6;
+        ++s_data.stats.QuadCount;
 
-#if 0
-        s_data.TextureShader->Bind();
-        s_data.TextureShader->SetFloat4("u_Color", Vector4(1.0f));
-        s_data.TextureShader->SetFloat("u_tilingFactor", tilingFactor);
-
-        const auto& projection = Matrix4x4::Ortho(-1.6f, 1.6f, -0.9f, 0.9f, -10, 10);
-        const auto& view = Matrix4x4::Translate({0, 0, 0}).Inverse();
-        const auto& model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
-
-        s_data.TextureShader->SetMat4("MVP",  projection * view * model);
-        texture->Bind();
-
-        s_data.QuadVertexArray->Bind();
-        RenderCommand::DrawIndexed(s_data.QuadVertexArray);
-#endif
     }
 }

@@ -28,7 +28,25 @@ namespace Nare
 
         static void DrawRotatedQuad(const Vector3& pos, const Vector2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor = 1.0f);
 #pragma endregion QUAD
-    private:
 
+        struct Stats
+        {
+            uint32_t DrawCalls = 0;
+            uint32_t QuadCount = 0;
+
+            inline uint32_t GetTotalVertexCount()
+            {
+                return QuadCount * 4;
+            }
+
+            inline uint32_t GetTotalIndexCount()
+            {
+                return QuadCount * 6;
+            }
+        };
+        static Stats GetStats();
+        static void ResetStats();
+    private:
+        static void FlushAndReset();
     };
 }

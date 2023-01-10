@@ -52,27 +52,30 @@ namespace Nare
     {
         static float rotation = 0.0f;
         rotation += ts * 20.0f;
+
+        Renderer2D::ResetStats();
         RenderCommand::SetClearColour({ 0.3f,  0.3f, 0.3f, 1.f });
         RenderCommand::Clear();
         
         Renderer2D::BeginScene();
 
-        // TODO: Add these functions: Shader::SetMat4, Shader::SetFloat4
-        // std::dynamic_pointer_cast<OpenGLShader>(_shader)->Bind();
-        // std::dynamic_pointer_cast<OpenGLShader>(_shader)->UploadUniformFloat4("u_Color", { 1.0f, 0.f, 1.0f, 1.0f });
         
         // Renderer::Submit(_squareVA, _shader);
         // Renderer2D::DrawRotatedQuad(Vector2(0.0f, 0.0f), { 0.4f , 0.2f }, 50.f, { 0.5f, 0.f, 1.0f, 1.0f });
         // Renderer2D::DrawQuad(Vector2(-0.5f, 0.f), { 1.f , 1.f }, _poppyTexture, 2.0f);
         // Renderer2D::DrawRotatedQuad(Vector2(0.2f, -0.2f), { 1.5f , 1.5f }, 42.f, _poppyTexture, 1.0f);
-        Renderer2D::DrawQuad(Vector2(0.5f, 0.8f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
-        Renderer2D::DrawQuad(Vector2(-0.4f, 0.2f), { 0.3f , 1.f }, { 0.0f, 1.f, 1.0f, 1.0f });
-        Renderer2D::DrawQuad(Vector2(0.7f, -0.4f), { 1.f , 1.5f }, { 0.0f, 1.f, 0.0f, 1.0f });
+        Renderer2D::DrawQuad({0.0f, 0.0f, 0.8f}, { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 0.8f });
+        Renderer2D::DrawRotatedQuad(Vector3(0.0f, 0.0f, -0.8f), { 1.0f , 1.0f }, rotation, _poppyTexture, 4.f);
+        Renderer2D::DrawQuad({-0.4f, 0.2f, 0.5f}, { 0.3f , 1.f }, { 0.0f, 1.f, 1.0f, 0.5f });
+        Renderer2D::DrawQuad({0.7f, -0.4f,0.3f}, { 1.f , 1.5f }, { 0.0f, 1.f, 0.0f, 0.3f });
         // Renderer2D::DrawQuad(Vector3(-0.5f, -0.8f, 0.2f), { 4.5f , 8.f }, _poppyTexture, 10.f);
         // Renderer2D::DrawQuad(Vector3(-0.8f, -0.8f, 0.5f), { 1.0f , 1.0f }, _poppyTexture, 4.f);
-        Renderer2D::DrawRotatedQuad(Vector3(0.0f, 0.0f, 0.0f), { 1.0f , 1.0f }, rotation, _poppyTexture, 4.f);
 
         Renderer2D::EndScene();
+        auto stats = Renderer2D::GetStats();
+        NR_CORE_TRACE("Draw calls: ", stats.DrawCalls);
+        NR_CORE_TRACE("Quads: ", stats.QuadCount);
+
     }
 
     void Launcher2D::OnEvent(Event &event)
