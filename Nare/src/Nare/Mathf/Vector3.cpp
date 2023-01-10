@@ -1,6 +1,7 @@
 #include <cmath>
 #include "Vector3.h"
 #include "Vector2.h"
+#include "Vector4.h"
 #include "Nare/Mathf/Mathf.h"
 #include "Nare/Core/Core.h"
 
@@ -29,6 +30,11 @@ Vector3::Vector3(const float& scalar)
 }
 
 Vector3::Vector3(float x, float y, float z) : x(x), y(y), z(z)
+{
+}
+
+Vector3::Vector3(const Vector4 &rhs)
+    : x(rhs.x), y(rhs.y), z(rhs.z)
 {
 }
 

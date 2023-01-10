@@ -50,6 +50,8 @@ namespace Nare
 
     void Launcher2D::OnUpdate(Timestep ts)
     {
+        static float rotation = 0.0f;
+        rotation += ts * 20.0f;
         RenderCommand::SetClearColour({ 0.3f,  0.3f, 0.3f, 1.f });
         RenderCommand::Clear();
         
@@ -64,10 +66,11 @@ namespace Nare
         // Renderer2D::DrawQuad(Vector2(-0.5f, 0.f), { 1.f , 1.f }, _poppyTexture, 2.0f);
         // Renderer2D::DrawRotatedQuad(Vector2(0.2f, -0.2f), { 1.5f , 1.5f }, 42.f, _poppyTexture, 1.0f);
         Renderer2D::DrawQuad(Vector2(0.5f, 0.8f), { 1.f , 1.f }, { 0.0f, 0.f, 1.0f, 1.0f });
-        Renderer2D::DrawQuad(Vector2(-0.2f, 0.0f), { 1.5f , 1.f }, { 1.0f, 0.f, 1.0f, 1.0f });
         Renderer2D::DrawQuad(Vector2(-0.4f, 0.2f), { 0.3f , 1.f }, { 0.0f, 1.f, 1.0f, 1.0f });
         Renderer2D::DrawQuad(Vector2(0.7f, -0.4f), { 1.f , 1.5f }, { 0.0f, 1.f, 0.0f, 1.0f });
-        Renderer2D::DrawQuad(Vector2(-0.5f, -0.7f), { 1.f , 1.f }, _poppyTexture);
+        // Renderer2D::DrawQuad(Vector3(-0.5f, -0.8f, 0.2f), { 4.5f , 8.f }, _poppyTexture, 10.f);
+        // Renderer2D::DrawQuad(Vector3(-0.8f, -0.8f, 0.5f), { 1.0f , 1.0f }, _poppyTexture, 4.f);
+        Renderer2D::DrawRotatedQuad(Vector3(0.0f, 0.0f, 0.0f), { 1.0f , 1.0f }, rotation, _poppyTexture, 4.f);
 
         Renderer2D::EndScene();
     }
