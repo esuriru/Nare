@@ -45,25 +45,14 @@ Vector4::Vector4(const float& scalar)
 {
 }
 
-Vector4::Vector4()
-    : x(0), y(0), z(0), w(0)
-{
-}
 
-Vector4::Vector4(float x, float y, float z, float w) : x(x), y(y), z(z), w(w)
-{
 
-}
 
 Vector4::Vector4(const Vector3& rhs) : x(rhs.x), y(rhs.y), z(rhs.z), w(0)
 {
 
 }
 
-Vector4::~Vector4()
-{
-
-}
 
 bool Vector4::IsZero() const
 {
@@ -131,15 +120,6 @@ bool Vector4::operator!=(const Vector4& rhs) const
 			!Mathf::Approximately(y, rhs.y) ||
 			!Mathf::Approximately(z, rhs.z) ||
 			!Mathf::Approximately(w, rhs.w);
-}
-
-Vector4& Vector4::operator=(const Vector4& rhs)
-{
-	x = rhs.x;
-	y = rhs.y;
-	z = rhs.z;
-	w = rhs.w;
-	return *this;
 }
 
 float Vector4::Length() const

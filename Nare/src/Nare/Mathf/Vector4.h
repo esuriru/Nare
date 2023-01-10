@@ -15,10 +15,15 @@ struct Vector4
 
 #pragma region CONSTRUCTORS
 	explicit Vector4(const float& scalar);
-    Vector4();
-	Vector4(float x, float y, float z, float w);
+
+    constexpr Vector4()
+        : x(0), y(0), z(0), w(0) {};
+	constexpr Vector4(float x, float y, float z, float w) noexcept
+        : x(x), y(y), z(z), w(w) {}
+    constexpr Vector4(const Vector4& rhs) = default;
+    constexpr Vector4& operator= (const Vector4& rhs) = default;
 	Vector4(const Vector3& rhs);
-	~Vector4();
+	~Vector4() = default;
 
 #pragma endregion CONSTRUCTORS
 
@@ -49,8 +54,6 @@ struct Vector4
 
 	bool operator==(const Vector4& rhs) const;
 	bool operator!= (const Vector4& rhs) const;
-
-	Vector4& operator=(const Vector4& rhs); 
 
 	float Length() const; 
 	float LengthSquared () const; 

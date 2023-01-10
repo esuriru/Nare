@@ -4,6 +4,7 @@
 #include "Nare/Platform/OpenGL/OpenGLShader.h"
 #include "Nare/Renderer/RenderCommand.h"
 
+
 namespace Nare
 {
     struct QuadVertex
@@ -120,6 +121,7 @@ namespace Nare
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Vector4 &colour)
     {
+
         s_data.QuadVertexBufferPtr->position = pos;
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
@@ -194,23 +196,26 @@ namespace Nare
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor)
     {
+        // TODO - make this a static colour, or even make a helper class that stores a Vector4.
+        constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+
         s_data.QuadVertexBufferPtr->position = pos;
-        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y, 0.f };
-        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y + size.y, 0 };
-        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x, pos.y + size.y, 0.f };
-        s_data.QuadVertexBufferPtr->colour = colour;
+        s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
         ++(s_data.QuadVertexBufferPtr);
 
