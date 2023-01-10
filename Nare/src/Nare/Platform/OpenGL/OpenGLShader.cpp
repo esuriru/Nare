@@ -99,13 +99,24 @@ namespace Nare
         UploadUniformInt(name, val);
     }
 
+    void OpenGLShader::SetIntArray(const std::string &name, int *values, uint32_t count)
+    {
+        UploadUniformIntArray(name, values, count);
+    }
+
     void OpenGLShader::UploadUniformInt(const std::string& name, int value)
 	{
 		const auto& location = glGetUniformLocation(rendererID_, name.data());
 		glUniform1i(location, value);
 	}
 
-	void OpenGLShader::UploadUniformFloat(const std::string& name, float value)
+    void OpenGLShader::UploadUniformIntArray(const std::string &name, int *values, uint32_t count)
+    {
+		const auto& location = glGetUniformLocation(rendererID_, name.data());
+		glUniform1iv(location, count, values);
+    }
+
+    void OpenGLShader::UploadUniformFloat(const std::string& name, float value)
 	{
 		const auto& location = glGetUniformLocation(rendererID_, name.data());
 		glUniform1f(location, value);

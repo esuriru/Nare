@@ -26,6 +26,7 @@ namespace Nare
         virtual void SetFloat4(const std::string& name, const Vector4& vec) = 0;
 
         virtual void SetInt(const std::string& name, const int& val) = 0;
+        virtual void SetIntArray(const std::string& name, int* values, uint32_t count) = 0;
         // virtual void SetInt2(const Vector2& vec) = 0;
         // virtual void SetInt3(const Vector3& vec) = 0;
         // virtual void SetInt4(const Vector4& vec) = 0;

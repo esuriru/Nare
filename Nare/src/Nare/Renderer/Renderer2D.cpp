@@ -12,7 +12,7 @@ namespace Nare
         Vector3 position;
         Vector4 colour;
         Vector2 texCoord;
-
+        float texIndex;
 
     };
 
@@ -34,7 +34,7 @@ namespace Nare
         QuadVertex* QuadVertexBufferBase = nullptr;
         QuadVertex* QuadVertexBufferPtr = nullptr;
 
-        std::array<uint32_t, MaxTextureSlots> TextureSlots;
+        std::array<Ref<Texture>, MaxTextureSlots> TextureSlots;
         uint32_t TextureSlotIndex = 1;
     };
 
@@ -51,6 +51,7 @@ namespace Nare
             { ShaderDataType::Float3, "vertexPosition" },
             { ShaderDataType::Float4, "vertexColour" },
             { ShaderDataType::Float2, "vertexTexCoords" },
+            { ShaderDataType::Float, "textureIndex" },
         });
 
         s_data.QuadVertexArray->AddVertexBuffer(s_data.QuadVertexBuffer);
@@ -81,12 +82,15 @@ namespace Nare
         uint32_t whiteTextureData = 0xffffffff;
         s_data.WhiteTexture->SetData(&whiteTextureData, sizeof(uint32_t));
 
+        int32_t samplers[s_data.MaxTextureSlots];
+        for (int32_t i = 0; i < s_data.MaxTextureSlots; ++i)
+            samplers[i] = i;
+
         s_data.TextureShader = Shader::Create("assets/shaders/Texture.glsl");
         s_data.TextureShader->Bind();
-        s_data.TextureShader->SetInt("texture_", 0);
+        s_data.TextureShader->SetIntArray("u_Textures", samplers, s_data.MaxTextureSlots);
 
-        // Set all texture slots to 0
-        s_data.TextureSlots = {0};
+        s_data.TextureSlots[0] = s_data.WhiteTexture;
     }
 
     void Renderer2D::Exit()
@@ -115,31 +119,39 @@ namespace Nare
 
     void Renderer2D::Flush()
     {
+        for (uint32_t i = 0; i < s_data.TextureSlotIndex; ++i)
+            s_data.TextureSlots[i]->Bind(i);
+
         RenderCommand::DrawIndexed(s_data.QuadVertexArray, s_data.QuadIndexCount);
     }
 
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Vector4 &colour)
     {
+        constexpr float texIndex = 0.0f; // White texture
 
         s_data.QuadVertexBufferPtr->position = pos;
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
+        s_data.QuadVertexBufferPtr->texIndex = texIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y, 0.f };
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
+        s_data.QuadVertexBufferPtr->texIndex = texIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y + size.y, 0 };
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
+        s_data.QuadVertexBufferPtr->texIndex = texIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x, pos.y + size.y, 0.f };
         s_data.QuadVertexBufferPtr->colour = colour;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
+        s_data.QuadVertexBufferPtr->texIndex = texIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadIndexCount += 6;
@@ -199,24 +211,45 @@ namespace Nare
         // TODO - make this a static colour, or even make a helper class that stores a Vector4.
         constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
 
+        float textureIndex = 0.0f;
+        for (uint32_t i = 1; i < s_data.TextureSlotIndex; ++i)
+        {
+            if (*s_data.TextureSlots[i].get() == *texture.get())
+            {
+                textureIndex = static_cast<float>(i);
+                break;
+            }
+        }
+
+        if (textureIndex == 0.0f)
+        {
+            textureIndex = static_cast<float>(s_data.TextureSlotIndex);
+            s_data.TextureSlots[s_data.TextureSlotIndex] = texture;
+            ++s_data.TextureSlotIndex;
+        }
+
         s_data.QuadVertexBufferPtr->position = pos;
         s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
+        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y, 0.f };
         s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
+        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x + size.x, pos.y + size.y, 0 };
         s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
+        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadVertexBufferPtr->position = { pos.x, pos.y + size.y, 0.f };
         s_data.QuadVertexBufferPtr->colour = white;
         s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
+        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
         ++(s_data.QuadVertexBufferPtr);
 
         s_data.QuadIndexCount += 6;

@@ -25,6 +25,11 @@ namespace Nare
 		}
 
 		virtual void Bind(uint32_t slot) const override;
+        
+        inline virtual bool operator==(const Texture& other) const override
+        {
+            return rendererID_ == dynamic_cast<const OpenGLTexture2D&>(other).rendererID_;
+        }
 
 	private:
 		std::string path_;
