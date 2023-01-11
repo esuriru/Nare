@@ -125,7 +125,7 @@ namespace Nare
     void Renderer2D::EndScene()
     {
 
-        uint32_t dataSize = (uint8_t*)s_data.QuadVertexBufferPtr - (uint8_t*)s_data.QuadVertexBufferBase;
+        uint32_t dataSize = static_cast<uint32_t>((uint8_t*)s_data.QuadVertexBufferPtr - (uint8_t*)s_data.QuadVertexBufferBase);
         s_data.QuadVertexBuffer->SetData(s_data.QuadVertexBufferBase, dataSize);
 
         Flush();

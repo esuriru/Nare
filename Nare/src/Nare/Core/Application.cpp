@@ -69,9 +69,9 @@ namespace Nare
 		// Backwards for loop
 		for (auto it = layerStack_.end(); it != layerStack_.begin();)
 		{
-			(*--it)->OnEvent(e);
 			if (e.Handled)
 				break;
+			(*--it)->OnEvent(e);
 		}
 	}
 
