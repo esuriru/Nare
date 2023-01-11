@@ -72,9 +72,9 @@ namespace Nare
         // Renderer2D::DrawQuad(Vector3(-0.8f, -0.8f, 0.5f), { 1.0f , 1.0f }, _poppyTexture, 4.f);
 
         Renderer2D::EndScene();
-        auto stats = Renderer2D::GetStats();
-        NR_CORE_TRACE("Draw calls: ", stats.DrawCalls);
-        NR_CORE_TRACE("Quads: ", stats.QuadCount);
+        // auto stats = Renderer2D::GetStats();
+        // NR_CORE_TRACE("Draw calls: ", stats.DrawCalls);
+        // NR_CORE_TRACE("Quads: ", stats.QuadCount);
 
     }
 

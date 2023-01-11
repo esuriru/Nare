@@ -5,24 +5,12 @@
 #include "Mathf.h"
 #include "Nare/Core/Core.h"
 
-Vector2::Vector2()
-	: x(0.f)
-	, y(0.f)
-{
-
-}
-
 Vector2::Vector2(double x, double y)
 	: x(static_cast<float>(x))
 	, y(static_cast<float>(y))
 {
 }
 
-Vector2::Vector2(float x, float y)
-	: x(x)
-	, y(y)
-{
-}
 
 Vector2::Vector2(unsigned x, unsigned y)
 	: x(static_cast<float>(x))

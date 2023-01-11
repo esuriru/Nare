@@ -83,6 +83,8 @@ set(Nare
     "src/Nare/Renderer/RenderCommand.cpp"
     "src/Nare/Renderer/Texture.h"
     "src/Nare/Renderer/Texture.cpp"
+    "src/Nare/Renderer/SubTexture2D.h"
+    "src/Nare/Renderer/SubTexture2D.cpp"
 
     # Utility
     "src/Nare/Utils/Singleton.h"
