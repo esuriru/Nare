@@ -26,6 +26,7 @@
 #include "Nare/Platform/OpenGL/OpenGLShader.h"
 #include "Nare/Renderer/VertexArray.h"
 #include "Nare/Renderer/Texture.h"
+#include "Nare/Renderer/SubTexture2D.h"
 
 // Events
 #include "Nare/Events/Event.h"

@@ -17,6 +17,9 @@ struct Vector2
 
 	constexpr Vector2(float x, float y) noexcept
 		: x(x), y(y) {}
+	constexpr Vector2(int x, int y) noexcept
+		: x(static_cast<float>(x)), y(static_cast<float>(y)) {}
+
     constexpr Vector2(const Vector2& rhs) = default;
     constexpr Vector2& operator= (const Vector2& rhs) = default;
 

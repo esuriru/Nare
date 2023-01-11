@@ -17,16 +17,16 @@ namespace Nare
     {
     }
 
-    Ref<SubTexture2D> SubTexture2D::CreateFromCoords(const Ref<Texture2D>& texture, const Vector2 &coords, const Vector2 &spriteSize)
+    Ref<SubTexture2D> SubTexture2D::CreateFromCoords(const Ref<Texture2D>& texture, const Vector2 &coords, const Vector2 &cellSize, const Vector2& spriteSize)
     {
         const Vector2& min = {
-            (coords.x * spriteSize.x) / texture->GetWidth(),
-            (coords.y * spriteSize.y) / texture->GetHeight()
+            (coords.x * cellSize.x) / texture->GetWidth(),
+            (coords.y * cellSize.y) / texture->GetHeight()
         };
 
         const Vector2& max = {
-            ((coords.x + 1) * spriteSize.x) / texture->GetWidth(),
-            ((coords.y + 1) * spriteSize.y) / texture->GetHeight()
+            ((coords.x + spriteSize.x) * cellSize.x) / texture->GetWidth(),
+            ((coords.y + spriteSize.y) * cellSize.y) / texture->GetHeight()
         };
 
         return CreateRef<SubTexture2D>(texture, min, max);

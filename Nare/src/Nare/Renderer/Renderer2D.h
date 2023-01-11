@@ -26,9 +26,9 @@ namespace Nare
 
         // Textures
         static void DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor = 1.0f);
-        static void DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<SubTexture2D> &texture, float tilingFactor = 1.0f);
+        static void DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<SubTexture2D> &subtexture, float tilingFactor = 1.0f);
         static void DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotation, const Ref<Texture2D> &texture, float tilingFactor = 1.0f);
-        static void DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotation, const Ref<SubTexture2D> &texture, float tilingFactor = 1.0f);
+        static void DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotation, const Ref<SubTexture2D> &subtexture, float tilingFactor = 1.0f);
 #pragma endregion QUAD
 
         struct Stats

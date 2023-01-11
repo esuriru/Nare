@@ -140,6 +140,16 @@ namespace Nare
         ++s_data.stats.DrawCalls;
     }
 
+    Renderer2D::Stats Renderer2D::GetStats()
+    {
+        return s_data.stats;
+    }
+
+    void Renderer2D::ResetStats()
+    {
+        memset(&s_data.stats, 0, sizeof(Stats));
+    }
+
     void Renderer2D::FlushAndReset()
     {
         EndScene();
@@ -150,10 +160,13 @@ namespace Nare
         s_data.TextureSlotIndex = 1;
     }
 
-    void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<SubTexture2D> &texture, float tilingFactor)
+    void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<SubTexture2D> &subtexture, float tilingFactor)
     {
         // TODO - make this a static colour, or even make a helper class that stores a Vector4.
         constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+        constexpr size_t quadVertexCount = 4;
+        const Vector2* texCoords = subtexture->GetTexCoords();
+        const Ref<Texture2D> texture = subtexture->GetTexture();
 
         if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
             FlushAndReset();
@@ -214,7 +227,7 @@ namespace Nare
     {
         constexpr size_t quadVertexCount = 4;
         constexpr float texIndex = 0.0f; // White texture
-        constexpr float tilingFactor = 0.0f; 
+        constexpr float tilingFactor = 1.0f; 
         constexpr std::array<Vector2, 4> texCoords {
             {
                 { 0.0f, 0.0f },
@@ -246,41 +259,32 @@ namespace Nare
 
     void Renderer2D::DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotationDegrees, const Vector4 &colour)
     {
+        constexpr size_t quadVertexCount = 4;
         constexpr float texIndex = 0.0f; // White texture
-        constexpr float tilingFactor = 0.0f; 
+        constexpr float tilingFactor = 1.0f; 
+        constexpr std::array<Vector2, 4> texCoords {
+            {
+                { 0.0f, 0.0f },
+                { 1.0f, 0.0f },
+                { 1.0f, 1.0f },
+                { 0.0f, 1.0f }
+            }
+        };
 
         if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
             FlushAndReset();
 
         Matrix4x4 model = Matrix4x4::TRS(pos, Quaternion::Euler(0, 0, rotationDegrees), colour);
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[0];
-        s_data.QuadVertexBufferPtr->colour = colour;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = texIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[1];
-        s_data.QuadVertexBufferPtr->colour = colour;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = texIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[2];
-        s_data.QuadVertexBufferPtr->colour = colour;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = texIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[3];
-        s_data.QuadVertexBufferPtr->colour = colour;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = texIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
+        for (size_t i = 0; i < quadVertexCount; ++i)
+        {
+            s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[i];
+            s_data.QuadVertexBufferPtr->colour = colour;
+            s_data.QuadVertexBufferPtr->texCoord = texCoords[i];
+            s_data.QuadVertexBufferPtr->texIndex = texIndex;
+            s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
+            ++(s_data.QuadVertexBufferPtr);
+        }
 
         s_data.QuadIndexCount += 6;
         ++s_data.stats.QuadCount;
@@ -290,6 +294,15 @@ namespace Nare
     {
         // TODO - make this a static colour, or even make a helper class that stores a Vector4.
         constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+        constexpr size_t quadVertexCount = 4;
+        constexpr std::array<Vector2, 4> texCoords {
+            {
+                { 0.0f, 0.0f },
+                { 1.0f, 0.0f },
+                { 1.0f, 1.0f },
+                { 0.0f, 1.0f }
+            }
+        };
 
         if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
             FlushAndReset();
@@ -313,54 +326,78 @@ namespace Nare
 
         Matrix4x4 model = Matrix4x4::TRS(pos, Quaternion::Euler(0, 0, rotationDegrees), size);
 
+        for (size_t i = 0; i < quadVertexCount; ++i)
+        {
+            s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[i];
+            s_data.QuadVertexBufferPtr->colour = white;
+            s_data.QuadVertexBufferPtr->texCoord = texCoords[i];
+            s_data.QuadVertexBufferPtr->texIndex = textureIndex;
+            s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
+            ++(s_data.QuadVertexBufferPtr);
+        }
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[0];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
+        s_data.QuadIndexCount += 6;
+        ++s_data.stats.QuadCount;
+    }
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[1];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
+    void Renderer2D::DrawRotatedQuad(const Vector3 &pos, const Vector2 &size, float rotationDegrees, const Ref<SubTexture2D> &subtexture, float tilingFactor)
+    {
+        // TODO - make this a static colour, or even make a helper class that stores a Vector4.
+        constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+        constexpr size_t quadVertexCount = 4;
+        const Vector2* texCoords = subtexture->GetTexCoords();
+        const Ref<Texture2D> texture = subtexture->GetTexture();
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[2];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
+        if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[3];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
+        float textureIndex = 0.0f;
+        for (uint32_t i = 1; i < s_data.TextureSlotIndex; ++i)
+        {
+            if (*s_data.TextureSlots[i].get() == *texture.get())
+            {
+                textureIndex = static_cast<float>(i);
+                break;
+            }
+        }
 
+        if (textureIndex == 0.0f)
+        {
+            textureIndex = static_cast<float>(s_data.TextureSlotIndex);
+            s_data.TextureSlots[s_data.TextureSlotIndex] = texture;
+            ++s_data.TextureSlotIndex;
+        }
+
+        Matrix4x4 model = Matrix4x4::TRS(pos, Quaternion::Euler(0, 0, rotationDegrees), size);
+
+        for (size_t i = 0; i < quadVertexCount; ++i)
+        {
+            s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[i];
+            s_data.QuadVertexBufferPtr->colour = white;
+            s_data.QuadVertexBufferPtr->texCoord = texCoords[i];
+            s_data.QuadVertexBufferPtr->texIndex = textureIndex;
+            s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
+            ++(s_data.QuadVertexBufferPtr);
+        }
         s_data.QuadIndexCount += 6;
 
         ++s_data.stats.QuadCount;
     }
 
-    Renderer2D::Stats Renderer2D::GetStats()
-    {
-        return s_data.stats;
-    }
-
-    void Renderer2D::ResetStats()
-    {
-        memset(&s_data.stats, 0, sizeof(Stats));
-    }
 
     void Renderer2D::DrawQuad(const Vector3 &pos, const Vector2 &size, const Ref<Texture2D> &texture, float tilingFactor)
     {
         // TODO - make this a static colour, or even make a helper class that stores a Vector4.
         constexpr Vector4 white = { 1.0f, 1.0f, 1.0f, 1.0f };
+        constexpr size_t quadVertexCount = 4;
+        constexpr std::array<Vector2, 4> texCoords {
+            {
+                { 0.0f, 0.0f },
+                { 1.0f, 0.0f },
+                { 1.0f, 1.0f },
+                { 0.0f, 1.0f }
+            }
+        };
 
         if (s_data.QuadIndexCount >= Renderer2DData::MaxIndices)
             FlushAndReset();
@@ -386,33 +423,15 @@ namespace Nare
 
         Matrix4x4 model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[0];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[1];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[2];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[3];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
+        for (size_t i = 0; i < quadVertexCount; ++i)
+        {
+            s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[i];
+            s_data.QuadVertexBufferPtr->colour = white;
+            s_data.QuadVertexBufferPtr->texCoord = texCoords[i];
+            s_data.QuadVertexBufferPtr->texIndex = textureIndex;
+            s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
+            ++(s_data.QuadVertexBufferPtr);
+        }
 
         s_data.QuadIndexCount += 6;
         ++s_data.stats.QuadCount;

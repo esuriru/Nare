@@ -14,8 +14,10 @@ namespace Nare
         void OnUpdate(Timestep ts) override;
         void OnEvent(Event& event) override;
     private:
-        Ref<Shader> _shader; 
-        Ref<Texture2D> _poppyTexture;
+        Ref<Shader> shader_; 
+        Ref<Texture2D> poppyTexture_;
+        Ref<Texture2D> chessPieces_;
+        Ref<SubTexture2D> pawn_;
 
         Ref<VertexArray> _squareVA;
 

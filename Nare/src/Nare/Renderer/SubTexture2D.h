@@ -21,7 +21,7 @@ namespace Nare
             return textureCoordinates_.data();
         }
 
-        static Ref<SubTexture2D> CreateFromCoords(const Ref<Texture2D>& texture, const Vector2& coords, const Vector2& spriteSize);
+        static Ref<SubTexture2D> CreateFromCoords(const Ref<Texture2D>& texture, const Vector2& coords, const Vector2& cellSize, const Vector2& spriteSize = { 1, 1 });
 
     private:
         Ref<Texture2D> texture_;
