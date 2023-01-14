@@ -5,6 +5,8 @@
 
 namespace Nare
 {
+    class Shader;
+
 	enum class ShaderDataType
 	{
 		None = 0, 
@@ -162,7 +164,19 @@ namespace Nare
 
 		virtual uint32_t GetCount() const = 0;
 
-		static Ref<IndexBuffer> Create(uint32_t* indices, uint32_t size);
+		static Ref<IndexBuffer> Create(uint32_t* indices, uint32_t count);
 	};
 
+    class UniformBuffer
+    {
+    public:
+        virtual ~UniformBuffer() {};
+
+		virtual void Bind() const = 0;
+		virtual void Unbind() const = 0;
+
+        virtual int GetSize() const = 0;
+
+        static Ref<UniformBuffer> Create(const Ref<Shader>& shader, const std::string& name);
+    };
 }

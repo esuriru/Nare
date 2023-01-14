@@ -95,7 +95,8 @@ namespace Nare
         }
         file_data.close();
 
-        for (int i = 0; i < raw_face_indices.size(); ++i)
+        uint32_t i;
+        for (i = 0; i < raw_face_indices.size(); ++i)
         {
             Vector3 vert = raw_verts[raw_face_indices[i] - 1];
             Vector2 tex_coord = raw_uv[raw_texture_indices[i] - 1];
@@ -106,6 +107,7 @@ namespace Nare
             mesh->normals.push_back(norm);
         }
 
+        mesh->CreateBuffers(i);
         return mesh;
     }
 
@@ -135,9 +137,53 @@ namespace Nare
 #endif
     }
 
-    void Mesh::CreateBuffers()
+    void Mesh::CreateBuffers(int count)
     {
-        // vertexBuffer_ = VertexBuffer::Create(vertices.data()->data(), vertices.size() * sizeof(float));
-        
+        std::map<Mesh::Vertex, uint16_t> vertex_map;
+
+        std::vector<float> vertex_data;
+        std::vector<uint32_t> indices;
+
+        Vertex v;
+        uint32_t index;
+
+        for (int j = 0; j < count; ++j)
+        {
+            v = { vertices[j], normals[j], uv[j] };
+
+            std::map<Mesh::Vertex, uint16_t>::iterator map_iterator = vertex_map.find(v);
+            if (map_iterator == vertex_map.end())
+            {
+                indices.push_back(map_iterator->second);    
+            }
+            else
+            {
+                for (int i = 0; i < 3; ++i)
+                    vertex_data.push_back(vertices[j][i]);
+
+                for (int i = 0; i < 3; ++i)
+                    vertex_data.push_back(normals[j][i]);
+
+                for (int i = 0; i < 2; ++i)
+                    vertex_data.push_back(uv[j][i]);
+
+                uint32_t new_index = static_cast<uint32_t>(vertex_data.size() / 8) - 1;
+                indices.push_back(new_index);
+                vertex_map[v] = new_index;
+            }
+        }
+
+        Ref<VertexBuffer> vertexBuffer = VertexBuffer::Create(vertex_data.data(), vertex_data.size() * sizeof(float));
+        vertexBuffer->SetLayout({
+            { ShaderDataType::Float3, "vertexPosition" },
+            { ShaderDataType::Float3, "vertexNormal" },
+            { ShaderDataType::Float2, "vertexUV"}
+        });
+
+        Ref<IndexBuffer> indexBuffer = IndexBuffer::Create(indices.data(), indices.size());
+
+        vertexArray_->AddVertexBuffer(vertexBuffer);
+        vertexArray_->SetIndexBuffer(indexBuffer);
     }
+
 }

@@ -19,11 +19,16 @@ namespace Nare
 		virtual void Bind() const override;
 		virtual void Unbind() const override;
 
-        virtual const std::string& GetName() const override
+        inline virtual const std::string& GetName() const override
         {
             return name_;
         }
 
+        inline virtual uint32_t GetID() const override
+        {
+            return rendererID_;
+        }
+        
         virtual void SetMat4(const std::string& name, const Matrix4x4& mat) override;
 
         virtual void SetFloat(const std::string& name, const float& val) override;

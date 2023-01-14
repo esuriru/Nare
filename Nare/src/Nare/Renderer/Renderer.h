@@ -19,7 +19,7 @@ namespace Nare
 
 		static void Submit(const Ref<VertexArray>& vertexArray, const Ref<Shader>& shader);
         
-        static void RenderEntity(Entity e); 
+        static void RenderMesh(const Mesh& mesh, const Matrix4x4 model_matrix);
 
 		inline static RendererAPI::API GetAPI()
 		{

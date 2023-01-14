@@ -5,6 +5,24 @@
 
 namespace Nare
 {
+    class OBJTestLayer : public Layer
+    {
+    public:
+        OBJTestLayer()
+            : Layer("OBJTest")
+        {
+                 
+        }
+
+        inline void OnUpdate(Timestep ts) override
+		{
+
+		}
+
+    private:
+        
+    };
+
 	class LauncherLayer : public Layer
 	{
 	public:

@@ -1,5 +1,6 @@
 #include "nrpch.h"
 #include "OpenGLBuffer.h"
+#include "Nare/Renderer/Shader.h"
 
 #include <GLAD/glad.h>
 
@@ -69,4 +70,35 @@ namespace Nare
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
 #pragma endregion INDEX_BUFFER
+
+#pragma region UNIFORM_BUFFER
+    OpenGLUniformBuffer::OpenGLUniformBuffer(const Ref<Shader>& shader, const std::string &name)
+        : debugName_(name)
+    {
+        const uint32_t& shader_ID = shader->GetID();
+        blockID_ = glGetUniformBlockIndex(shader_ID, "LightBlock");
+        glUniformBlockBinding(shader_ID, blockID_, LIGHT_BUFFER_BINDING_ID);
+        glGetActiveUniformBlockiv(shader_ID, blockID_, GL_UNIFORM_BLOCK_DATA_SIZE, &blockSize_);
+
+        glGenBuffers(1, &rendererID_);
+        glBindBuffer(GL_UNIFORM_BUFFER, rendererID_);
+        glBufferData(GL_UNIFORM_BUFFER, blockSize_, NULL, GL_STATIC_DRAW);
+        glBindBufferRange(GL_UNIFORM_BUFFER, LIGHT_BUFFER_BINDING_ID, rendererID_, 0, blockSize_);
+        glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+    }
+
+    OpenGLUniformBuffer::~OpenGLUniformBuffer()
+    {
+    }
+
+    void OpenGLUniformBuffer::Bind() const
+    {
+    }
+
+    void OpenGLUniformBuffer::Unbind() const
+    {
+    }
+
+#pragma endregion UNIFORM_BUFFER
 }

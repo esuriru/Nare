@@ -29,4 +29,27 @@ namespace Nare
         Transform* parent;
         std::vector<Transform*> children;
 	};
+
+    struct Light
+    {
+        enum LightType 
+        {
+            None = 0,
+            Spot, Point, Directional
+        };
+
+        LightType type;
+        Vector3 position;
+        Vector3 direction;
+        Vector4 colour;
+
+        float power;
+
+        float cos_cutoff;
+        float cos_inner; 
+
+        float constant;
+        float linear;
+        float quadratic;
+    };
 }

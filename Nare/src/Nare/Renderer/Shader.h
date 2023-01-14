@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Nare/Renderer/Buffer.h"
+#include "nrpch.h"
 #include "Nare/Core/Core.h"
 #include "Nare/Core/NareMath.h"
 
@@ -8,10 +10,13 @@ namespace Nare
 	class Shader
 	{
 	public:
+        // TODO - Cache the uniform locations in a map.
 		virtual ~Shader() = default;
 
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
+
+        virtual uint32_t GetID() const = 0;
 
         virtual const std::string& GetName() const = 0;
 
@@ -30,5 +35,10 @@ namespace Nare
         // virtual void SetInt2(const Vector2& vec) = 0;
         // virtual void SetInt3(const Vector3& vec) = 0;
         // virtual void SetInt4(const Vector4& vec) = 0;
+
+        
+    private:
+        std::vector<UniformBuffer> uniformBuffers_;
+
 	};
 }

@@ -63,4 +63,19 @@ namespace Nare
 		return nullptr;
 	}
 
+    Ref<UniformBuffer> UniformBuffer::Create(const Ref<Shader> &shader, const std::string &name)
+    {
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:
+			NR_CORE_ASSERT(false, "RendererAPI::None is currently not supported")
+			return nullptr;
+		case RendererAPI::API::OpenGL:
+			return CreateRef<OpenGLUniformBuffer>(shader, name);
+		}
+
+		NR_CORE_ASSERT(false, "UniformBuffer cannot be generated")
+		return nullptr;
+    }
+
 }

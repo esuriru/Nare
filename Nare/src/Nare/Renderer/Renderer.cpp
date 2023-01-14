@@ -31,6 +31,7 @@ namespace Nare
 	void Renderer::EndScene()
 	{
 	}
+    
 
 	void Renderer::Submit(const Ref<VertexArray>& vertexArray, const Ref<Shader>& shader)
 	{
@@ -40,8 +41,10 @@ namespace Nare
 		RenderCommand::DrawIndexed(vertexArray);
 	}
 
-    void Renderer::RenderEntity(Entity e)
+    void Renderer::RenderMesh(const Mesh &mesh, const Matrix4x4 model_matrix)
     {
-
+        mesh.material.shader->Bind();
+        mesh.vertexArray_->Bind();
+        RenderCommand::DrawIndexed(mesh.vertexArray_);
     }
 }

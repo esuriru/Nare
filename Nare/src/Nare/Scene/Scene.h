@@ -13,8 +13,9 @@ namespace Nare
     public:
         inline void Render()
         {
+            const auto& coordinator = Coordinator::Instance();
             for (const auto& entity : Entities)
-                Renderer::RenderEntity(entity);
+                Renderer::RenderMesh(coordinator.GetComponent<RenderMesh>(entity)->mesh, coordinator.GetComponent<Transform>(entity)->worldMatrix);
         }
     };
 
@@ -42,6 +43,7 @@ namespace Nare
             for (const auto& child : t->children)
                 calculate_matrices_(child);    
         }
+
     };
 
 	class Scene
@@ -60,7 +62,6 @@ namespace Nare
 
         Ref<TransformSystem> transformSystem_;
         Ref<RenderSystem> renderSystem_;
-
 	};
 
 }
