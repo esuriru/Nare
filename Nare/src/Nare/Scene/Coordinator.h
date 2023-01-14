@@ -50,7 +50,7 @@ namespace Nare
 		}
 
 		template<typename T>
-		inline T& GetComponent(Entity entity)
+		inline T* GetComponent(Entity entity) const
 		{
 			return componentManager_->GetComponent<T>(entity);
 		}

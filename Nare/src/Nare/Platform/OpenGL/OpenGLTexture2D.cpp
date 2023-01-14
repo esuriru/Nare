@@ -39,6 +39,10 @@ namespace Nare
 
 		NR_CORE_ASSERT(internalFormat & dataFormat, "Format not supported")
 
+        // TODO - need to read up more on what this does: apparently, STB_image does not perform any kind of alignment
+        // https://stackoverflow.com/questions/23150123/loading-png-with-stb-image-for-opengl-texture-gives-wrong-colors
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
 		glCreateTextures(GL_TEXTURE_2D, 1, &rendererID_);
 		glTextureStorage2D(rendererID_, 1, internalFormat, static_cast<GLint>(width_), static_cast<GLint>(height_));
 

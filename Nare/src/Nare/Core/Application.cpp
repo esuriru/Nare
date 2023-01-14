@@ -8,6 +8,9 @@
 #include "Nare/Core/Timestep.h"
 #include "Nare/Core/Core.h"
 
+// Components
+#include "Nare/Scene/Components.h"
+
 // Events
 #include "Nare/Events/ApplicationEvent.h"
 #include "Nare/Events/EventDispatcher.h"
@@ -34,6 +37,14 @@ namespace Nare
 
 		window_->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
 		window_->SetVSyncEnabled(false);
+
+        auto& coordinator = Coordinator::Instance();
+
+        coordinator.Init();
+
+        // Register components
+        coordinator.RegisterComponent<Transform>();
+        coordinator.RegisterComponent<RenderMesh>();
 
 	}
 

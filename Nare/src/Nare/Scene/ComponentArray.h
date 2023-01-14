@@ -40,11 +40,11 @@ namespace Nare
 			--size_;
 		}
 
-		inline T& GetData(Entity entity)
+		inline T* GetData(Entity entity)
 		{
-			NR_CORE_ASSERT(entityToIndexMap_.find(entity) != entityToIndexMap_.end(), "Retrieving a component that does not exist.")
-
-			return componentArray_[entityToIndexMap_[entity]];
+            // Return a pointer so it is 'optional', null.
+            NR_CORE_WARN("Entity ", entity, " called GetData which returned a component that doesn't exist");
+			return &(componentArray_[entityToIndexMap_[entity]]);
 		}
 
 		inline void EntityDestroyed(Entity entity) override

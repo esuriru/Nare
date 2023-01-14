@@ -2,6 +2,7 @@
 #include "RendererAPI.h"
 #include "RenderCommand.h"
 #include "Shader.h"
+#include "Nare/Scene/Entity.h"
 
 namespace Nare
 {
@@ -17,6 +18,8 @@ namespace Nare
 		static void EndScene();
 
 		static void Submit(const Ref<VertexArray>& vertexArray, const Ref<Shader>& shader);
+        
+        static void RenderEntity(Entity e); 
 
 		inline static RendererAPI::API GetAPI()
 		{

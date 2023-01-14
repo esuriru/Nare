@@ -190,34 +190,15 @@ namespace Nare
 
         Matrix4x4 model = Matrix4x4::Translate(pos) * Matrix4x4::Scale(size);
 
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[0];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[1];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 0.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[2];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 1.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
-        s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[3];
-        s_data.QuadVertexBufferPtr->colour = white;
-        s_data.QuadVertexBufferPtr->texCoord = { 0.f , 1.f };
-        s_data.QuadVertexBufferPtr->texIndex = textureIndex;
-        s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
-        ++(s_data.QuadVertexBufferPtr);
-
+        for (size_t i = 0; i < quadVertexCount; ++i)
+        {
+            s_data.QuadVertexBufferPtr->position = model * s_data.QuadVertexPositions[i];
+            s_data.QuadVertexBufferPtr->colour = white;
+            s_data.QuadVertexBufferPtr->texCoord = texCoords[i];
+            s_data.QuadVertexBufferPtr->texIndex = textureIndex;
+            s_data.QuadVertexBufferPtr->tilingFactor = tilingFactor;
+            ++(s_data.QuadVertexBufferPtr);
+        }
         s_data.QuadIndexCount += 6;
         ++s_data.stats.QuadCount;
 

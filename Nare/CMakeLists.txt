@@ -83,6 +83,10 @@ set(Nare
     "src/Nare/Renderer/RenderCommand.cpp"
     "src/Nare/Renderer/Texture.h"
     "src/Nare/Renderer/Texture.cpp"
+    "src/Nare/Renderer/Mesh.h"
+    "src/Nare/Renderer/Mesh.cpp"
+    "src/Nare/Renderer/Material.h"
+    "src/Nare/Renderer/Material.cpp"
     "src/Nare/Renderer/SubTexture2D.h"
     "src/Nare/Renderer/SubTexture2D.cpp"
 
@@ -93,7 +97,8 @@ set(Nare
     # Scene
     "src/Nare/Scene/Scene.h"
     "src/Nare/Scene/Scene.cpp"
-    "src/Nare/Scene/Component.h"
+    "src/Nare/Scene/Transform.h"
+    "src/Nare/Scene/Transform.cpp"
     "src/Nare/Scene/IComponentArray.h"
     "src/Nare/Scene/ComponentArray.h"
     "src/Nare/Scene/ComponentManager.h"
@@ -103,6 +108,7 @@ set(Nare
     "src/Nare/Scene/Coordinator.cpp"
     "src/Nare/Scene/Entity.h"
     "src/Nare/Scene/Entity.cpp"
+    "src/Nare/Scene/Components.h"
 
     # PNG loader
     "vendor/stb_image/stb_image.h" 

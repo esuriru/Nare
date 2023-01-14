@@ -17,6 +17,7 @@ namespace Nare
         Ref<Shader> shader_; 
         Ref<Texture2D> poppyTexture_;
         Ref<Texture2D> chessPieces_;
+        Ref<Texture2D> turtleMeme_;
         Ref<SubTexture2D> pawn_;
 
         Ref<VertexArray> _squareVA;

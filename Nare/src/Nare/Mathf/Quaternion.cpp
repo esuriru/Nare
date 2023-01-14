@@ -1,5 +1,6 @@
 #include "Quaternion.h"
 #include "Nare/Core/NareMath.h"
+#include "Nare/Core/Core.h"
 
 const Quaternion& Quaternion::identity = Quaternion(1.0f, 0, 0, 0);
 
@@ -7,19 +8,25 @@ const Quaternion& Quaternion::identity = Quaternion(1.0f, 0, 0, 0);
 /// Quaternions are stored and initialised as (w, x, y, z);
 /// </summary>
 Quaternion::Quaternion(float w, float x, float y, float z)
-	: data_({w, x, y, z})
+	: w(w), x(x), y(y), z(z)
 {
 }
 
 
 float Quaternion::Length() const
 {
-	return data_.Length();
+	return sqrt(x * x + y * y + z * z + w * w);
 }
 
 Quaternion& Quaternion::Normalize()
 {
-	data_.Normalize();
+    const float l = Length();
+    NR_CORE_ASSERT(Mathf::ApproximatelyZero(l), "Trying to normalize a quaternion with magnitude zero.")
+
+    x /= l;
+    y /= l;
+    z /= l;
+    w /= l;
 	return *this;
 }
 

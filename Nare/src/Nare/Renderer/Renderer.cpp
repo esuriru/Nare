@@ -2,8 +2,14 @@
 #include "Renderer.h"
 #include "RenderCommand.h"
 
+#include "Nare/Scene/Coordinator.h"
+#include "Nare/Scene/Transform.h"
+#include "Nare/Scene/Components.h"
+
 #include "Nare/Renderer/VertexArray.h"
 #include "Nare/Renderer/Renderer2D.h"
+
+#include "Mesh.h"
 
 namespace Nare
 {
@@ -33,4 +39,9 @@ namespace Nare
 		vertexArray->Bind();
 		RenderCommand::DrawIndexed(vertexArray);
 	}
+
+    void Renderer::RenderEntity(Entity e)
+    {
+
+    }
 }

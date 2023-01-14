@@ -7,12 +7,11 @@
 
 struct Quaternion
 {
-	float& x = data_.x; 
-	float& y = data_.y;
-	float& z = data_.z;
-	float& w = data_.w;
+    float x, y, z, w;
 
 	Quaternion(float w = 1.f, float x = 0.f, float y = 0.f, float z = 0.f);
+
+    Quaternion& operator=(const Quaternion& rhs) = default;
 
 	float Length() const;
 
@@ -26,9 +25,6 @@ struct Quaternion
 	static Quaternion Euler(float pitch, float yaw, float roll);
 
 	static const Quaternion& identity;
-
-private:
-	Vector4 data_;
 };
 
 

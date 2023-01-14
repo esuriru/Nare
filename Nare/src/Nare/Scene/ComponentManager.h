@@ -46,9 +46,9 @@ namespace Nare
 		}
 
 		template<typename T>
-		T& GetComponent(Entity entity)
+		T* GetComponent(Entity entity)
 		{
-			return GetComponent<T>()->GetData(entity);
+			return GetComponentArray<T>()->GetData(entity);
 		}
 
 		void EntityDestroyed(Entity entity)
