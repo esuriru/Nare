@@ -64,6 +64,8 @@ set(Nare
     "src/Nare/Platform/OpenGL/OpenGLShader.cpp"
     "src/Nare/Platform/OpenGL/OpenGLTexture2D.h"
     "src/Nare/Platform/OpenGL/OpenGLTexture2D.cpp"
+    "src/Nare/Platform/OpenGL/OpenGLFramebuffer.h"
+    "src/Nare/Platform/OpenGL/OpenGLFramebuffer.cpp"
 
     # Renderer
     "src/Nare/Renderer/GraphicsContext.h"
@@ -89,6 +91,8 @@ set(Nare
     "src/Nare/Renderer/Material.cpp"
     "src/Nare/Renderer/SubTexture2D.h"
     "src/Nare/Renderer/SubTexture2D.cpp"
+    "src/Nare/Renderer/Framebuffer.h"
+    "src/Nare/Renderer/Framebuffer.cpp"
 
     # Utility
     "src/Nare/Utils/Singleton.h"
