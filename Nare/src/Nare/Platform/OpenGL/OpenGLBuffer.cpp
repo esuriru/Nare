@@ -76,7 +76,7 @@ namespace Nare
         : name_(name)
     {
         const uint32_t& shader_ID = shader->GetID();
-        blockID_ = glGetUniformBlockIndex(shader_ID, "LightBlock");
+        blockID_ = glGetUniformBlockIndex(shader_ID, name.data());
         glUniformBlockBinding(shader_ID, blockID_, bindingID);
         glGetActiveUniformBlockiv(shader_ID, blockID_, GL_UNIFORM_BLOCK_DATA_SIZE, &blockSize_);
 
