@@ -11,7 +11,9 @@ namespace Nare
         OBJTestLayer()
             : Layer("OBJTest")
         {
-                 
+            Ref<Shader> shader = shaderLibrary_.Load("assets/shaders/Standard.glsl");
+            shader->RegisterUniformBuffer("Light");
+
         }
 
         inline void OnUpdate(Timestep ts) override
@@ -20,7 +22,7 @@ namespace Nare
 		}
 
     private:
-        
+        ShaderLibrary shaderLibrary_;        
     };
 
 	class LauncherLayer : public Layer

@@ -35,10 +35,14 @@ namespace Nare
         // virtual void SetInt2(const Vector2& vec) = 0;
         // virtual void SetInt3(const Vector3& vec) = 0;
         // virtual void SetInt4(const Vector4& vec) = 0;
-
         
-    private:
-        std::vector<UniformBuffer> uniformBuffers_;
+        // virtual void RegisterUniformBuffer(const std::string& name) = 0;
+        // virtual Ref<UniformBuffer> GetUniformBuffer(const std::string& name) const = 0;
+        
+    protected:
+        // std::unordered_map<std::string, Ref<UniformBuffer>> uniformBuffers_;
+
+        // bool UniformBufferExists(const std::string& ub_name) const;
 
 	};
 }

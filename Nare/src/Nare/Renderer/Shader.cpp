@@ -37,4 +37,9 @@ namespace Nare
 		NR_CORE_ASSERT(false, "Shader cannot be generated")
 		return nullptr;
 	}
+
+    // bool Shader::UniformBufferExists(const std::string &ub_name) const
+    // {
+    //     return uniformBuffers_.find(ub_name) != uniformBuffers_.end();
+    // }
 }

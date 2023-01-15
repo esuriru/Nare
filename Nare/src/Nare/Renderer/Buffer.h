@@ -177,6 +177,10 @@ namespace Nare
 
         virtual int GetSize() const = 0;
 
-        static Ref<UniformBuffer> Create(const Ref<Shader>& shader, const std::string& name);
+        virtual const std::string& GetName() const = 0;
+
+        virtual void SetData(const void* data, uint32_t size) = 0;
+
+        static Ref<UniformBuffer> Create(const Ref<Shader>& shader, const std::string& name, const int bindingID);
     };
 }

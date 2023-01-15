@@ -8,12 +8,17 @@
 
 namespace Nare
 {
+    constexpr uint32_t MAX_LIGHTS = 10;
+
     class RenderSystem : public System
     {
     public:
         inline void Render()
         {
             const auto& coordinator = Coordinator::Instance();
+            // Render lights
+                
+            // Render meshes
             for (const auto& entity : Entities)
                 Renderer::RenderMesh(coordinator.GetComponent<RenderMesh>(entity)->mesh, coordinator.GetComponent<Transform>(entity)->worldMatrix);
         }
@@ -62,6 +67,8 @@ namespace Nare
 
         Ref<TransformSystem> transformSystem_;
         Ref<RenderSystem> renderSystem_;
+
+        std::array<Light, MAX_LIGHTS> lights_;
 	};
 
 }

@@ -43,6 +43,7 @@ namespace Nare
 
     void Renderer::RenderMesh(const Mesh &mesh, const Matrix4x4 model_matrix)
     {
+         
         mesh.material.shader->Bind();
         mesh.vertexArray_->Bind();
         RenderCommand::DrawIndexed(mesh.vertexArray_);

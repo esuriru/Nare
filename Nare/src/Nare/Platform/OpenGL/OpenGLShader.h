@@ -49,6 +49,8 @@ namespace Nare
 
 		void UploadUniformMat4(const std::string& name, const Matrix4x4& vec);
 
+        // virtual void RegisterUniformBuffer(const std::string& name) override;
+        // virtual Ref<UniformBuffer> GetUniformBuffer(const std::string& name) const override;
 
 	private:
 		uint32_t rendererID_;
@@ -57,12 +59,11 @@ namespace Nare
 
 		std::string ReadFile(const std::string& file_path);
 
-		// TODO: Make this a typedef
 		std::unordered_map<GLenum, std::string> Preprocess(const std::string& source);
 
 		static std::vector<std::string> s_validShaderTypes_;
-		void Compile(std::unordered_map<GLenum, std::string> shaderSources);
 
+		void Compile(std::unordered_map<GLenum, std::string> shaderSources);
 	};
 
     class ShaderLibrary

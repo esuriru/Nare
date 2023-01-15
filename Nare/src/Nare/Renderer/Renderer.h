@@ -6,6 +6,7 @@
 
 namespace Nare
 {
+    class Mesh;
 	class VertexArray;
 
 	class Renderer
@@ -20,7 +21,7 @@ namespace Nare
 		static void Submit(const Ref<VertexArray>& vertexArray, const Ref<Shader>& shader);
         
         static void RenderMesh(const Mesh& mesh, const Matrix4x4 model_matrix);
-
+            
 		inline static RendererAPI::API GetAPI()
 		{
 			return RendererAPI::GetAPI();

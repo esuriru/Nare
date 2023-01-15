@@ -49,7 +49,7 @@ namespace Nare
     class OpenGLUniformBuffer : public UniformBuffer
     {
     public:
-        OpenGLUniformBuffer(const Ref<Shader>& shader, const std::string& name);
+        OpenGLUniformBuffer(const Ref<Shader>& shader, const std::string& name, const int bindingID);
         virtual ~OpenGLUniformBuffer() override;
 
 		virtual void Bind() const override;
@@ -60,10 +60,18 @@ namespace Nare
             return blockSize_;
         }
 
+        inline virtual const std::string& GetName() const override
+        {
+            return name_;
+        }
+
+        virtual void SetData(const void* data, uint32_t size) override;
+
     private:
         int blockSize_;
 		uint32_t rendererID_;
         uint32_t blockID_; 
-        std::string debugName_;
+
+        std::string name_;
     };
 }

@@ -137,12 +137,34 @@ namespace Nare
 	void OpenGLShader::UploadUniformMat4(const std::string& name, const Matrix4x4& matrix)
 	{
 		const auto& location = glGetUniformLocation(rendererID_, name.data());
+
 		// TODO: GL_TRUE for row-major, GL_FALSE for column-major
+        // TODO: Should I make a row-major matrix?
 		glUniformMatrix4fv(location, 1, GL_FALSE, matrix.data());
 	}
 
-	void OpenGLShader::Compile(std::unordered_map<GLenum, std::string> shaderSources)
-	{
+    // void OpenGLShader::RegisterUniformBuffer(const std::string& name)
+    // {
+    //     if (UniformBufferExists(name))
+    //         return NR_CORE_ERROR("Uniform buffer already registered on shader '", name_, "'");
+
+    //     uniformBuffers_[name] = UniformBuffer::Create(CreateRef<Shader>(this), name, uniformBuffers_.size());
+    // }
+
+    // Ref<UniformBuffer> OpenGLShader::GetUniformBuffer(const std::string &name) const
+    // {
+    //     if (!UniformBufferExists(name))
+    //     {
+    //         NR_CORE_ERROR("Uniform buffer could not be found or is not registered yet in shader '", name_, "'");
+    //         NR_CORE_WARN("GetUniformBuffer returning nullptr");
+    //         return nullptr;
+    //     }
+
+    //     return uniformBuffers_.at(name);
+    // }
+
+    void OpenGLShader::Compile(std::unordered_map<GLenum, std::string> shaderSources)
+    {
 		// Create the program that the fragment and vertex shader into
 		GLuint program = glCreateProgram();
         NR_CORE_ASSERT(shaderSources.size() <= 2, "Nare only supports a maximum of 2 shaders for now.")
