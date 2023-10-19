@@ -36,7 +36,7 @@ namespace Nare
         virtual void SetFloat3(const std::string& name, const Vector3& vec) override;
         virtual void SetFloat4(const std::string& name, const Vector4& vec) override;
 
-        virtual void SetInt(const std::string& name, const int& val) override;
+        virtual void SetInt(const std::string& name, int val) override;
         virtual void SetIntArray(const std::string& name, int* values, uint32_t count) override;
 
 		void UploadUniformInt(const std::string& name, int value);

@@ -94,7 +94,7 @@ namespace Nare
         UploadUniformFloat4(name, vec);
     }
 
-    void OpenGLShader::SetInt(const std::string& name, const int &val)
+    void OpenGLShader::SetInt(const std::string& name, int val)
     {
         UploadUniformInt(name, val);
     }
