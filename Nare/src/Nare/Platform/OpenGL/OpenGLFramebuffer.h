@@ -8,7 +8,7 @@ namespace Nare
     {
     public:
         OpenGLFrameBuffer(const FramebufferSpecification& spec);
-        virtual ~OpenGLFrameBuffer() = default;
+        virtual ~OpenGLFrameBuffer();
 
         inline virtual const FramebufferSpecification& GetSpecification() const override
         {
@@ -19,7 +19,7 @@ namespace Nare
 
     private:
         uint32_t rendererID_;
-        uint32_t colorAttachment_;
+        uint32_t colorAttachment_, depthAttachment_;
 
         FramebufferSpecification spec_;
     };

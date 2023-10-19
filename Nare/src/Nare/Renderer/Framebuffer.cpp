@@ -2,6 +2,8 @@
 
 #include "Nare/Renderer/Renderer.h"
 
+#include "Nare/Platform/OpenGL/OpenGLFrameBuffer.h"
+
 namespace Nare
 {
     Ref<Framebuffer> Framebuffer::Create(const FramebufferSpecification &spec)
@@ -11,9 +13,9 @@ namespace Nare
         case RendererAPI::API::None:
             NR_CORE_ASSERT(false, "RendererAPI::None is currently not supported");
             return nullptr;
-        // case RendererAPI::API::OpenGL: return CreateRef<OpenGLFramebuffer>(spec);
-        case RendererAPI::API::OpenGL:
-            return nullptr;
+        case RendererAPI::API::OpenGL: return CreateRef<OpenGLFramebuffer>(spec);
+        // case RendererAPI::API::OpenGL:
+        //     return nullptr;
         }
 
         NR_CORE_ASSERT(false, "Framebuffer cannot be generated");
